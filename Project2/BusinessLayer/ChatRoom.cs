@@ -84,7 +84,7 @@ namespace Project2.BusinessLayer
             }
             if (exists)
             {
-                this.log.Info("attempt to register with the Username:" + Username + ", a user with thie Username already exists");
+                this.log.Warn("attempt to register with the Username:" + Username + ", a user with thie Username already exists");
                 this.gui.ExistUsername();
                 this.FirstMenu();
             }
@@ -102,25 +102,39 @@ namespace Project2.BusinessLayer
             String g_id = information.First.Value;
             String Username = information.Last.Value;
             bool UsernameExists = false;
+            bool groupIdExists = false;
             User logging = null;
             foreach (User user in this.usersList)
             {
                 if (!UsernameExists)
-                    if (user.Username == Username & user.G_id == g_id)
+                    if (user.Username == Username)
                     {
                         UsernameExists = true;
-                        logging = user;
+                        if (user.G_id == g_id)
+                        {
+                            groupIdExists = true;
+                            logging = user;
+                        }
                     }
             }
             if (!UsernameExists)
             {
-                log.Info("attempt to login with the Username: " + Username + ", a user with thie Username doesn't exists");
+                log.Warn("attempt to login with the Username: " + Username + ", a user with thie Username doesn't exists");
                 this.gui.NoSuchUsername();
                 this.FirstMenu();
             }
-            this.logged = logging;
-            log.Info("User loged in successfully. Username: " + Username + "group id: " + g_id);
-            this.Logged();
+            if (!groupIdExists)
+            {
+                log.Warn("attempt to login with the Username: " + Username + "  ID: " + g_id + " - this ID doesnt match the username");
+                this.gui.noSuchId();
+                this.FirstMenu();
+            }
+            else
+            {
+                this.logged = logging;
+                log.Info("User loged in successfully. Username: " + Username + "group id: " + g_id);
+                this.Logged();
+            }
         }
 
         public void Logged()
@@ -168,7 +182,7 @@ namespace Project2.BusinessLayer
         public void Retrieve()
         {
             List<IMessage> tmpList = Communication.Instance.GetTenMessages(this.url);
-            Console.WriteLine(tmpList.Count());
+
             foreach (IMessage tmp in tmpList)
             {
                 Message tmpMsg = new Message(tmp);
@@ -198,11 +212,8 @@ namespace Project2.BusinessLayer
 
         public void Exit()
         {
-            if (this.logged != null)
-            {
-                this.logout();
-            }
-            Environment.Exit(0);
+            log.Logger.Repository.Shutdown();
+            
         }
         public void Display(int num)
         {
@@ -224,18 +235,24 @@ namespace Project2.BusinessLayer
             {
                 gui.MessageLimit();
                 this.log.Info(this.logged.Username + "Tried to write a message over 150 chars");
-                this.Send();
+
             }
-            if (message.Length ==0)
+            else if (message.Length ==0)
             {
                 gui.NoMessage();
                 this.log.Info(this.logged.Username + "Tried to write an empty message");
-                this.Send();
             }
+            else
+            {
+                this.logged.Send(message, this.url);
 
-            this.logged.Send(message, this.url);
-            
-            
+            }
+            this.Logged();
+
+
+
+
+
         }
         public void DisplayAll() // Display ALL message from a specified user function
         {
@@ -243,28 +260,19 @@ namespace Project2.BusinessLayer
             String g_id = information.First.Value;
             String Username = information.Last.Value;
             bool exists = false;
-            foreach (User user in this.usersList)
+            foreach (Message msg in this.msgList)
             {
-                if (!exists)
+                if(msg.UserName.Equals(Username))
                 {
-                    if (user.Username.Equals(Username) & user.G_id.Equals(g_id))
-                        {
-                        foreach(Message msg in this.msgList)
-                        {
-                            if(msg.UserName == Username)
-                            {
-                                Console.WriteLine(msg.ToString());
-                            }
-                        }
-
-                    }
-                        
+                    this.gui.DisplayMsg(msg.tostring);
+                    exists = true ;
                 }
+               
             }
-            if (exists)
+            if (!exists)
             {
-                this.log.Info("attempt to retrieve with wrong Username:" + Username);
-                this.DisplayAll();
+                this.gui.noUser();
+                this.log.Info("attempt to retrieve messages with wrong userName and GroupID combination:" + Username + " " + g_id);
             }
             this.Logged();
             

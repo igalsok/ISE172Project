@@ -37,7 +37,7 @@ namespace Project2.PersistentLayer
         public UserHandler()
         {
             users = new List<User>();
-            FilePath = "C:/temp/users.xml";
+            FilePath = "PersistentLayer/users.xml";
             if (File.Exists(this.FilePath))
             {
                 retriveAll();

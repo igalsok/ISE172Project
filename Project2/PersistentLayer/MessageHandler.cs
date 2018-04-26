@@ -47,7 +47,7 @@ namespace Project2.PersistentLayer
         public MessageHandler()
         {
             messages = new List<Message>();
-            filePath = "C:/temp/messages.xml";
+            filePath = "PersistentLayer/messages.xml";
             if (File.Exists(this.filePath))
             {
                 retriveAll();

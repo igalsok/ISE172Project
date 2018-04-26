@@ -1,0 +1,15 @@
+2018-04-26 15:44:43,324 [1] INFO  Project2.Program [(null)] - Info logging
+2018-04-26 15:44:43,367 [1] ERROR Project2.Program [(null)] - This is my error
+System.Exception: Exception!
+   at Project2.Program.Main(String[] args) in P:\Projects\PEs2\PROJECT\ISE172Project\Project2\Program.cs:line 21
+2018-04-26 15:45:17,344 [1] INFO  Project2.Program [(null)] - attempt to register with the Username:lol, a user with thie Username already exists
+2018-04-26 15:45:22,230 [1] INFO  Project2.Program [(null)] - attempt to login with the Username: lol, a user with thie Username doesn't exists
+2018-04-26 15:53:01,161 [1] WARN  Project2.Program [(null)] - attempt to login with the Username: loland with this ID: 232 this ID doesnt match the username
+2018-04-26 15:53:06,952 [1] INFO  Project2.Program [(null)] - User registered successfully. Username: igalgroup id: 123
+2018-04-26 15:55:13,536 [1] WARN  Project2.Program [(null)] - attempt to login with the Username: lol  ID: 3234 - this ID doesnt match the username
+2018-04-26 16:06:42,271 [1] INFO  Project2.Program [(null)] - User registered successfully. Username: igalgroup id: 123
+2018-04-26 16:06:44,526 [1] INFO  Project2.Program [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-04-26 16:07:56,236 [1] INFO  Project2.Program [(null)] - User registered successfully. Username: igalgroup id: 123
+2018-04-26 16:07:59,102 [1] INFO  Project2.Program [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-04-26 16:08:05,384 [1] WARN  Project2.Program [(null)] - attempt to register with the Username:igal, a user with thie Username already exists
+2018-04-26 16:08:09,038 [1] INFO  Project2.Program [(null)] - User loged in successfully. Username: igalgroup id: 123

@@ -59,7 +59,7 @@ namespace Project2.PresentationLayer
         }
         public void NoSuchUsername()
         {
-            Console.WriteLine("Such Username or groupID does not exist");
+            Console.WriteLine("Such Username does not exist");
         }
         public void ExistUsername()
         {
@@ -83,6 +83,7 @@ namespace Project2.PresentationLayer
             X.AddFirst(Console.ReadLine());
             Console.WriteLine("Enter Group ID : ");
             X.AddFirst(Console.ReadLine());
+            Console.WriteLine();
             return X;
 
         }
@@ -92,12 +93,27 @@ namespace Project2.PresentationLayer
         }
         public void MessageLimit()
         {
-            Console.WriteLine("Message with over than 150 chars can't be sent");
+            Console.WriteLine("Can't send a message!");
+            Console.WriteLine("Reason: Message with over than 150 chars ");
+
+            Console.WriteLine();
         }
 
         public void NoMessage()
         {
-            Console.WriteLine("Message is empty, please write a message");
+            Console.WriteLine("Can't send a message!");
+            Console.WriteLine("Reason: *Empty Message* ");
+            Console.WriteLine();
+        }
+        public void noUser()
+        {
+            Console.WriteLine("no Messages from this user + groupID");
+            Console.WriteLine();
+        }
+        public void noSuchId()
+        {
+            Console.WriteLine("This GroupID doesnt match the username");
+            Console.WriteLine();
         }
     }
 }
