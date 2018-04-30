@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>278e70cb-2463-414e-a964-3f4cc4e14a10</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:16</Date>
+    <MessageContent>igal sok 123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:278e70cb-2463-414e-a964-3f4cc4e14a10
+UserName:igal
+DateTime:4/30/2018 5:11:16 PM
+MessageContect:igal sok 123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>7b409bfa-485d-4c78-a8ea-fbcc85dafde8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:21</Date>
+    <MessageContent>igalsok321</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:7b409bfa-485d-4c78-a8ea-fbcc85dafde8
+UserName:igal
+DateTime:4/30/2018 5:11:21 PM
+MessageContect:igalsok321
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>5964e61b-3c29-47fe-95fc-0f093796edb2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-04-30T17:11:27</Date>
+    <MessageContent>shalom aleyhem</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5964e61b-3c29-47fe-95fc-0f093796edb2
+UserName:igal
+DateTime:4/30/2018 5:11:27 PM
+MessageContect:shalom aleyhem
+GroupId:123
+</tostring>
+  </Message>
+</ArrayOfMessage>

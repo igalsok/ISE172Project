@@ -21,3 +21,18 @@
 2018-04-30 17:10:17,052 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
 2018-04-30 17:10:24,268 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
 2018-04-30 17:10:37,796 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-04-30 17:11:27,941 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: karamgroup id: 123
+2018-04-30 17:11:34,574 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: igal  ID: 23131 - this ID doesnt match the username
+2018-04-30 17:11:39,424 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: igal  ID: 23131 - this ID doesnt match the username
+2018-04-30 17:11:47,287 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: karamgroup id: 123
+2018-04-30 17:12:59,225 [1] INFO  ProjectMS2.App [(null)] - User: karam, group id:123, is logging out
+2018-04-30 17:26:35,943 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: nataliagroup id: 345
+2018-04-30 17:26:45,095 [1] WARN  ProjectMS2.App [(null)] - attempt to register with the Username:natalia, a user with thie Username already exists
+2018-04-30 17:27:05,091 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: natalia  ID: 315 - this ID doesnt match the username
+2018-04-30 17:27:08,770 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: natalia  ID: 123 - this ID doesnt match the username
+2018-04-30 17:27:32,937 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: nataliagroup id: 345
+2018-04-30 17:28:08,869 [1] INFO  ProjectMS2.App [(null)] - User: natalia, group id:345, is logging out
+2018-04-30 20:10:11,879 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-04-30 20:10:36,779 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-04-30 20:10:42,951 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-04-30 20:11:49,038 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123

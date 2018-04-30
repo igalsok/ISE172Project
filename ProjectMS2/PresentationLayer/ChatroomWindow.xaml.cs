@@ -21,10 +21,14 @@ namespace ProjectMS2.PresentationLayer
     public partial class ChatroomWindow : Window
     {
         private ChatRoom ch;
+       
+        
         public ChatroomWindow(ChatRoom ch)
         {
             InitializeComponent();
             this.ch = ch;
+            ch.Retrieve();
+            refresh();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -39,6 +43,16 @@ namespace ProjectMS2.PresentationLayer
             window2.Show();
             Close();
 
+        }
+        private void refresh()
+        {
+
+            txt_msg.Text = ch.Display(20);
+        }
+
+        private void btn_refresh_Click(object sender, RoutedEventArgs e)
+        {
+            refresh();
         }
     }
 }

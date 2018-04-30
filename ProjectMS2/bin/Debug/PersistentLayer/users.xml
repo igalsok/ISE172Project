@@ -4,4 +4,12 @@
     <Username>igal</Username>
     <G_id>123</G_id>
   </User>
+  <User>
+    <Username>karam</Username>
+    <G_id>123</G_id>
+  </User>
+  <User>
+    <Username>natalia</Username>
+    <G_id>345</G_id>
+  </User>
 </ArrayOfUser>

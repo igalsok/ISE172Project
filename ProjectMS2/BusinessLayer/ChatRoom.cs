@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ProjectMS2.PresentationLayer;
 using ProjectMS2.PersistentLayer;
 using ProjectMS2.CommunicationLayer;
+using System.Timers;
 
 
 namespace ProjectMS2.BusinessLayer
@@ -13,14 +14,27 @@ namespace ProjectMS2.BusinessLayer
    public class ChatRoom
     {
 
-        public User logged;
-        public String url = "http://127.0.0.1";
+        private User logged;
+        private String url = "http://127.0.0.1";
         public List<Message> msgList;
-        public List<User> usersList;
-        public Gui gui;
-        public log4net.ILog log;
-        public MessageHandler MessageHandler;
-        public UserHandler UserHandler;
+        private List<User> usersList;
+        private log4net.ILog log;
+        private MessageHandler MessageHandler;
+        private UserHandler UserHandler;
+        private System.Timers.Timer _RetrieveTimer;
+        public System.Timers.Timer RetrieveTimer
+        {
+            get
+            {
+                return this._RetrieveTimer;
+            }
+            set
+            {
+                this._RetrieveTimer = value;
+            }
+        }
+
+
 
         public ChatRoom(log4net.ILog tmp)
         {
@@ -29,51 +43,6 @@ namespace ProjectMS2.BusinessLayer
             this.UserHandler = new UserHandler();
             this.msgList = this.MessageHandler.getAll();
             this.usersList = this.UserHandler.getAll();
-        }
-        public void Start(Gui gui, log4net.ILog log)
-        {
-            //private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-            this.gui = gui;
-            this.log = log;
-            this.MessageHandler = new MessageHandler();
-            this.UserHandler = new UserHandler();
-            this.msgList = this.MessageHandler.getAll();
-            this.usersList = this.UserHandler.getAll();
-            //this.UsersList=
-            FirstMenu();
-        }
-        public void FirstMenu()
-        {
-            String select = gui.FirstMenu();
-            int numSelect;
-            try
-            {
-                numSelect = (Int32.Parse(select));
-            }
-            catch
-            {
-                this.log.Info("user inserted a string which is not a number in the first menu");
-                this.gui.WrongFirstMenu();
-                this.FirstMenu();
-            }
-            numSelect = (Int32.Parse(select));
-            switch (numSelect)
-            {
-                case 1:
-                    
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-                    this.Exit();
-                    break;
-                default:
-                    this.log.Info("the number selected does not exits in the start menu");
-                    this.gui.WrongFirstMenu();
-                    this.FirstMenu();
-                    break;
-            }
         }
 
         public Boolean Register(String Username,String Gid)
@@ -141,54 +110,24 @@ namespace ProjectMS2.BusinessLayer
             }
         }
 
-        public void Logged()
-        {
-            String tmp = this.gui.LoggedMenu(this.logged.Username);
-            int selection;
-            try
-            {
-                selection = (Int32.Parse(tmp));
-            }
-            catch
-            {
-                this.log.Info("user inserted a string which is not a number in the LoggedMenu");
-                Logged();
-                this.FirstMenu();
-            }
-            selection = (Int32.Parse(tmp));
-
-            switch (selection)
-            {
-                case 1:
-                    this.Retrieve();
-                    break;
-                case 2:
-                    this.Display(20);
-                    break;
-                case 3:
-                    this.DisplayAll();
-                    break;
-                case 4:
-                    this.Send();
-                    break;
-                case 5:
-                    this.logout();
-                    break;
-                default:
-                    this.log.Info("the number selected does not exits in the logged menu");
-                    this.gui.WrongLoggedMenu();
-                    this.Logged();
-                    break;
-            }
-            Logged();
-        }
-
+       
         public void Retrieve()
         {
-            List<IMessage> tmpList = Communication.Instance.GetTenMessages(this.url);
+            // Create a timer with a two second interval.
+            RetrieveTimer = new System.Timers.Timer(2000);
+            // Hook up the Elapsed event for the timer. 
+            RetrieveTimer.Elapsed += OnTimedEvent;
+            RetrieveTimer.AutoReset = true;
+            RetrieveTimer.Enabled = true;
 
+        }
+
+        private void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            List<IMessage> tmpList = Communication.Instance.GetTenMessages(this.url);
             foreach (IMessage tmp in tmpList)
             {
+
                 Message tmpMsg = new Message(tmp);
                 bool exists = false;
                 foreach (Message check in this.msgList)
@@ -199,9 +138,9 @@ namespace ProjectMS2.BusinessLayer
                         break;
                     }
                 }
-                if(!exists)
+                if (!exists)
                 {
-                   
+
                     this.MessageHandler.SaveNew(tmpMsg);
                 }
 
@@ -218,31 +157,32 @@ namespace ProjectMS2.BusinessLayer
             log.Logger.Repository.Shutdown();
             
         }
-        public void Display(int num)
+        public String Display(int num)
         {
+            String str = "";
             foreach (Message tmp in this.msgList)
             {
 
                 if (num > 0)
                 {
-                    gui.DisplayMsg(tmp.ToString());
+                    str = str + "/n" + tmp.tostring;
                     --num;
                 }
             }
-
+            return str;
         }
         public void Send()
         {
-           String message =  this.gui.Send();
+            String message = "";
             if(message.Length > 150)
             {
-                gui.MessageLimit();
+              
                 this.log.Info(this.logged.Username + "Tried to write a message over 150 chars");
 
             }
             else if (message.Length ==0)
             {
-                gui.NoMessage();
+                
                 this.log.Info(this.logged.Username + "Tried to write an empty message");
             }
             else
@@ -250,34 +190,33 @@ namespace ProjectMS2.BusinessLayer
                 this.logged.Send(message, this.url);
 
             }
-            this.Logged();
+  
 
 
 
 
 
         }
-        public void DisplayAll() // Display ALL message from a specified user function
+        public void DisplayAll(String Username, String g_id) // Display ALL message from a specified user function
         {
-            LinkedList<String> information = this.gui.DisplayAll();
-            String g_id = information.First.Value;
-            String Username = information.Last.Value;
+
+
             bool exists = false;
             foreach (Message msg in this.msgList)
             {
                 if(msg.UserName.Equals(Username))
                 {
-                    this.gui.DisplayMsg(msg.tostring);
+             
                     exists = true ;
                 }
                
             }
             if (!exists)
             {
-                this.gui.noUser();
+
                 this.log.Info("attempt to retrieve messages with wrong userName and GroupID combination:" + Username + " " + g_id);
             }
-            this.Logged();
+ 
             
 
 
