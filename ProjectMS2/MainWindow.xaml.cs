@@ -38,11 +38,20 @@ namespace ProjectMS2
         private void click_btn_Login(object sender, RoutedEventArgs e)
         {
             
-            LoginWindow window = new LoginWindow();
-            window.Show();
+            LoginWindow window = new LoginWindow(this.ch);
+            window.ShowDialog();
+            if (window.isLogged)
+            {
+                ChatroomWindow window2 = new ChatroomWindow(this.ch);
+                window2.Show();
+                Close();
+            }
+
+
         }
         private void click_btn_Exit(object sender, RoutedEventArgs e)
         {
+            ch.Exit();
             Close();
         }
     }

@@ -77,6 +77,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PresentationLayer\ChatroomWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PresentationLayer\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +93,9 @@
   <ItemGroup>
     <Compile Include="PersistentLayer\MessageHandler.cs" />
     <Compile Include="PersistentLayer\UserHandler.cs" />
+    <Compile Include="PresentationLayer\ChatroomWindow.xaml.cs">
+      <DependentUpon>ChatroomWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\Gui.cs" />
     <Compile Include="PresentationLayer\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>

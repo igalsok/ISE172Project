@@ -1,0 +1,17 @@
+﻿<Window x:Class="ProjectMS2.PresentationLayer.ChatroomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMS2.PresentationLayer"
+        mc:Ignorable="d"
+        Title="ChatroomWindow" Height="600" Width="1000">
+    <Grid>
+        <Rectangle Fill="LightSeaGreen"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="467" VerticalAlignment="Top" Width="591"/>
+        <ListBox HorizontalAlignment="Left" Height="357" VerticalAlignment="Top" Width="482" Margin="50,58,0,0"/>
+        <ListBox HorizontalAlignment="Left" Height="357" VerticalAlignment="Top" Width="482" Margin="50,58,0,0"/>
+        <Button Content="Logout" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="113" Margin="844,522,0,0" Height="39" Click="click_btn_logout"/>
+
+    </Grid>
+</Window>

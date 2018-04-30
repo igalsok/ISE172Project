@@ -63,7 +63,7 @@ namespace ProjectMS2.BusinessLayer
                     
                     break;
                 case 2:
-                    this.Login();
+
                     break;
                 case 3:
                     this.Exit();
@@ -103,11 +103,9 @@ namespace ProjectMS2.BusinessLayer
 
         }
 
-        public void Login()
+        public Boolean Login(String Username, String g_id)
         {
-            LinkedList<String> information = this.gui.Login();
-            String g_id = information.First.Value;
-            String Username = information.Last.Value;
+            
             bool UsernameExists = false;
             bool groupIdExists = false;
             User logging = null;
@@ -127,20 +125,19 @@ namespace ProjectMS2.BusinessLayer
             if (!UsernameExists)
             {
                 log.Warn("attempt to login with the Username: " + Username + ", a user with thie Username doesn't exists");
-                this.gui.NoSuchUsername();
-                this.FirstMenu();
+                return false;
+
             }
-            if (!groupIdExists)
+            else if (!groupIdExists)
             {
                 log.Warn("attempt to login with the Username: " + Username + "  ID: " + g_id + " - this ID doesnt match the username");
-                this.gui.noSuchId();
-                this.FirstMenu();
+                return false;
             }
             else
             {
                 this.logged = logging;
                 log.Info("User loged in successfully. Username: " + Username + "group id: " + g_id);
-                this.Logged();
+                return true;
             }
         }
 
@@ -214,7 +211,6 @@ namespace ProjectMS2.BusinessLayer
         {
             log.Info("User: " + this.logged.Username + ", group id:" + this.logged.G_id + ", is logging out");
             this.logged = null;
-            FirstMenu();
         }
 
         public void Exit()

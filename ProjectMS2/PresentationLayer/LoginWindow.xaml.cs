@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjectMS2.BusinessLayer;
 
 namespace ProjectMS2.PresentationLayer
 {
@@ -19,9 +20,54 @@ namespace ProjectMS2.PresentationLayer
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private bool _isLogged;
+        public bool isLogged
+        {
+            get { return this._isLogged; }
+            set { this._isLogged = value; }
+        }
+     
         public LoginWindow()
         {
             InitializeComponent();
         }
+
+        private ChatRoom ch;
+
+        public LoginWindow(ChatRoom chatRoom)
+        {
+            this.ch = chatRoom;
+            InitializeComponent();
+        }
+
+        private void txtbox_usernameLog(object sender, TextChangedEventArgs e)
+        {
+
+        }
+        private void txtbox_gIDLog(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btn_Login_Click(object sender, RoutedEventArgs e)
+        {
+            if (ch.Login(txtBox_usernameLog.Text, txtBox_gIDReg.Text))
+            {
+                MessageBox.Show("logged-In Successfully");
+                this.isLogged = true;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("this Username: " + txtBox_usernameLog.Text + " is not registered");
+            }
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+
     }
 }

@@ -9,12 +9,13 @@
     <Grid RenderTransformOrigin="0.491,0.501">
 
         <Rectangle Fill="SteelBlue"/>
-        <Label x:Name="Lbl_welcome" FontWeight="UltraBold" FontSize="25" Content="Welcome to BGU Chatroom"  HorizontalAlignment="Left" Margin="199,57,0,0" VerticalAlignment="Top" Height="40" Width="374"/>
+        <Label x:Name="Lbl_welcome" FontWeight="UltraBold" FontSize="25" Content="Welcome to BGU Chatroom"  HorizontalAlignment="Left" Margin="235,60,0,0" VerticalAlignment="Top" Height="40" Width="374"/>
         <Button x:Name="btn_register" Content="Register" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="206" Margin="296,193,0,0" Height="38" Click="click_btn_Register"/>
         <Button x:Name="btn_login" Content="Login" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Top" Width="206" Margin="296,133,0,0" Height="38" Click="click_btn_Login"/>
         <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Top" Width="206" Margin="296,255,0,0" Height="38" Click="click_btn_Exit"/>
         <Image x:Name="img_bguLogo" Source="/images/bgu_logo.png" HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="119" Margin="34,36,0,0" Grid.ColumnSpan="2"/>
-        
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="version: 1.0.0" VerticalAlignment="Top" Margin="709,394,0,0" Height="17" Width="74"/>
+
 
 
     </Grid>

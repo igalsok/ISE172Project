@@ -13,7 +13,7 @@
         <Label x:Name="lbl_userNameReg" FontSize="20" Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.117,4.179" Margin="0,111,0,0"/>
         <Label x:Name="lbl_gIDReg" Content="groupID:" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,186,0,0" Height="40" Width="94"/>
         <TextBox x:Name="txtBox_gIDReg"   HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160" Margin="123,194,0,0" TextChanged="txtbox_gIDReg"/>
-        <Button x:Name="btn_register" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="97,272,0,0" Height="43" Click="btn_register_Click"/>
+        <Button x:Name="btn_register" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="123,263,0,0" Height="43" Click="btn_register_Click"/>
         <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.969,10.056" Margin="10,391,0,0" Click="btn_exit_Click"/>
 
     </Grid>

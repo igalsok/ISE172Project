@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectMS2.PresentationLayer"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="300">
+        Title="LoginWindow" Height="450" Width="350">
     <Grid>
-        <Label x:Name="lbl_register" Content="Please enter the following data" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="185" Margin="70,10,0,0"/>
-
+        <Rectangle Fill="SteelBlue"/>
+        <Label x:Name="Login" Content="Login" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="92" Margin="126,21,0,0"/>
+        <TextBox x:Name="txtBox_usernameLog"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Margin="123,119,0,0" TextChanged="txtbox_usernameLog"/>
+        <Label x:Name="lbl_userNameLog" FontSize="20" Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.117,4.179" Margin="0,111,0,0"/>
+        <Label x:Name="lbl_gIDReg" Content="groupID:" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,186,0,0" Height="40" Width="94"/>
+        <TextBox x:Name="txtBox_gIDReg"   HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160" Margin="123,194,0,0" TextChanged="txtbox_gIDLog"/>
+        <Button x:Name="btn_Login" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="126,270,0,0" Height="43" Click="btn_Login_Click"/>
+        <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.969,10.056" Margin="10,391,0,0" Click="btn_exit_Click"/>
     </Grid>
 </Window>
