@@ -1,0 +1,20 @@
+﻿<Window x:Class="ProjectMS2.PresentationLayer.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMS2.PresentationLayer"
+        mc:Ignorable="d"
+        Title="RegisterWindow" Height="450" Width="350">
+    <Grid>
+        <Rectangle Fill="SteelBlue"/>
+        <Label x:Name="lbl_register" Content="Registeration" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Height="63" Width="183" Margin="59,10,0,0"/>
+        <TextBox x:Name="txtBox_usernameReg"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Margin="123,119,0,0" TextChanged="txtbox_usernameReg"/>
+        <Label x:Name="lbl_userNameReg" FontSize="20" Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.117,4.179" Margin="0,111,0,0"/>
+        <Label x:Name="lbl_gIDReg" Content="groupID:" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,186,0,0" Height="40" Width="94"/>
+        <TextBox x:Name="txtBox_gIDReg"   HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160" Margin="123,194,0,0" TextChanged="txtbox_gIDReg"/>
+        <Button x:Name="btn_register" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="97,272,0,0" Height="43" Click="btn_register_Click"/>
+        <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.969,10.056" Margin="10,391,0,0" Click="btn_exit_Click"/>
+
+    </Grid>
+</Window>

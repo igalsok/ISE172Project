@@ -1,0 +1,15 @@
+2018-04-30 15:50:22,013 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: group id: 
+2018-04-30 15:54:56,311 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: igalgroup id: 123
+2018-04-30 15:55:02,287 [1] WARN  ProjectMS2.App [(null)] - attempt to register with the Username:igal, a user with thie Username already exists
+2018-04-30 15:55:13,777 [1] WARN  ProjectMS2.App [(null)] - attempt to register with the Username:igal, a user with thie Username already exists
+2018-04-30 15:55:16,704 [1] WARN  ProjectMS2.App [(null)] - attempt to register with the Username:igal, a user with thie Username already exists
+2018-04-30 15:55:27,776 [1] WARN  ProjectMS2.App [(null)] - attempt to register with the Username:igal, a user with thie Username already exists
+2018-04-30 15:55:31,717 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: lolgroup id: 123
+2018-04-30 15:59:49,138 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: igalgroup id: 123
+2018-04-30 16:04:46,898 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: lolgroup id: 123
+2018-04-30 16:04:51,915 [1] WARN  ProjectMS2.App [(null)] - attempt to register with the Username:lol, a user with thie Username already exists
+2018-04-30 16:05:09,230 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: lolgroup id: 123
+2018-04-30 16:09:30,013 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: lol123group id: 123
+2018-04-30 16:10:58,174 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: lol213421421group id: 213
+2018-04-30 16:14:32,689 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: igal123group id: 123
+2018-04-30 16:17:08,094 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: igalgroup id: 123
