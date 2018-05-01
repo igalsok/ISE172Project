@@ -117,6 +117,7 @@ namespace ProjectMS2.BusinessLayer
             RetrieveTimer = new System.Timers.Timer(2000);
             // Hook up the Elapsed event for the timer. 
             RetrieveTimer.Elapsed += OnTimedEvent;
+           
             RetrieveTimer.AutoReset = true;
             RetrieveTimer.Enabled = true;
 
@@ -132,7 +133,7 @@ namespace ProjectMS2.BusinessLayer
                 bool exists = false;
                 foreach (Message check in this.msgList)
                 {
-                    if (tmpMsg.Id == check.Id)
+                    if (tmpMsg.Id.Equals(check.Id))
                     {
                         exists = true;
                         break;
@@ -140,7 +141,6 @@ namespace ProjectMS2.BusinessLayer
                 }
                 if (!exists)
                 {
-
                     this.MessageHandler.SaveNew(tmpMsg);
                 }
 
@@ -165,29 +165,31 @@ namespace ProjectMS2.BusinessLayer
 
                 if (num > 0)
                 {
-                    str = str + "/n" + tmp.tostring;
+                    str = str + "\n" + tmp.tostring;
                     --num;
                 }
             }
             return str;
         }
-        public void Send()
+        public int Send(String msg)
         {
-            String message = "";
-            if(message.Length > 150)
+            
+            if(msg.Length > 150)
             {
               
                 this.log.Info(this.logged.Username + "Tried to write a message over 150 chars");
+                return 1;
 
             }
-            else if (message.Length ==0)
+            else if (msg.Length == 0)
             {
-                
                 this.log.Info(this.logged.Username + "Tried to write an empty message");
+                return 2;
             }
             else
             {
-                this.logged.Send(message, this.url);
+                this.logged.Send(msg, this.url);
+                return 3;
 
             }
   

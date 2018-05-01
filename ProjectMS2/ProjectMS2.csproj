@@ -85,6 +85,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PresentationLayer\MessageSent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PresentationLayer\RegisterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -96,9 +100,11 @@
     <Compile Include="PresentationLayer\ChatroomWindow.xaml.cs">
       <DependentUpon>ChatroomWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\Gui.cs" />
     <Compile Include="PresentationLayer\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\MessageSent.xaml.cs">
+      <DependentUpon>MessageSent.xaml</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
@@ -136,6 +142,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\bgu_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\302-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\1157-512.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

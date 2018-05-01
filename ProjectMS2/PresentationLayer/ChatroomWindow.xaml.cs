@@ -28,7 +28,7 @@ namespace ProjectMS2.PresentationLayer
             InitializeComponent();
             this.ch = ch;
             ch.Retrieve();
-            refresh();
+            txtBox_sendMsg.Text =  String.Empty;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -47,12 +47,35 @@ namespace ProjectMS2.PresentationLayer
         private void refresh()
         {
 
-            txt_msg.Text = ch.Display(20);
+            txtBox_displayMsg.Text = ch.Display(20);
         }
 
         private void btn_refresh_Click(object sender, RoutedEventArgs e)
         {
             refresh();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           int caseSwitch = ch.Send(txtBox_sendMsg.Text);
+            switch (caseSwitch)
+            {
+                case 1:
+                    MessageBox.Show("Message didn't sent! \n Message cannot be over 150 chars!");
+                    txtBox_sendMsg.Text = "";
+                    break;
+                case 2:
+                    MessageBox.Show("Message didn't sent! \n cannot send an empty message!");
+                    txtBox_sendMsg.Text = "";
+                    break;
+                case 3:
+                    MessageSent sent = new MessageSent();
+                    sent.Show();
+                    txtBox_sendMsg.Text = "";
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

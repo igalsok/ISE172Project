@@ -98,8 +98,6 @@ namespace ProjectMS2.BusinessLayer
             this.UserName = msg.UserName;
             this.Date = msg.Date;
             this.tostring = msg.ToString();
-            MessageHandler messageHandler = new MessageHandler();
-            messageHandler.SaveNew(this);
         }
         public String ToString()
         {

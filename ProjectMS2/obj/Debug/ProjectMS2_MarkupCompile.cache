@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-51482393890
+6-1494997086
 
-161840770936
+16-1183689055
 15976488507
-App.xaml;MainWindow.xaml;PresentationLayer\ChatroomWindow.xaml;PresentationLayer\LoginWindow.xaml;PresentationLayer\RegisterWindow.xaml;
+App.xaml;MainWindow.xaml;PresentationLayer\ChatroomWindow.xaml;PresentationLayer\LoginWindow.xaml;PresentationLayer\MessageSent.xaml;PresentationLayer\RegisterWindow.xaml;
 
 False
 
