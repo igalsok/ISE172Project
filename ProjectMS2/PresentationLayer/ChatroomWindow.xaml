@@ -11,17 +11,17 @@
         Title="ChatroomWindow" Height="630" Width="1050" >
     <Grid>
         <Rectangle Grid.ColumnSpan="2" Margin="0,0,0.333,-0.333"  />
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="502" VerticalAlignment="Top" Width="758" Grid.ColumnSpan="2">
-            <Button Content="Button"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="501" VerticalAlignment="Top" Width="753">
+            <Button Content="Button" Margin="-0.333"/>
         </Border>
         <Button x:Name="Logout" Content="Logout" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Margin="888,525,0,0" Height="50" Click="click_btn_logout"/>
-        <TextBox x:Name="txtBox_displayMsg"  IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Background="SkyBlue" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="452" Width="722" Margin="10,10,0,0" FontFamily="Rockwell Nova" Text="{Binding msg, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Grid.ColumnSpan="2" />
-        <Button x:Name="btn_refresh" Content="refresh" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="327,467,0,0" Click="btn_refresh_Click"/>
+        <TextBox x:Name="txtBox_displayMsg"  TextChanged="txtBox_displayMsg_TextChanged" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Background="SkyBlue" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="452" Width="722" Margin="10,10,0,0" FontFamily="Rockwell Nova" Text="{Binding msg, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Grid.ColumnSpan="2" />
         <TextBox x:Name="txtBox_sendMsg"  ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="651" Margin="10,526,0,0" Grid.ColumnSpan="2"  />
         <Button Content="Send" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="116" Margin="661,0,0,24.667" Height="50" RenderTransformOrigin="0.697,0.463" Click="Button_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="481" Margin="796,10,0,0" VerticalAlignment="Top" Width="221"/>
         
-        
+
+
 
 
 

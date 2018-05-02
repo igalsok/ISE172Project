@@ -21,18 +21,7 @@ namespace ProjectMS2.BusinessLayer
         private log4net.ILog log;
         private MessageHandler MessageHandler;
         private UserHandler UserHandler;
-        private System.Timers.Timer _RetrieveTimer;
-        public System.Timers.Timer RetrieveTimer
-        {
-            get
-            {
-                return this._RetrieveTimer;
-            }
-            set
-            {
-                this._RetrieveTimer = value;
-            }
-        }
+
 
 
 
@@ -113,18 +102,6 @@ namespace ProjectMS2.BusinessLayer
        
         public void Retrieve()
         {
-            // Create a timer with a two second interval.
-            RetrieveTimer = new System.Timers.Timer(2000);
-            // Hook up the Elapsed event for the timer. 
-            RetrieveTimer.Elapsed += OnTimedEvent;
-           
-            RetrieveTimer.AutoReset = true;
-            RetrieveTimer.Enabled = true;
-
-        }
-
-        private void OnTimedEvent(Object source, ElapsedEventArgs e)
-        {
             List<IMessage> tmpList = Communication.Instance.GetTenMessages(this.url);
             foreach (IMessage tmp in tmpList)
             {
@@ -146,6 +123,8 @@ namespace ProjectMS2.BusinessLayer
 
             }
         }
+
+       
         public void logout()
         {
             log.Info("User: " + this.logged.Username + ", group id:" + this.logged.G_id + ", is logging out");
@@ -167,6 +146,10 @@ namespace ProjectMS2.BusinessLayer
                 {
                     str = str + "\n" + tmp.tostring;
                     --num;
+                }
+                else if(num == 0)
+                {
+                   str = str + "\n" + tmp.tostring;
                 }
             }
             return str;
