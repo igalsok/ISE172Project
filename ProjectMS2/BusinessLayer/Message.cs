@@ -25,7 +25,7 @@ namespace ProjectMS2.BusinessLayer
             }
         }
         private String userName;
-        public String UserName
+        public  String UserName
         {
             get
             {
@@ -99,7 +99,7 @@ namespace ProjectMS2.BusinessLayer
             this.Date = msg.Date;
             this.tostring = msg.ToString();
         }
-        public String ToString()
+        public override String ToString()
         {
             return this.tostring;
         }

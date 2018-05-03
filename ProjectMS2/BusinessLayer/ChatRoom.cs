@@ -7,7 +7,7 @@ using ProjectMS2.PresentationLayer;
 using ProjectMS2.PersistentLayer;
 using ProjectMS2.CommunicationLayer;
 using System.Timers;
-
+using System.Collections.ObjectModel;
 
 namespace ProjectMS2.BusinessLayer
 {
@@ -16,21 +16,17 @@ namespace ProjectMS2.BusinessLayer
 
         private User logged;
         private String url = "http://127.0.0.1";
-        public List<Message> msgList;
+        public ObservableCollection<Message> msgList;
         private List<User> usersList;
         private log4net.ILog log;
         private MessageHandler MessageHandler;
         private UserHandler UserHandler;
-
-
-
-
         public ChatRoom(log4net.ILog tmp)
         {
             this.log = tmp;
             this.MessageHandler = new MessageHandler();
             this.UserHandler = new UserHandler();
-            this.msgList = this.MessageHandler.getAll();
+            this.msgList = new ObservableCollection<Message>(this.MessageHandler.getAll());
             this.usersList = this.UserHandler.getAll();
         }
 
@@ -119,6 +115,12 @@ namespace ProjectMS2.BusinessLayer
                 if (!exists)
                 {
                     this.MessageHandler.SaveNew(tmpMsg);
+                    App.Current.Dispatcher.Invoke((Action)delegate 
+                    {
+                        this.msgList.Add(tmpMsg);
+                        
+                    });
+                    
                 }
 
             }
@@ -144,12 +146,12 @@ namespace ProjectMS2.BusinessLayer
 
                 if (num > 0)
                 {
-                    str = str + "\n" + tmp.tostring;
+                    str = str + "\n" + tmp;
                     --num;
                 }
                 else if(num == 0)
                 {
-                   str = str + "\n" + tmp.tostring;
+                   str = str + "\n" + tmp;
                 }
             }
             return str;
@@ -199,14 +201,22 @@ namespace ProjectMS2.BusinessLayer
             if (!exists)
             {
 
-                this.log.Info("attempt to retrieve messages with wrong userName and GroupID combination:" + Username + " " + g_id);
+                this.log.Warn("attempt to retrieve messages with wrong userName and GroupID combination:" + Username + " " + g_id);
             }
- 
-            
-
-
-
         }
+        public void sortList(int caseSwitch)
+        {
+            switch (caseSwitch)
+            {
+                case 1:
+                    
+                    break;
+
+            }
+        }
+
+
+        
 
     }
 }

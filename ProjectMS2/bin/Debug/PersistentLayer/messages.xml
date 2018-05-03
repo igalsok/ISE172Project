@@ -1,328 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Message>
-    <Id>1c576067-3006-4ef1-8b04-1a5af20773b1</Id>
+    <Id>3e30fa11-1037-45e8-aca1-3596da3e8785</Id>
     <UserName>igal</UserName>
-    <Date>2018-05-01T09:56:04</Date>
-    <MessageContent>shalom</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:1c576067-3006-4ef1-8b04-1a5af20773b1
-UserName:igal
-DateTime:5/1/2018 9:56:04 AM
-MessageContect:shalom
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>3e845b95-60d6-44f4-8d28-a3b3cce658b4</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-01T09:56:27</Date>
-    <MessageContent>hello world</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:3e845b95-60d6-44f4-8d28-a3b3cce658b4
-UserName:igal
-DateTime:5/1/2018 9:56:27 AM
-MessageContect:hello world
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>815d52d9-51f3-4b2b-bdd2-58cf6adcd7ea</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-01T09:57:09</Date>
+    <Date>2018-05-03T13:29:14</Date>
     <MessageContent>igal</MessageContent>
     <GroupID>123</GroupID>
-    <tostring>Message ID:815d52d9-51f3-4b2b-bdd2-58cf6adcd7ea
+    <tostring>Message ID:3e30fa11-1037-45e8-aca1-3596da3e8785
 UserName:igal
-DateTime:5/1/2018 9:57:09 AM
+DateTime:5/3/2018 1:29:14 PM
 MessageContect:igal
 GroupId:123
 </tostring>
   </Message>
   <Message>
-    <Id>076dd8cf-b29d-4618-96b4-5a117965c200</Id>
+    <Id>243a2696-6386-405b-aa3c-a1f6eb1b2e01</Id>
     <UserName>igal</UserName>
-    <Date>2018-05-02T12:07:27</Date>
-    <MessageContent>igalshalommeod</MessageContent>
+    <Date>2018-05-03T13:29:20</Date>
+    <MessageContent>hello whats app</MessageContent>
     <GroupID>123</GroupID>
-    <tostring>Message ID:076dd8cf-b29d-4618-96b4-5a117965c200
+    <tostring>Message ID:243a2696-6386-405b-aa3c-a1f6eb1b2e01
 UserName:igal
-DateTime:5/2/2018 12:07:27 PM
-MessageContect:igalshalommeod
+DateTime:5/3/2018 1:29:20 PM
+MessageContect:hello whats app
 GroupId:123
 </tostring>
   </Message>
   <Message>
-    <Id>f27b0e02-1c82-4ccf-ac6f-c61c57aec611</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T12:35:29</Date>
-    <MessageContent>31231</MessageContent>
+    <Id>a9246e39-14cc-45f7-a779-ce649ff69bf3</Id>
+    <UserName>lolipop</UserName>
+    <Date>2018-05-03T13:29:37</Date>
+    <MessageContent>good how are you?</MessageContent>
     <GroupID>123</GroupID>
-    <tostring>Message ID:f27b0e02-1c82-4ccf-ac6f-c61c57aec611
-UserName:igal
-DateTime:5/2/2018 12:35:29 PM
-MessageContect:31231
+    <tostring>Message ID:a9246e39-14cc-45f7-a779-ce649ff69bf3
+UserName:lolipop
+DateTime:5/3/2018 1:29:37 PM
+MessageContect:good how are you?
 GroupId:123
 </tostring>
   </Message>
   <Message>
-    <Id>ee837a2d-6ee9-4214-aa2e-d97788b11049</Id>
+    <Id>2c4f31e8-a166-4f65-9e39-c10fc0064254</Id>
+    <UserName>bibi</UserName>
+    <Date>2018-05-03T13:29:57</Date>
+    <MessageContent>hey hello hey</MessageContent>
+    <GroupID>987</GroupID>
+    <tostring>Message ID:2c4f31e8-a166-4f65-9e39-c10fc0064254
+UserName:bibi
+DateTime:5/3/2018 1:29:57 PM
+MessageContect:hey hello hey
+GroupId:987
+</tostring>
+  </Message>
+  <Message>
+    <Id>48b33693-dcd4-4bea-8c57-47f67648eecb</Id>
     <UserName>igal</UserName>
-    <Date>2018-05-02T13:11:07</Date>
-    <MessageContent>eqweqw</MessageContent>
+    <Date>2018-05-03T13:32:48</Date>
+    <MessageContent>igal123</MessageContent>
     <GroupID>123</GroupID>
-    <tostring>Message ID:ee837a2d-6ee9-4214-aa2e-d97788b11049
+    <tostring>Message ID:48b33693-dcd4-4bea-8c57-47f67648eecb
 UserName:igal
-DateTime:5/2/2018 1:11:07 PM
-MessageContect:eqweqw
+DateTime:5/3/2018 1:32:48 PM
+MessageContect:igal123
 GroupId:123
 </tostring>
   </Message>
   <Message>
-    <Id>81ed9876-b51c-4a7d-8398-bdf106058527</Id>
+    <Id>6c908a48-4bbf-44aa-99e3-cbf19f4370b6</Id>
     <UserName>igal</UserName>
-    <Date>2018-05-02T13:11:14</Date>
-    <MessageContent>gdfgdfg</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:81ed9876-b51c-4a7d-8398-bdf106058527
-UserName:igal
-DateTime:5/2/2018 1:11:14 PM
-MessageContect:gdfgdfg
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>8851ef6f-8901-48e5-8db2-c186347752ef</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:11:15</Date>
-    <MessageContent>gdfgd</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:8851ef6f-8901-48e5-8db2-c186347752ef
-UserName:igal
-DateTime:5/2/2018 1:11:15 PM
-MessageContect:gdfgd
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>c5b67c08-6407-48fc-9768-bc391a9538e1</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:11:17</Date>
-    <MessageContent>fgdgdfg</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:c5b67c08-6407-48fc-9768-bc391a9538e1
-UserName:igal
-DateTime:5/2/2018 1:11:17 PM
-MessageContect:fgdgdfg
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>25170415-3dc9-49ec-a74e-47f7a9983ca2</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:11:19</Date>
-    <MessageContent>gfdgdg</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:25170415-3dc9-49ec-a74e-47f7a9983ca2
-UserName:igal
-DateTime:5/2/2018 1:11:19 PM
-MessageContect:gfdgdg
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>3e0bc6b4-b947-48f6-9156-62a022569bce</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:13:08</Date>
-    <MessageContent>2</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:3e0bc6b4-b947-48f6-9156-62a022569bce
-UserName:igal
-DateTime:5/2/2018 1:13:08 PM
-MessageContect:2
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>ca8a0467-d05a-48b9-8086-8507f1e84c84</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:13:12</Date>
-    <MessageContent>32131231332</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:ca8a0467-d05a-48b9-8086-8507f1e84c84
-UserName:igal
-DateTime:5/2/2018 1:13:12 PM
-MessageContect:32131231332
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>255d25ad-b509-4b11-84a4-8039009e3897</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:13:14</Date>
-    <MessageContent>312321312313</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:255d25ad-b509-4b11-84a4-8039009e3897
-UserName:igal
-DateTime:5/2/2018 1:13:14 PM
-MessageContect:312321312313
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>104e6cb8-7cf5-4980-b53d-dc1e71a1cb13</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:50:53</Date>
+    <Date>2018-05-03T14:09:22</Date>
     <MessageContent>igal</MessageContent>
     <GroupID>123</GroupID>
-    <tostring>Message ID:104e6cb8-7cf5-4980-b53d-dc1e71a1cb13
+    <tostring>Message ID:6c908a48-4bbf-44aa-99e3-cbf19f4370b6
 UserName:igal
-DateTime:5/2/2018 1:50:53 PM
+DateTime:5/3/2018 2:09:22 PM
 MessageContect:igal
 GroupId:123
 </tostring>
   </Message>
   <Message>
-    <Id>21544db9-524a-4c88-9178-d771054f9856</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:51:01</Date>
-    <MessageContent>ma kore ya gever</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:21544db9-524a-4c88-9178-d771054f9856
-UserName:igal
-DateTime:5/2/2018 1:51:01 PM
-MessageContect:ma kore ya gever
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>8ce74db4-06e6-48a4-ae53-0a5a48aa9d30</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:51:19</Date>
-    <MessageContent>akol tov</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:8ce74db4-06e6-48a4-ae53-0a5a48aa9d30
-UserName:igal
-DateTime:5/2/2018 1:51:19 PM
-MessageContect:akol tov
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>c359497d-bac5-4285-b6c0-540689422b76</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:56:15</Date>
-    <MessageContent>shalom</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:c359497d-bac5-4285-b6c0-540689422b76
-UserName:igal
-DateTime:5/2/2018 1:56:15 PM
-MessageContect:shalom
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>e8c0eaca-0358-48b8-a725-9292ee890a7e</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:56:22</Date>
-    <MessageContent>whatsappppppp</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:e8c0eaca-0358-48b8-a725-9292ee890a7e
-UserName:igal
-DateTime:5/2/2018 1:56:22 PM
-MessageContect:whatsappppppp
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>14c691aa-f0a6-4050-9070-b89a213041ca</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:56:27</Date>
-    <MessageContent>akol good?</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:14c691aa-f0a6-4050-9070-b89a213041ca
-UserName:igal
-DateTime:5/2/2018 1:56:27 PM
-MessageContect:akol good?
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>168218d0-9f76-4032-b441-675139e578af</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:56:40</Date>
-    <MessageContent>yes everything is fine how are you?</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:168218d0-9f76-4032-b441-675139e578af
-UserName:igal
-DateTime:5/2/2018 1:56:40 PM
-MessageContect:yes everything is fine how are you?
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>fb4fb763-805a-45d4-87e2-285abcec86ef</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T13:56:56</Date>
-    <MessageContent>hi</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:fb4fb763-805a-45d4-87e2-285abcec86ef
-UserName:igal
-DateTime:5/2/2018 1:56:56 PM
-MessageContect:hi
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>2d05a99a-deea-4e26-bd7d-566b8f281e0a</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T14:00:29</Date>
-    <MessageContent>fdasfsdf</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:2d05a99a-deea-4e26-bd7d-566b8f281e0a
-UserName:igal
-DateTime:5/2/2018 2:00:29 PM
-MessageContect:fdasfsdf
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>c7a299d8-e027-4eb2-a443-6f204b2ce0b4</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T14:02:10</Date>
-    <MessageContent>igal</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:c7a299d8-e027-4eb2-a443-6f204b2ce0b4
-UserName:igal
-DateTime:5/2/2018 2:02:10 PM
-MessageContect:igal
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>cd39b612-fe98-4c84-9821-b8934b0b8a28</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T14:02:16</Date>
-    <MessageContent>whatsapp igal</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:cd39b612-fe98-4c84-9821-b8934b0b8a28
-UserName:igal
-DateTime:5/2/2018 2:02:16 PM
-MessageContect:whatsapp igal
-GroupId:123
-</tostring>
-  </Message>
-  <Message>
-    <Id>c1c1f936-3d5b-4963-870f-c8b5f7c59123</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-02T14:02:28</Date>
-    <MessageContent>fine?</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:c1c1f936-3d5b-4963-870f-c8b5f7c59123
-UserName:igal
-DateTime:5/2/2018 2:02:28 PM
-MessageContect:fine?
-GroupId:123
+    <Id>fb6a2ff4-6a0a-4d5c-be80-95b5bd930b15</Id>
+    <UserName>natasha</UserName>
+    <Date>2018-05-03T14:25:55</Date>
+    <MessageContent>natasha 123456</MessageContent>
+    <GroupID>054</GroupID>
+    <tostring>Message ID:fb6a2ff4-6a0a-4d5c-be80-95b5bd930b15
+UserName:natasha
+DateTime:5/3/2018 2:25:55 PM
+MessageContect:natasha 123456
+GroupId:054
 </tostring>
   </Message>
 </ArrayOfMessage>

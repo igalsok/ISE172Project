@@ -122,3 +122,136 @@
 2018-05-02 16:56:06,400 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
 2018-05-02 17:00:23,694 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
 2018-05-02 17:02:03,515 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 10:37:55,645 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 10:38:58,795 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 10:40:24,459 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 10:41:16,465 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 10:45:49,258 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 10:57:47,309 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 11:00:33,010 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 11:11:46,387 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 11:33:59,721 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 11:56:15,842 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 11:57:52,707 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 12:26:04,467 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 12:30:29,637 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 12:31:26,582 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 12:32:35,221 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 12:32:57,879 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 12:33:52,288 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 12:35:19,488 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 12:42:07,168 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 12:43:00,473 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 12:43:48,571 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 12:44:06,041 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-05-03 12:44:10,900 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: lolipopgroup id: 123
+2018-05-03 12:44:15,230 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: lolipopgroup id: 123
+2018-05-03 12:44:39,000 [1] INFO  ProjectMS2.App [(null)] - User: lolipop, group id:123, is logging out
+2018-05-03 12:44:45,289 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: abrashagroup id: 321
+2018-05-03 12:44:51,502 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: abrasha , a user with thie Username doesn't exists
+2018-05-03 12:44:53,837 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: abrasha , a user with thie Username doesn't exists
+2018-05-03 12:44:56,372 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: abrashagroup id: 321
+2018-05-03 13:05:27,637 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:05:45,989 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:08:54,110 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: lolipopgroup id: 123
+2018-05-03 13:10:34,330 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:11:06,530 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:11:55,816 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:13:19,086 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:17:57,055 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:18:32,230 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-05-03 13:18:54,716 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: botengroup id: 123
+2018-05-03 13:19:00,102 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:19:17,665 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-05-03 13:19:22,404 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: bibigroup id: 987
+2018-05-03 13:19:27,068 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: bibigroup id: 987
+2018-05-03 13:22:27,687 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:23:47,475 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:40:30,406 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:40:42,887 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:41:29,692 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:43:48,060 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:49:08,211 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:49:44,505 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:52:17,732 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:57:04,073 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:57:18,705 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:57:37,564 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:58:14,078 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 13:59:27,437 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:01:27,632 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:03:02,153 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:05:43,636 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:07:52,033 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:11:38,007 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:12:10,108 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:12:40,053 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:12:53,873 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:13:39,499 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:14:16,433 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:16:14,014 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:22:26,718 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:22:48,757 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:24:30,161 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:26:19,551 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:27:49,398 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:28:34,178 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-05-03 14:28:48,971 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:29:08,923 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:29:54,759 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 14:29:56,556 [1] INFO  ProjectMS2.App [(null)] - igalTried to write an empty message
+2018-05-03 14:32:00,400 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:10:46,022 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:10:55,400 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-05-03 15:12:17,047 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:14:13,315 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:16:44,410 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:21:08,151 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:31:06,511 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:32:08,105 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:32:52,787 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:36:38,645 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:38:02,171 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:43:34,771 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:47:43,248 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:48:38,830 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-05-03 15:50:57,124 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:52:39,868 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:55:06,892 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 15:56:58,780 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:00:52,530 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:01:44,849 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:03:42,025 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:06:17,695 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:08:32,034 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:10:58,886 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:19:08,946 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:23:04,670 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:23:37,068 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:24:00,077 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:24:34,201 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-05-03 16:25:19,275 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:25:55,040 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:26:05,113 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-05-03 16:26:08,796 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:28:21,121 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:29:07,183 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 16:29:27,055 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-05-03 16:29:32,568 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: lolipopgroup id: 123
+2018-05-03 16:29:45,837 [1] INFO  ProjectMS2.App [(null)] - User: lolipop, group id:123, is logging out
+2018-05-03 16:29:51,752 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: bibigroup id: 987
+2018-05-03 16:32:37,722 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 17:05:02,903 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 17:06:23,644 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 17:08:55,223 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 17:12:39,500 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 17:15:35,441 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 17:16:17,651 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 17:18:45,683 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 17:20:58,933 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 17:21:17,480 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 17:22:21,626 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-03 17:25:35,811 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: natashagroup id: 054
+2018-05-03 17:25:44,456 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: natashagroup id: 054
+2018-05-03 17:28:49,737 [1] INFO  ProjectMS2.App [(null)] - User: natasha, group id:054, is logging out
+2018-05-03 17:28:53,450 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123

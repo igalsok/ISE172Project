@@ -4,4 +4,24 @@
     <Username>igal</Username>
     <G_id>123</G_id>
   </User>
+  <User>
+    <Username>lolipop</Username>
+    <G_id>123</G_id>
+  </User>
+  <User>
+    <Username>abrasha</Username>
+    <G_id>321</G_id>
+  </User>
+  <User>
+    <Username>boten</Username>
+    <G_id>123</G_id>
+  </User>
+  <User>
+    <Username>bibi</Username>
+    <G_id>987</G_id>
+  </User>
+  <User>
+    <Username>natasha</Username>
+    <G_id>054</G_id>
+  </User>
 </ArrayOfUser>

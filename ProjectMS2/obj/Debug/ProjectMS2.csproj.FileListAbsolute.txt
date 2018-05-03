@@ -28,3 +28,5 @@ P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\PresentationLayer\Ch
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\PresentationLayer\ChatroomWindow.baml
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\PresentationLayer\MessageSent.g.cs
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\PresentationLayer\MessageSent.baml
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\PresentationLayer\viewMessage.g.cs
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\PresentationLayer\viewMessage.baml
