@@ -53,7 +53,7 @@ namespace ProjectMS2.PresentationLayer
         {
             if (ch.Login(txtBox_usernameLog.Text, txtBox_gIDReg.Text))
             {
-                MessageBox.Show("logged-In Successfully");
+                
                 this.isLogged = true;
                 Close();
             }

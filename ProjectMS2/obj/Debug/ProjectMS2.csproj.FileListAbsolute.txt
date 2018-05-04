@@ -30,3 +30,9 @@ P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\PresentationLayer\Me
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\PresentationLayer\MessageSent.baml
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\PresentationLayer\viewMessage.g.cs
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\PresentationLayer\viewMessage.baml
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\ControlzEx.dll
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\MahApps.Metro.dll
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\System.Windows.Interactivity.dll
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\ControlzEx.pdb
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\MahApps.Metro.pdb
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\MahApps.Metro.xml

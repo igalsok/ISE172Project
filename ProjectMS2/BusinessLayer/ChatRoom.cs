@@ -13,7 +13,7 @@ namespace ProjectMS2.BusinessLayer
 {
    public class ChatRoom
     {
-
+        #region Fields/Properties
         private User logged;
         private String url = "http://127.0.0.1";
         public ObservableCollection<Message> msgList;
@@ -21,6 +21,8 @@ namespace ProjectMS2.BusinessLayer
         private log4net.ILog log;
         private MessageHandler MessageHandler;
         private UserHandler UserHandler;
+        #endregion
+        #region constructors
         public ChatRoom(log4net.ILog tmp)
         {
             this.log = tmp;
@@ -29,7 +31,8 @@ namespace ProjectMS2.BusinessLayer
             this.msgList = new ObservableCollection<Message>(this.MessageHandler.getAll());
             this.usersList = this.UserHandler.getAll();
         }
-
+        #endregion
+        #region firstMenu
         public Boolean Register(String Username,String Gid)
         {
             bool exists = false;
@@ -94,8 +97,13 @@ namespace ProjectMS2.BusinessLayer
                 return true;
             }
         }
+        public void Exit()
+        {
+            log.Logger.Repository.Shutdown();
 
-       
+        }
+        #endregion
+        #region chatroomMenu
         public void Retrieve()
         {
             List<IMessage> tmpList = Communication.Instance.GetTenMessages(this.url);
@@ -133,11 +141,7 @@ namespace ProjectMS2.BusinessLayer
             this.logged = null;
         }
 
-        public void Exit()
-        {
-            log.Logger.Repository.Shutdown();
-            
-        }
+
         public String Display(int num)
         {
             String str = "";
@@ -215,8 +219,6 @@ namespace ProjectMS2.BusinessLayer
             }
         }
 
-
-        
-
+        #endregion
     }
 }
