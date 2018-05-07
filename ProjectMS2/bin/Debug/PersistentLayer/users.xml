@@ -24,4 +24,8 @@
     <Username>natasha</Username>
     <G_id>054</G_id>
   </User>
+  <User>
+    <Username>checkUser</Username>
+    <G_id>876</G_id>
+  </User>
 </ArrayOfUser>

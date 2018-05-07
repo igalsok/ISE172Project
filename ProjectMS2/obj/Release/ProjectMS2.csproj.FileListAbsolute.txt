@@ -27,3 +27,12 @@ P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Release\ProjectMS2.csproj.
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Release\ProjectMS2.csproj.CopyComplete
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Release\ProjectMS2.exe
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Release\ProjectMS2.pdb
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Release\ControlzEx.dll
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Release\MahApps.Metro.dll
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Release\System.Windows.Interactivity.dll
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Release\ControlzEx.pdb
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Release\MahApps.Metro.pdb
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Release\MahApps.Metro.xml
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Release\PresentationLayer\viewMessage.g.cs
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Release\PresentationLayer\viewMessage.baml
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Release\ProjectMS2.csprojResolveAssemblyReference.cache

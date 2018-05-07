@@ -46,6 +46,10 @@ namespace ProjectMS2.PresentationLayer
                 NotifyPropertyChanged("MsgLst");
             }
         }
+        private bool isConnected;
+        private bool isReversed;
+
+
 
         private System.Timers.Timer _RetrieveTimer;
         public System.Timers.Timer RetrieveTimer
@@ -72,7 +76,9 @@ namespace ProjectMS2.PresentationLayer
             timer(); 
             txtBox_sendMsg.Text = String.Empty;
             ((INotifyCollectionChanged)lst_Display.Items).CollectionChanged += ListView_CollectionChanged; // autoscroll
-            
+            isConnected = false;
+            btnVisible();
+            chk_des.IsChecked = true;
         }
         #endregion
         #region MainFunctions
@@ -84,30 +90,48 @@ namespace ProjectMS2.PresentationLayer
             Close();
 
         }
-
-
+        private void btnVisible()
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                if (isConnected)
+            {
+                    btn_send.IsEnabled = true;
+                    lbl_Con.Visibility = Visibility.Visible;
+                    lbl_nCon.Visibility = Visibility.Hidden;
+                }
+            else
+            {
+                    btn_send.IsEnabled = false;
+                    lbl_Con.Visibility = Visibility.Hidden;
+                    lbl_nCon.Visibility = Visibility.Visible;
+                }
+            });
+        }
         private void Button_Send_Click(object sender, RoutedEventArgs e)
         {
-            int caseSwitch = ch.Send(txtBox_sendMsg.Text);
-            switch (caseSwitch)
+            if (isConnected)
             {
-                case 1:
-                    MessageBox.Show("Message didn't sent! \n Message cannot be over 150 chars!");
-                    txtBox_sendMsg.Text = "";
-                    break;
-                case 2:
-                    MessageBox.Show("Message didn't sent! \n cannot send an empty message!");
-                    txtBox_sendMsg.Text = "";
-                    break;
-                case 3:
-                    txtBox_sendMsg.Text = "";
-                    break;
-                default:
-                    break;
+                int caseSwitch = ch.Send(txtBox_sendMsg.Text);
+                switch (caseSwitch)
+                {
+                    case 1:
+                        MessageBox.Show("Message didn't sent! \n Message cannot be over 150 chars!");
+                        txtBox_sendMsg.Text = "";
+                        break;
+                    case 2:
+                        MessageBox.Show("Message didn't sent! \n cannot send an empty message!");
+                        txtBox_sendMsg.Text = "";
+                        break;
+                    case 3:
+                        txtBox_sendMsg.Text = "";
+                        break;
+                    default:
+                        break;
+                }
             }
+
         }
-
-
         private void chk_time_Checked(object sender, RoutedEventArgs e)
         {
             chk_gId.IsChecked = false;
@@ -117,10 +141,19 @@ namespace ProjectMS2.PresentationLayer
             chk_uName.IsEnabled = true;
             this._chked = 1;
             if(ch!=null)
+            { 
+                if(!isReversed)
+                { 
                 MsgLst = ch.msgList;
+                }
+                else
+                {
+                    ObservableCollection<Message> tmp = new ObservableCollection<Message>(ch.msgList);
+                    this.MsgLst = new ObservableCollection<Message>(tmp.Reverse<Message>());
+                }
+            }
 
         }
-
         private void chk_uName_Checked(object sender, RoutedEventArgs e)
         {
             chk_gId.IsChecked = false;
@@ -129,10 +162,14 @@ namespace ProjectMS2.PresentationLayer
             chk_uName.IsEnabled = false;
             chk_gId.IsEnabled = true;
             this._chked = 2;
+            if(!isReversed)
             this.MsgLst = new ObservableCollection<Message>(from i in ch.msgList orderby i.GroupID orderby i.UserName select i);
-
+            else
+            {
+                ObservableCollection<Message> tmp = new ObservableCollection<Message>(from i in ch.msgList orderby i.GroupID orderby i.UserName select i);
+                this.MsgLst = new ObservableCollection<Message>(tmp.Reverse<Message>());
+            }
         }
-
         private void chk_gId_Checked(object sender, RoutedEventArgs e)
         {
             chk_time.IsChecked = false;
@@ -142,7 +179,16 @@ namespace ProjectMS2.PresentationLayer
             chk_gId.IsEnabled = false;
             
             this._chked = 3;
+            if(!isReversed)
+            { 
             this.MsgLst = new ObservableCollection<Message>(from i in ch.msgList orderby i.UserName orderby i.GroupID select i);
+            }
+            else
+            {
+                ObservableCollection<Message> tmp = new ObservableCollection<Message>(from i in ch.msgList orderby i.UserName orderby i.GroupID select i);
+                FilterList = new ObservableCollection<Message>(tmp.Reverse<Message>());
+            }
+          
         }
         private void filterbtn_Click(object sender, RoutedEventArgs e)
         {
@@ -165,7 +211,6 @@ namespace ProjectMS2.PresentationLayer
                 filter();
             }));
         }
-
         private void txtBox_uNameFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
             filter();
@@ -176,6 +221,23 @@ namespace ProjectMS2.PresentationLayer
             {
                 btn_send.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             }
+        }
+        private void chk_as_Checked(object sender, RoutedEventArgs e)
+        {
+            chk_des.IsChecked = false;
+            isReversed = true;
+            MsgLst = new ObservableCollection<Message>(MsgLst.Reverse());
+
+        }
+        private void chk_des_Checked(object sender, RoutedEventArgs e)
+        {
+            chk_as.IsChecked = false;
+            if (isReversed)
+                MsgLst = new ObservableCollection<Message>(MsgLst.Reverse());
+            isReversed = false;
+            
+
+
         }
         #endregion
         #region AutoScroll
@@ -202,7 +264,8 @@ namespace ProjectMS2.PresentationLayer
         }
         private void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            ch.Retrieve();
+            isConnected = ch.Retrieve();
+            btnVisible();
             sortDisplay();
             filter();
         }
@@ -227,25 +290,75 @@ namespace ProjectMS2.PresentationLayer
                 switch (this._chked)
                 {
                     case 1:
-                        if (txtBox_IdFilter.Text == "")
-                            MsgLst = ch.msgList;
+                        if (!isReversed)
+                        {
+                            if (txtBox_IdFilter.Text == "")
+                            {
+
+                                MsgLst = ch.msgList;
+                            }
+                            else
+                                FilterList = ch.msgList;
+                        }
                         else
-                            FilterList = ch.msgList;
+                        {
+                            if (txtBox_IdFilter.Text == "")
+                            {
+                                this.MsgLst = new ObservableCollection<Message>(ch.msgList.Reverse<Message>());
+                            }
+                            else
+                                FilterList = new ObservableCollection<Message>(ch.msgList.Reverse<Message>());
+                        }
                         break;
                     case 2:
-                        if (txtBox_IdFilter.Text == "")
-                            FilterList = this.MsgLst  =  new ObservableCollection<Message>(from i in ch.msgList orderby i.GroupID orderby i.UserName  select i) ;
-                            
+                        if (!isReversed)
+                        {
+                            if (txtBox_IdFilter.Text == "")
+                            {
+
+                                FilterList = this.MsgLst = new ObservableCollection<Message>(from i in ch.msgList orderby i.GroupID orderby i.UserName select i);
+                            }
+                            else
+                            {
+                                FilterList = new ObservableCollection<Message>(from i in ch.msgList orderby i.GroupID orderby i.UserName select i);
+                            }
+                        }
                         else
-                            FilterList = new ObservableCollection<Message>(from i in ch.msgList orderby i.GroupID orderby i.UserName select i);
-                        break;
+                        {
+                            if (txtBox_IdFilter.Text == "")
+                            {
+                                ObservableCollection<Message> tmp = new ObservableCollection<Message>(from i in ch.msgList orderby i.GroupID orderby i.UserName select i);
+                                FilterList = this.MsgLst = new ObservableCollection<Message>(tmp.Reverse<Message>());
+                            }
+                            else
+                            {
+                              ObservableCollection<Message>  tmp = new ObservableCollection<Message>(from i in ch.msgList orderby i.GroupID orderby i.UserName select i);
+                                FilterList = new ObservableCollection<Message>(tmp.Reverse<Message>());
+                            }
+                        }
+                                break;
                     case 3:
-                        if (txtBox_IdFilter.Text == "")
-                            
-                            this.MsgLst = new ObservableCollection<Message>(from i in ch.msgList  orderby i.UserName orderby i.GroupID select i);
+                        if (!isReversed)
+                        {
+                            if (txtBox_IdFilter.Text == "")
+                                this.MsgLst = new ObservableCollection<Message>(from i in ch.msgList orderby i.UserName orderby i.GroupID select i);
+                            else
+                                FilterList = new ObservableCollection<Message>(from i in ch.msgList orderby i.UserName orderby i.GroupID select i);
+                        }
                         else
-                            FilterList = new ObservableCollection<Message>(from i in ch.msgList orderby i.UserName orderby i.GroupID select i);
-                        break;
+                        {
+                            if (txtBox_IdFilter.Text == "")
+                            { 
+                                ObservableCollection<Message> tmp = new ObservableCollection<Message>(from i in ch.msgList orderby i.UserName orderby i.GroupID select i);
+                                FilterList = this.MsgLst = new ObservableCollection<Message>(tmp.Reverse<Message>());
+                            }
+                            else
+                            {
+                                ObservableCollection<Message> tmp = new ObservableCollection<Message>(from i in ch.msgList orderby i.UserName orderby i.GroupID select i);
+                                FilterList = new ObservableCollection<Message>(tmp.Reverse<Message>());
+                            }
+                        }
+                            break;
 
                 }
             });
@@ -276,10 +389,13 @@ namespace ProjectMS2.PresentationLayer
                         }
 
                     }
+
                     this.MsgLst = tmpList;
                 }
             });
         }
         #endregion
+
+        
     }
 }

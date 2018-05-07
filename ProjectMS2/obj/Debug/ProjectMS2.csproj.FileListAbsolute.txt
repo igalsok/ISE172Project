@@ -6,7 +6,6 @@ P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\log4net.dll
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\Newtonsoft.Json.dll
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\log4net.xml
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\Newtonsoft.Json.xml
-P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\ProjectMS2.csprojResolveAssemblyReference.cache
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\App.g.cs
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\ProjectMS2_MarkupCompile.cache
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\ProjectMS2_MarkupCompile.lref
@@ -36,3 +35,4 @@ P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\System.Windows.Inter
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\ControlzEx.pdb
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\MahApps.Metro.pdb
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\MahApps.Metro.xml
+P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\ProjectMS2.csprojResolveAssemblyReference.cache

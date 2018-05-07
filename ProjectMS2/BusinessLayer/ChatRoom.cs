@@ -15,7 +15,7 @@ namespace ProjectMS2.BusinessLayer
     {
         #region Fields/Properties
         private User logged;
-        private String url = "http://127.0.0.1";
+        private String url = "http://192.168.1.114";
         public ObservableCollection<Message> msgList;
         private List<User> usersList;
         private log4net.ILog log;
@@ -104,8 +104,9 @@ namespace ProjectMS2.BusinessLayer
         }
         #endregion
         #region chatroomMenu
-        public void Retrieve()
+        public bool Retrieve()
         {
+            try { 
             List<IMessage> tmpList = Communication.Instance.GetTenMessages(this.url);
             foreach (IMessage tmp in tmpList)
             {
@@ -130,7 +131,13 @@ namespace ProjectMS2.BusinessLayer
                     });
                     
                 }
-
+               
+            }
+                return true;
+            }
+            catch(System.AggregateException )
+            {
+                return false;
             }
         }
 

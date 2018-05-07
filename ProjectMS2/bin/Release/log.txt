@@ -1,0 +1,9 @@
+2018-05-05 13:57:06,702 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: igal, a user with thie Username doesn't exists
+2018-05-05 13:57:11,491 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: igalgroup id: 123
+2018-05-05 13:57:16,219 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-05 13:58:29,628 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: igalgroup id: 123
+2018-05-05 13:58:35,245 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-05 13:59:06,477 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-05 13:59:40,264 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-05 13:59:50,878 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-05-05 13:59:55,878 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123

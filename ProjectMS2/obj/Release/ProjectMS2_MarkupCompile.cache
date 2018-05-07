@@ -10,11 +10,11 @@ none
 false
 TRACE
 
-6-1494997086
+7-1011261593
 
-16-1183689055
-15976488507
-App.xaml;MainWindow.xaml;PresentationLayer\ChatroomWindow.xaml;PresentationLayer\LoginWindow.xaml;PresentationLayer\MessageSent.xaml;PresentationLayer\RegisterWindow.xaml;
+171866460419
+181645493668
+App.xaml;MainWindow.xaml;PresentationLayer\ChatroomWindow.xaml;PresentationLayer\LoginWindow.xaml;PresentationLayer\MessageSent.xaml;PresentationLayer\RegisterWindow.xaml;PresentationLayer\viewMessage.xaml;
 
 False
 
