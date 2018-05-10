@@ -18,25 +18,29 @@ namespace ProjectMS2.BusinessLayer
         #region Fields/Properties
         private User logged;
         private String url = "http://192.168.1.114";
-        public ObservableCollection<Message> list;
-        private ObservableCollection<Message> _msgList;
-        public ObservableCollection<Message> msgList
+        private ObservableCollection<Message> msgList;
+        private ObservableCollection<Message> _DisplayList;
+        public ObservableCollection<Message> DisplayList
         {
-            get { return _msgList; }
+            get { return _DisplayList; }
             set
             {
-                this._msgList = value;
-                NotifyPropertyChanged("msgList");
+                this._DisplayList = value;
+                NotifyPropertyChanged("DisplayList");
 
             }
         }
-        public ObservableCollection<Message> filterList;
         private List<User> usersList;
         private log4net.ILog log;
         private MessageHandler MessageHandler;
         private UserHandler UserHandler;
-       public int sortBtn;
-        public bool isReversed;
+        private int _sortBtn;
+        public int sortBtn
+        {
+            get { return _sortBtn; }
+            set { this._sortBtn = value; }
+        }
+        private bool isReversed;
 
         #endregion
         #region constructors
@@ -45,12 +49,10 @@ namespace ProjectMS2.BusinessLayer
             this.log = tmp;
             this.MessageHandler = new MessageHandler();
             this.UserHandler = new UserHandler();
-            this.msgList = new ObservableCollection<Message>(this.MessageHandler.getAll());
-            this.filterList = new ObservableCollection<Message>(this.MessageHandler.getAll());
+            this.DisplayList = this.msgList= new ObservableCollection<Message>(this.MessageHandler.getAll());
             this.usersList = this.UserHandler.getAll();
             sortBtn = 1;
             isReversed = false;
-            this.list = new ObservableCollection<Message>(this.MessageHandler.getAll());
         }
         #endregion
         #region firstMenu
@@ -61,13 +63,17 @@ namespace ProjectMS2.BusinessLayer
             {
                 if (!exists)
                 {
-                    if (user.Username.Equals(Username))
+                    if (user.Username.Equals(Username) & user.G_id.Equals(Gid))
+                    { 
                         exists = true;
+                        break;
+                    }
+
                 }
             }
             if (exists)
             {
-                this.log.Warn("attempt to register with the Username:" + Username + ", a user with thie Username already exists");
+                this.log.Warn("attempt to register with the * Username:" + Username + ", G-ID: " + Gid + " a user with this Username and gID already exists");
                 return false;
             }
             else
@@ -84,32 +90,28 @@ namespace ProjectMS2.BusinessLayer
         public Boolean Login(String Username, String g_id)
         {
 
-            bool UsernameExists = false;
-            bool groupIdExists = false;
+            bool exists = false;
+
             User logging = null;
             foreach (User user in this.usersList)
             {
-                if (!UsernameExists)
-                    if (user.Username == Username)
+                if (!exists)
+                {
+                    if (user.Username == Username && user.G_id == g_id)
                     {
-                        UsernameExists = true;
-                        if (user.G_id == g_id)
-                        {
-                            groupIdExists = true;
-                            logging = user;
-                        }
+                        exists = true;
+                        logging = user;
+
                     }
+                }
+                else
+                    break;
             }
-            if (!UsernameExists)
+            if (!exists)
             {
-                log.Warn("attempt to login with the Username: " + Username + ", a user with thie Username doesn't exists");
+                log.Warn("attempt to login with the Username: " + Username + " and the G-ID: " + g_id +" a user with thie Username and ID doesn't exists");
                 return false;
 
-            }
-            else if (!groupIdExists)
-            {
-                log.Warn("attempt to login with the Username: " + Username + "  ID: " + g_id + " - this ID doesnt match the username");
-                return false;
             }
             else
             {
@@ -136,7 +138,7 @@ namespace ProjectMS2.BusinessLayer
 
                     Message tmpMsg = new Message(tmp);
                     bool exists = false;
-                    foreach (Message check in this.list)
+                    foreach (Message check in this.msgList)
                     {
                         if (tmpMsg.Id.Equals(check.Id))
                         {
@@ -149,7 +151,7 @@ namespace ProjectMS2.BusinessLayer
                         this.MessageHandler.SaveNew(tmpMsg);
                         App.Current.Dispatcher.Invoke((Action)delegate
                         {
-                            this.list.Add(tmpMsg);
+                            this.msgList.Add(tmpMsg);
                             isNew = true;
 
                         });
@@ -174,25 +176,6 @@ namespace ProjectMS2.BusinessLayer
             this.logged = null;
         }
 
-
-        public String Display(int num)
-        {
-            String str = "";
-            foreach (Message tmp in this.msgList)
-            {
-
-                if (num > 0)
-                {
-                    str = str + "\n" + tmp;
-                    --num;
-                }
-                else if (num == 0)
-                {
-                    str = str + "\n" + tmp;
-                }
-            }
-            return str;
-        }
         public int Send(String msg)
         {
 
@@ -221,26 +204,6 @@ namespace ProjectMS2.BusinessLayer
 
 
         }
-        public void DisplayAll(String Username, String g_id) // Display ALL message from a specified user function
-        {
-
-
-            bool exists = false;
-            foreach (Message msg in this.msgList)
-            {
-                if (msg.UserName.Equals(Username))
-                {
-
-                    exists = true;
-                }
-
-            }
-            if (!exists)
-            {
-
-                this.log.Warn("attempt to retrieve messages with wrong userName and GroupID combination:" + Username + " " + g_id);
-            }
-        }
 
 
 
@@ -253,7 +216,7 @@ namespace ProjectMS2.BusinessLayer
             ObservableCollection<Message> tmpList = new ObservableCollection<Message>();
             if (!idEmpty)
             {
-                foreach (Message msg in list)
+                foreach (Message msg in msgList)
                 {
                     if (msg.GroupID.Equals(IdFilter))
                     {
@@ -277,7 +240,7 @@ namespace ProjectMS2.BusinessLayer
             }
             else
             {
-                sort(this.list.ToList<Message>());
+                sort(this.msgList.ToList<Message>());
             }
         }
       
@@ -321,20 +284,20 @@ namespace ProjectMS2.BusinessLayer
 
             }
 
-           this.msgList= tmpList;
+           this.DisplayList= tmpList;
 
         }
         public void reverse(bool reversed)
         {
             if (reversed)
             {
-                msgList = new ObservableCollection<Message>(msgList.Reverse<Message>());
+                DisplayList = new ObservableCollection<Message>(DisplayList.Reverse<Message>());
                     this.isReversed = true;
             }
             else
             {
                 if(isReversed)
-                msgList = new ObservableCollection<Message>(msgList.Reverse<Message>());
+                    DisplayList = new ObservableCollection<Message>(DisplayList.Reverse<Message>());
                 this.isReversed = false;
             }
      

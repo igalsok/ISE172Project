@@ -47,7 +47,7 @@ namespace ProjectMS2.PresentationLayer
             }
             else
             {
-                MessageBox.Show("this Username: " + txtBox_usernameReg.Text +  " is already registered");
+                MessageBox.Show("this Username: " + txtBox_usernameReg.Text + " and G-Id: " + txtBox_gIDReg.Text + " is already registered");
             }
         }
 

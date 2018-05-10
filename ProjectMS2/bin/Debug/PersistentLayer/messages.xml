@@ -65,4 +65,95 @@ MessageContect:123
 GroupId:123
 </tostring>
   </Message>
+  <Message>
+    <Id>5c5c9f51-b3b2-45b8-8015-c347c310ea59</Id>
+    <UserName>igal</UserName>
+    <Date>2018-05-10T11:47:40</Date>
+    <MessageContent>123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:5c5c9f51-b3b2-45b8-8015-c347c310ea59
+UserName:igal
+DateTime:5/10/2018 11:47:40 AM
+MessageContect:123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>2aa0cfe2-a528-4377-9b39-d451fca6aea8</Id>
+    <UserName>igal</UserName>
+    <Date>2018-05-10T11:48:12</Date>
+    <MessageContent>ma kore gever</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:2aa0cfe2-a528-4377-9b39-d451fca6aea8
+UserName:igal
+DateTime:5/10/2018 11:48:12 AM
+MessageContect:ma kore gever
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>a487dc0a-8ec5-45b3-936c-8cdfe04beab2</Id>
+    <UserName>igal</UserName>
+    <Date>2018-05-10T11:48:20</Date>
+    <MessageContent>hey</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:a487dc0a-8ec5-45b3-936c-8cdfe04beab2
+UserName:igal
+DateTime:5/10/2018 11:48:20 AM
+MessageContect:hey
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>847c8346-bff4-43e3-a885-bc2fd58635a7</Id>
+    <UserName>igal</UserName>
+    <Date>2018-05-10T12:04:40</Date>
+    <MessageContent>igal123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:847c8346-bff4-43e3-a885-bc2fd58635a7
+UserName:igal
+DateTime:5/10/2018 12:04:40 PM
+MessageContect:igal123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>cf6e5c17-f43d-4300-b19a-7e325a2f6488</Id>
+    <UserName>igal</UserName>
+    <Date>2018-05-10T12:06:32</Date>
+    <MessageContent>adasfdas</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:cf6e5c17-f43d-4300-b19a-7e325a2f6488
+UserName:igal
+DateTime:5/10/2018 12:06:32 PM
+MessageContect:adasfdas
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>9bf2998b-e16f-4c12-a1c5-e412273ddbc0</Id>
+    <UserName>igal</UserName>
+    <Date>2018-05-10T12:23:34</Date>
+    <MessageContent>123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:9bf2998b-e16f-4c12-a1c5-e412273ddbc0
+UserName:igal
+DateTime:5/10/2018 12:23:34 PM
+MessageContect:123
+GroupId:123
+</tostring>
+  </Message>
+  <Message>
+    <Id>b7b46eda-89f5-407f-917a-333d2c288863</Id>
+    <UserName>igal</UserName>
+    <Date>2018-05-10T12:23:41</Date>
+    <MessageContent>hi</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:b7b46eda-89f5-407f-917a-333d2c288863
+UserName:igal
+DateTime:5/10/2018 12:23:41 PM
+MessageContect:hi
+GroupId:123
+</tostring>
+  </Message>
 </ArrayOfMessage>

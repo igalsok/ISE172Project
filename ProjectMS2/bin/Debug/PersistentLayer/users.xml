@@ -44,4 +44,8 @@
     <Username>igal2</Username>
     <G_id>123</G_id>
   </User>
+  <User>
+    <Username>igal</Username>
+    <G_id>1234</G_id>
+  </User>
 </ArrayOfUser>

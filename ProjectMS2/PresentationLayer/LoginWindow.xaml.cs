@@ -40,18 +40,11 @@ namespace ProjectMS2.PresentationLayer
             InitializeComponent();
         }
 
-        private void txtbox_usernameLog(object sender, TextChangedEventArgs e)
-        {
 
-        }
-        private void txtbox_gIDLog(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
         private void btn_Login_Click(object sender, RoutedEventArgs e)
         {
-            if (ch.Login(txtBox_usernameLog.Text, txtBox_gIDReg.Text))
+            if (ch.Login(txtBox_usernameLog.Text, txtBox_gIDlog.Text))
             {
                 
                 this.isLogged = true;
@@ -59,7 +52,7 @@ namespace ProjectMS2.PresentationLayer
             }
             else
             {
-                MessageBox.Show("this Username: " + txtBox_usernameLog.Text + " is not registered");
+                MessageBox.Show("this Username: " + txtBox_usernameLog.Text +" G-ID: "+ txtBox_gIDlog.Text + " is not registered");
             }
         }
 

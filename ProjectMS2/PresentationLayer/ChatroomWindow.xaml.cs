@@ -30,6 +30,7 @@ namespace ProjectMS2.PresentationLayer
 
         #region Fields/Properties
         private ChatRoom ch;
+        private bool firstLog;
         private bool isConnected;
 
 
@@ -55,14 +56,11 @@ namespace ProjectMS2.PresentationLayer
             DataContext = ch;
             timer();
             txtBox_sendMsg.Text = String.Empty;
-            ((INotifyCollectionChanged)lst_Display.Items).CollectionChanged += ListView_CollectionChanged; // autoscroll
             isConnected = false;
             btnVisible();
             chk_des.IsChecked = true;
-
-
-
-
+            firstLog = true;
+         
         }
         #endregion
         #region MainFunctions
@@ -196,16 +194,6 @@ namespace ProjectMS2.PresentationLayer
             ch.reverse(false);
         }
         #endregion
-        #region AutoScroll
-        private void ListView_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.Action == NotifyCollectionChangedAction.Add)
-            {
-                // scroll the new item into view   
-                lst_Display.ScrollIntoView(e.NewItems[0]);
-            }
-        }
-        #endregion
         #region Timer
         private void timer()
         {
@@ -227,17 +215,26 @@ namespace ProjectMS2.PresentationLayer
                 {
                     case 1:
                         isConnected = true;
+                        if(firstLog)
+                        {
+                            lst_Display.ScrollIntoView(lst_Display.Items[lst_Display.Items.Count - 1]);
+                            firstLog = false;
+                        }
                         break;
                     case 2:
                         isConnected = true;
                         ch.filter(txtBox_IdFilter.Text == "", txtBox_uNameFilter.Text == "", txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
+                        lst_Display.ScrollIntoView(lst_Display.Items[lst_Display.Items.Count - 1]);
                         break;
                     case 3:
                         isConnected = false;
                         break;
                 }
+                
                 btnVisible();
+                
             });
+            
         }
         #endregion
 
