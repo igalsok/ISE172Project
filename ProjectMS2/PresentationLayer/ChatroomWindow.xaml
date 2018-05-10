@@ -26,7 +26,7 @@
 
         <Button x:Name="Logout" Content="Logout" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Margin="438,291,0,0" Height="50" Click="click_btn_logout"/>
         <TextBox x:Name="txtBox_sendMsg"  ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" Margin="10,460,0,0"  />
-        <ListView Background="AliceBlue" ItemsSource="{Binding MsgLst , UpdateSourceTrigger=PropertyChanged }" SelectedItem="{Binding Path=msgLst}"   x:Name="lst_Display" HorizontalAlignment="Left" Height="431" VerticalAlignment="Top" Width="383" Margin="10,10,0,0">
+        <ListView Background="AliceBlue" ItemsSource="{Binding DisplayList , UpdateSourceTrigger=PropertyChanged }" SelectedItem="{Binding Path=msgLst}"   x:Name="lst_Display" HorizontalAlignment="Left" Height="431" VerticalAlignment="Top" Width="383" Margin="10,10,0,0">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>

@@ -28,4 +28,24 @@
     <Username>checkUser</Username>
     <G_id>876</G_id>
   </User>
+  <User>
+    <Username>user</Username>
+    <G_id>321</G_id>
+  </User>
+  <User>
+    <Username>andrei</Username>
+    <G_id>987</G_id>
+  </User>
+  <User>
+    <Username>amigo</Username>
+    <G_id>987</G_id>
+  </User>
+  <User>
+    <Username>igal2</Username>
+    <G_id>123</G_id>
+  </User>
+  <User>
+    <Username>igal</Username>
+    <G_id>1234</G_id>
+  </User>
 </ArrayOfUser>
