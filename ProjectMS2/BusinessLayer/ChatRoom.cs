@@ -8,19 +8,36 @@ using ProjectMS2.PersistentLayer;
 using ProjectMS2.CommunicationLayer;
 using System.Timers;
 using System.Collections.ObjectModel;
+using System.Windows;
+using System.ComponentModel;
 
 namespace ProjectMS2.BusinessLayer
 {
-   public class ChatRoom
+    public class ChatRoom : INotifyPropertyChanged
     {
         #region Fields/Properties
         private User logged;
         private String url = "http://192.168.1.114";
-        public ObservableCollection<Message> msgList;
+        public ObservableCollection<Message> list;
+        private ObservableCollection<Message> _msgList;
+        public ObservableCollection<Message> msgList
+        {
+            get { return _msgList; }
+            set
+            {
+                this._msgList = value;
+                NotifyPropertyChanged("msgList");
+
+            }
+        }
+        public ObservableCollection<Message> filterList;
         private List<User> usersList;
         private log4net.ILog log;
         private MessageHandler MessageHandler;
         private UserHandler UserHandler;
+       public int sortBtn;
+        public bool isReversed;
+
         #endregion
         #region constructors
         public ChatRoom(log4net.ILog tmp)
@@ -29,11 +46,15 @@ namespace ProjectMS2.BusinessLayer
             this.MessageHandler = new MessageHandler();
             this.UserHandler = new UserHandler();
             this.msgList = new ObservableCollection<Message>(this.MessageHandler.getAll());
+            this.filterList = new ObservableCollection<Message>(this.MessageHandler.getAll());
             this.usersList = this.UserHandler.getAll();
+            sortBtn = 1;
+            isReversed = false;
+            this.list = new ObservableCollection<Message>(this.MessageHandler.getAll());
         }
         #endregion
         #region firstMenu
-        public Boolean Register(String Username,String Gid)
+        public Boolean Register(String Username, String Gid)
         {
             bool exists = false;
             foreach (User user in this.usersList)
@@ -56,13 +77,13 @@ namespace ProjectMS2.BusinessLayer
                 log.Info("User registered successfully. Username: " + Username + "group id: " + Gid);
                 return true;
             }
-            
+
 
         }
 
         public Boolean Login(String Username, String g_id)
         {
-            
+
             bool UsernameExists = false;
             bool groupIdExists = false;
             User logging = null;
@@ -104,44 +125,49 @@ namespace ProjectMS2.BusinessLayer
         }
         #endregion
         #region chatroomMenu
-        public bool Retrieve()
+        public int Retrieve()
         {
-            try { 
-            List<IMessage> tmpList = Communication.Instance.GetTenMessages(this.url);
-            foreach (IMessage tmp in tmpList)
+            try
             {
+                List<IMessage> tmpList = Communication.Instance.GetTenMessages(this.url);
+                bool isNew = false;
+                foreach (IMessage tmp in tmpList)
+                {
 
-                Message tmpMsg = new Message(tmp);
-                bool exists = false;
-                foreach (Message check in this.msgList)
-                {
-                    if (tmpMsg.Id.Equals(check.Id))
+                    Message tmpMsg = new Message(tmp);
+                    bool exists = false;
+                    foreach (Message check in this.list)
                     {
-                        exists = true;
-                        break;
+                        if (tmpMsg.Id.Equals(check.Id))
+                        {
+                            exists = true;
+                            break;
+                        }
                     }
-                }
-                if (!exists)
-                {
-                    this.MessageHandler.SaveNew(tmpMsg);
-                    App.Current.Dispatcher.Invoke((Action)delegate 
+                    if (!exists)
                     {
-                        this.msgList.Add(tmpMsg);
-                        
-                    });
-                    
+                        this.MessageHandler.SaveNew(tmpMsg);
+                        App.Current.Dispatcher.Invoke((Action)delegate
+                        {
+                            this.list.Add(tmpMsg);
+                            isNew = true;
+
+                        });
+                    }
+
                 }
-               
+                if (isNew) { isNew = false; return 2; }
+                
+                else
+                return 1;
             }
-                return true;
-            }
-            catch(System.AggregateException )
+            catch (System.AggregateException)
             {
-                return false;
+                return 3;
             }
         }
 
-       
+
         public void logout()
         {
             log.Info("User: " + this.logged.Username + ", group id:" + this.logged.G_id + ", is logging out");
@@ -160,19 +186,19 @@ namespace ProjectMS2.BusinessLayer
                     str = str + "\n" + tmp;
                     --num;
                 }
-                else if(num == 0)
+                else if (num == 0)
                 {
-                   str = str + "\n" + tmp;
+                    str = str + "\n" + tmp;
                 }
             }
             return str;
         }
         public int Send(String msg)
         {
-            
-            if(msg.Length > 150)
+
+            if (msg.Length > 150)
             {
-              
+
                 this.log.Info(this.logged.Username + "Tried to write a message over 150 chars");
                 return 1;
 
@@ -188,7 +214,7 @@ namespace ProjectMS2.BusinessLayer
                 return 3;
 
             }
-  
+
 
 
 
@@ -202,12 +228,12 @@ namespace ProjectMS2.BusinessLayer
             bool exists = false;
             foreach (Message msg in this.msgList)
             {
-                if(msg.UserName.Equals(Username))
+                if (msg.UserName.Equals(Username))
                 {
-             
-                    exists = true ;
+
+                    exists = true;
                 }
-               
+
             }
             if (!exists)
             {
@@ -215,17 +241,118 @@ namespace ProjectMS2.BusinessLayer
                 this.log.Warn("attempt to retrieve messages with wrong userName and GroupID combination:" + Username + " " + g_id);
             }
         }
-        public void sortList(int caseSwitch)
+
+
+
+
+        #endregion
+        #region sort&filter
+
+        public void filter(bool idEmpty, bool uNameEmpty, String IdFilter, String uNameFilter)
         {
-            switch (caseSwitch)
+            ObservableCollection<Message> tmpList = new ObservableCollection<Message>();
+            if (!idEmpty)
+            {
+                foreach (Message msg in list)
+                {
+                    if (msg.GroupID.Equals(IdFilter))
+                    {
+                        tmpList.Add(msg);
+                    }
+                }
+
+                if (!uNameEmpty)
+                {
+                    foreach (Message msg in tmpList.ToList<Message>())
+                    {
+                        if (!msg.UserName.Equals(uNameFilter))
+                        {
+                            tmpList.Remove(msg);
+                        }
+                    }
+
+                }
+
+                sort(tmpList.ToList<Message>());
+            }
+            else
+            {
+                sort(this.list.ToList<Message>());
+            }
+        }
+      
+        public void sort(List<Message> list)
+        {
+            ObservableCollection<Message> tmpList = new ObservableCollection<Message>();
+            switch (sortBtn)
             {
                 case 1:
-                    
+                    if (!isReversed)
+                    {
+                            tmpList = new ObservableCollection<Message>(list);
+                      }
+                   
+                    else
+                    {
+                        tmpList = new ObservableCollection<Message>(list.Reverse<Message>());
+                    }
+                    break;
+                case 2:
+                    if (!isReversed)
+                    {
+
+                       tmpList = new ObservableCollection<Message>(from i in list orderby i.GroupID orderby i.UserName select i);
+                    }
+                    else
+                    {
+                        tmpList = new ObservableCollection<Message>((from i in list orderby i.GroupID orderby i.UserName select i).Reverse<Message>());
+                    }
+                  
+                    break;
+                case 3:
+                    if (!isReversed)
+                    {
+                        tmpList = new ObservableCollection<Message>(from i in list orderby i.UserName orderby i.GroupID select i);
+                    }
+                    else
+                        tmpList = new ObservableCollection<Message>((from i in list orderby i.UserName orderby i.GroupID select i).Reverse<Message>());
+  
                     break;
 
             }
-        }
 
+           this.msgList= tmpList;
+
+        }
+        public void reverse(bool reversed)
+        {
+            if (reversed)
+            {
+                msgList = new ObservableCollection<Message>(msgList.Reverse<Message>());
+                    this.isReversed = true;
+            }
+            else
+            {
+                if(isReversed)
+                msgList = new ObservableCollection<Message>(msgList.Reverse<Message>());
+                this.isReversed = false;
+            }
+     
+
+        }
         #endregion
+        #region ProperyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged(string property)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
+        }
+        #endregion
+
     }
+
 }
+

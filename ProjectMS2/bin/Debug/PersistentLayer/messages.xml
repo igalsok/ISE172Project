@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Message>
-    <Id>b12632de-380f-43cc-82ae-4c3c601055f2</Id>
+    <Id>af6e03fc-772d-44c0-84f6-dc8f50b8affe</Id>
     <UserName>igal</UserName>
-    <Date>2018-05-06T12:01:58</Date>
-    <MessageContent>hello</MessageContent>
+    <Date>2018-05-10T10:59:46</Date>
+    <MessageContent>123</MessageContent>
     <GroupID>123</GroupID>
-    <tostring>Message ID:b12632de-380f-43cc-82ae-4c3c601055f2
+    <tostring>Message ID:af6e03fc-772d-44c0-84f6-dc8f50b8affe
 UserName:igal
-DateTime:5/6/2018 12:01:58 PM
-MessageContect:hello
+DateTime:5/10/2018 10:59:46 AM
+MessageContect:123
 GroupId:123
 </tostring>
   </Message>
   <Message>
-    <Id>e2bb5c20-5324-458e-b1a0-3d54b481e80d</Id>
+    <Id>2073a8b5-c144-4087-8ac6-f97485589a39</Id>
     <UserName>igal</UserName>
-    <Date>2018-05-06T12:02:17</Date>
-    <MessageContent>whataspp</MessageContent>
+    <Date>2018-05-10T10:59:50</Date>
+    <MessageContent>igal hello</MessageContent>
     <GroupID>123</GroupID>
-    <tostring>Message ID:e2bb5c20-5324-458e-b1a0-3d54b481e80d
+    <tostring>Message ID:2073a8b5-c144-4087-8ac6-f97485589a39
 UserName:igal
-DateTime:5/6/2018 12:02:17 PM
-MessageContect:whataspp
+DateTime:5/10/2018 10:59:50 AM
+MessageContect:igal hello
 GroupId:123
 </tostring>
   </Message>
   <Message>
-    <Id>6f2feda7-e952-4c02-bba2-58056919980e</Id>
-    <UserName>igal</UserName>
-    <Date>2018-05-06T12:02:20</Date>
-    <MessageContent>brother</MessageContent>
-    <GroupID>123</GroupID>
-    <tostring>Message ID:6f2feda7-e952-4c02-bba2-58056919980e
-UserName:igal
-DateTime:5/6/2018 12:02:20 PM
-MessageContect:brother
-GroupId:123
+    <Id>5ddf1c3e-be7a-4a2c-85ae-00fc8957e014</Id>
+    <UserName>user</UserName>
+    <Date>2018-05-10T11:00:06</Date>
+    <MessageContent>hello user</MessageContent>
+    <GroupID>321</GroupID>
+    <tostring>Message ID:5ddf1c3e-be7a-4a2c-85ae-00fc8957e014
+UserName:user
+DateTime:5/10/2018 11:00:06 AM
+MessageContect:hello user
+GroupId:321
 </tostring>
   </Message>
   <Message>
-    <Id>88926140-1510-4483-bac9-f0a5fdb12779</Id>
-    <UserName>checkUser</UserName>
-    <Date>2018-05-06T12:03:02</Date>
+    <Id>a43eb0af-cf7c-4ddb-b0eb-1c42693c95a1</Id>
+    <UserName>amigo</UserName>
+    <Date>2018-05-10T11:00:38</Date>
     <MessageContent>hi</MessageContent>
-    <GroupID>876</GroupID>
-    <tostring>Message ID:88926140-1510-4483-bac9-f0a5fdb12779
-UserName:checkUser
-DateTime:5/6/2018 12:03:02 PM
+    <GroupID>987</GroupID>
+    <tostring>Message ID:a43eb0af-cf7c-4ddb-b0eb-1c42693c95a1
+UserName:amigo
+DateTime:5/10/2018 11:00:38 AM
 MessageContect:hi
-GroupId:876
+GroupId:987
 </tostring>
   </Message>
   <Message>
-    <Id>918ee49b-eff2-4f7f-8850-db70b0c8642e</Id>
-    <UserName>checkUser</UserName>
-    <Date>2018-05-06T12:03:04</Date>
-    <MessageContent>how are you?</MessageContent>
-    <GroupID>876</GroupID>
-    <tostring>Message ID:918ee49b-eff2-4f7f-8850-db70b0c8642e
-UserName:checkUser
-DateTime:5/6/2018 12:03:04 PM
-MessageContect:how are you?
-GroupId:876
+    <Id>340df289-bf28-4ba1-a080-f6bb20b544c1</Id>
+    <UserName>igal2</UserName>
+    <Date>2018-05-10T11:18:58</Date>
+    <MessageContent>123</MessageContent>
+    <GroupID>123</GroupID>
+    <tostring>Message ID:340df289-bf28-4ba1-a080-f6bb20b544c1
+UserName:igal2
+DateTime:5/10/2018 11:18:58 AM
+MessageContect:123
+GroupId:123
 </tostring>
   </Message>
 </ArrayOfMessage>
