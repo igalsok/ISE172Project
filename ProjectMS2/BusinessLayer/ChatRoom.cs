@@ -142,7 +142,7 @@ namespace ProjectMS2.BusinessLayer
             try
             {
                 List<IMessage> tmpList = Communication.Instance.GetTenMessages(this.url);
-                bool isNew = false;
+                bool IsNew = false;
                 foreach (IMessage tmp in tmpList)
                 {
 
@@ -162,13 +162,13 @@ namespace ProjectMS2.BusinessLayer
                         App.Current.Dispatcher.Invoke((Action)delegate
                         {
                             this.msgList.Add(tmpMsg);
-                            isNew = true;
+                            IsNew = true;
 
                         });
                     }
 
                 }
-                if (isNew) { isNew = false; return 2; }
+                if (IsNew) { IsNew = false; return 2; }
                 
                 else
                 return 1;
@@ -186,24 +186,24 @@ namespace ProjectMS2.BusinessLayer
             this.logged = null;
         }
 
-        public int Send(String msg) //1 - over 150, 2 - empty , 3- sent
+        public int Send(String Msg) //1 - over 150, 2 - empty , 3- sent
         {
 
-            if (msg.Length > 150)
+            if (Msg.Length > 150)
             {
 
                 this.log.Info(this.logged.Username + "Tried to write a message over 150 chars");
                 return 1;
 
             }
-            else if (msg.Length == 0)
+            else if (Msg.Length == 0)
             {
                 this.log.Info(this.logged.Username + "Tried to write an empty message");
                 return 2;
             }
             else
             {
-                this.logged.Send(msg, this.url);
+                this.logged.Send(Msg, this.url);
                 return 3;
 
             }
