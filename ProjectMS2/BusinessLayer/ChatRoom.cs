@@ -32,8 +32,18 @@ namespace ProjectMS2.BusinessLayer
         }
         private List<User> usersList;
         private log4net.ILog log;
-        private MessageHandler MessageHandler;
-        private UserHandler UserHandler;
+        private MessageHandler _MessageHandler;
+        public MessageHandler MessageHandler
+        {
+            get { return this._MessageHandler; }
+            set { this._MessageHandler = value; }
+        }
+        private UserHandler _UserHandler;
+        public UserHandler UserHandler
+        {
+            get { return this._UserHandler; }
+            set { this._UserHandler = value; }
+        }
         private int _sortBtn;
         public int sortBtn
         {
@@ -109,14 +119,14 @@ namespace ProjectMS2.BusinessLayer
             }
             if (!exists)
             {
-                log.Warn("attempt to login with the Username: " + Username + " and the G-ID: " + g_id +" a user with thie Username and ID doesn't exists");
+                log.Warn("attempt to login with the Username: " + Username + " and the G-ID: " + g_id +" a user with this Username and ID doesn't exist");
                 return false;
 
             }
             else
             {
                 this.logged = logging;
-                log.Info("User loged in successfully. Username: " + Username + "group id: " + g_id);
+                log.Info("User logged in successfully. Username: " + Username + "group id: " + g_id);
                 return true;
             }
         }
@@ -176,7 +186,7 @@ namespace ProjectMS2.BusinessLayer
             this.logged = null;
         }
 
-        public int Send(String msg)
+        public int Send(String msg) //1 - over 150, 2 - empty , 3- sent
         {
 
             if (msg.Length > 150)
@@ -197,12 +207,6 @@ namespace ProjectMS2.BusinessLayer
                 return 3;
 
             }
-
-
-
-
-
-
         }
 
 

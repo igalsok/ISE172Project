@@ -75,9 +75,9 @@ namespace ProjectMS2.PersistentLayer
                     writer.Close();
             }
         }
-        public void SaveNewList(List<Message> mssgList) // save new Message to the list and saves the updated list to the file
+        public void SaveNewList(List<Message> msgList) // save new Message to the list and saves the updated list to the file
         {
-            this.messages.AddRange(mssgList);
+            this.messages.AddRange(msgList);
             TextWriter writer = null;
             try
             {
