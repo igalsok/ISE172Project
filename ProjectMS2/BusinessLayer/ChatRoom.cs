@@ -83,7 +83,7 @@ namespace ProjectMS2.BusinessLayer
             }
             if (exists)
             {
-                this.log.Warn("attempt to register with the * Username:" + Username + ", G-ID: " + Gid + " a user with this Username and gID already exists");
+                this.log.Warn("attempt to register with the Username:" + Username + ", G-ID: " + Gid + ".a user with this Username and G-ID already exists");
                 return false;
             }
             else
@@ -192,13 +192,13 @@ namespace ProjectMS2.BusinessLayer
             if (Msg.Length > 150)
             {
 
-                this.log.Info(this.logged.Username + "Tried to write a message over 150 chars");
+                this.log.Info(this.logged.Username + "an attempt to send a message over 150 chars");
                 return 1;
 
             }
             else if (Msg.Length == 0)
             {
-                this.log.Info(this.logged.Username + "Tried to write an empty message");
+                this.log.Info(this.logged.Username + "an attempt to send an empty message");
                 return 2;
             }
             else
