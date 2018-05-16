@@ -100,16 +100,16 @@ namespace ProjectMS2.BusinessLayer
         public Boolean Login(String Username, String g_id)
         {
 
-            bool exists = false;
+            bool Exists = false;
 
             User logging = null;
             foreach (User user in this.usersList)
             {
-                if (!exists)
+                if (!Exists)
                 {
                     if (user.Username == Username && user.G_id == g_id)
                     {
-                        exists = true;
+                        Exists = true;
                         logging = user;
 
                     }
@@ -117,9 +117,9 @@ namespace ProjectMS2.BusinessLayer
                 else
                     break;
             }
-            if (!exists)
+            if (!Exists)
             {
-                log.Warn("attempt to login with the Username: " + Username + " and the G-ID: " + g_id +" a user with this Username and ID doesn't exist");
+                log.Warn("attempt to login with the Username: " + Username + " and G-ID: " + g_id +", a user with this Username and ID doesn't exist");
                 return false;
 
             }
@@ -146,11 +146,11 @@ namespace ProjectMS2.BusinessLayer
                 foreach (IMessage tmp in tmpList)
                 {
 
-                    Message tmpMsg = new Message(tmp);
+                    Message TmpMsg = new Message(tmp);
                     bool exists = false;
                     foreach (Message check in this.msgList)
                     {
-                        if (tmpMsg.Id.Equals(check.Id))
+                        if (TmpMsg.Id.Equals(check.Id))
                         {
                             exists = true;
                             break;
@@ -158,10 +158,10 @@ namespace ProjectMS2.BusinessLayer
                     }
                     if (!exists)
                     {
-                        this.MessageHandler.SaveNew(tmpMsg);
+                        this.MessageHandler.SaveNew(TmpMsg);
                         App.Current.Dispatcher.Invoke((Action)delegate
                         {
-                            this.msgList.Add(tmpMsg);
+                            this.msgList.Add(TmpMsg);
                             IsNew = true;
 
                         });
