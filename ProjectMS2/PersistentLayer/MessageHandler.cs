@@ -59,7 +59,7 @@ namespace ProjectMS2.PersistentLayer
         {
             return this.messages;
         }
-        public void SaveNew(Message msg) // save new Message to the list and saves the updated list to the file
+        public void SaveNew(Message msg) // saves the new Message in the list and saves the updated list in the file
         {
             this.Messages.Add(msg);
             TextWriter writer = null;
@@ -91,7 +91,7 @@ namespace ProjectMS2.PersistentLayer
                     writer.Close();
             }
         }
-        private List<Message> retriveAll() //retrives from the file
+        private List<Message> retriveAll() //retrieves from the file
         {
             TextReader reader = null;
             try
@@ -113,7 +113,7 @@ namespace ProjectMS2.PersistentLayer
         }
         public List<Message> getAll() // return the list from the field
         {
-            return messages;
+            return this.messages;
         }
         public List<Message> load() //loads again from the file and saves the new list.
         {
