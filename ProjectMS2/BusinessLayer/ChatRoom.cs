@@ -32,8 +32,18 @@ namespace ProjectMS2.BusinessLayer
         }
         private List<User> usersList;
         private log4net.ILog log;
-        private MessageHandler MessageHandler;
-        private UserHandler UserHandler;
+        private MessageHandler _MessageHandler;
+        public MessageHandler MessageHandler
+        {
+            get { return this._MessageHandler; }
+            set { this._MessageHandler = value; }
+        }
+        private UserHandler _UserHandler;
+        public UserHandler UserHandler
+        {
+            get { return this._UserHandler; }
+            set { this._UserHandler = value; }
+        }
         private int _sortBtn;
         public int sortBtn
         {
@@ -73,7 +83,7 @@ namespace ProjectMS2.BusinessLayer
             }
             if (exists)
             {
-                this.log.Warn("attempt to register with the * Username:" + Username + ", G-ID: " + Gid + " a user with this Username and gID already exists");
+                this.log.Warn("attempt to register with the Username:" + Username + ", G-ID: " + Gid + ".a user with this Username and G-ID already exists");
                 return false;
             }
             else
@@ -90,16 +100,16 @@ namespace ProjectMS2.BusinessLayer
         public Boolean Login(String Username, String g_id)
         {
 
-            bool exists = false;
+            bool Exists = false;
 
             User logging = null;
             foreach (User user in this.usersList)
             {
-                if (!exists)
+                if (!Exists)
                 {
                     if (user.Username == Username && user.G_id == g_id)
                     {
-                        exists = true;
+                        Exists = true;
                         logging = user;
 
                     }
@@ -107,16 +117,16 @@ namespace ProjectMS2.BusinessLayer
                 else
                     break;
             }
-            if (!exists)
+            if (!Exists)
             {
-                log.Warn("attempt to login with the Username: " + Username + " and the G-ID: " + g_id +" a user with thie Username and ID doesn't exists");
+                log.Warn("attempt to login with the Username: " + Username + " and G-ID: " + g_id +", a user with this Username and ID doesn't exist");
                 return false;
 
             }
             else
             {
                 this.logged = logging;
-                log.Info("User loged in successfully. Username: " + Username + "group id: " + g_id);
+                log.Info("User logged in successfully. Username: " + Username + "group id: " + g_id);
                 return true;
             }
         }
@@ -132,15 +142,15 @@ namespace ProjectMS2.BusinessLayer
             try
             {
                 List<IMessage> tmpList = Communication.Instance.GetTenMessages(this.url);
-                bool isNew = false;
+                bool IsNew = false;
                 foreach (IMessage tmp in tmpList)
                 {
 
-                    Message tmpMsg = new Message(tmp);
+                    Message TmpMsg = new Message(tmp);
                     bool exists = false;
                     foreach (Message check in this.msgList)
                     {
-                        if (tmpMsg.Id.Equals(check.Id))
+                        if (TmpMsg.Id.Equals(check.Id))
                         {
                             exists = true;
                             break;
@@ -148,17 +158,17 @@ namespace ProjectMS2.BusinessLayer
                     }
                     if (!exists)
                     {
-                        this.MessageHandler.SaveNew(tmpMsg);
+                        this.MessageHandler.SaveNew(TmpMsg);
                         App.Current.Dispatcher.Invoke((Action)delegate
                         {
-                            this.msgList.Add(tmpMsg);
-                            isNew = true;
+                            this.msgList.Add(TmpMsg);
+                            IsNew = true;
 
                         });
                     }
 
                 }
-                if (isNew) { isNew = false; return 2; }
+                if (IsNew) { IsNew = false; return 2; }
                 
                 else
                 return 1;
@@ -176,33 +186,27 @@ namespace ProjectMS2.BusinessLayer
             this.logged = null;
         }
 
-        public int Send(String msg)
+        public int Send(String Msg) //1 - over 150, 2 - empty , 3- sent
         {
 
-            if (msg.Length > 150)
+            if (Msg.Length > 150)
             {
 
-                this.log.Info(this.logged.Username + "Tried to write a message over 150 chars");
+                this.log.Info(this.logged.Username + "an attempt to send a message over 150 chars");
                 return 1;
 
             }
-            else if (msg.Length == 0)
+            else if (Msg.Length == 0)
             {
-                this.log.Info(this.logged.Username + "Tried to write an empty message");
+                this.log.Info(this.logged.Username + "an attempt to send an empty message");
                 return 2;
             }
             else
             {
-                this.logged.Send(msg, this.url);
+                this.logged.Send(Msg, this.url);
                 return 3;
 
             }
-
-
-
-
-
-
         }
 
 

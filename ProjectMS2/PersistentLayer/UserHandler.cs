@@ -48,7 +48,7 @@ namespace ProjectMS2.PersistentLayer
         {
             return this.users;
         }
-        public void saveNew(User user)  //save new User to the list and saves the updated list to the file
+        public void saveNew(User user)  //saves the new User in the list and saves the updated list in the file
         {
             users.Add(user);
             TextWriter writer = null;
@@ -64,9 +64,9 @@ namespace ProjectMS2.PersistentLayer
                     writer.Close();
             }
         }
-        public void saveNewList(List<User> userList)  //save new User to the list and saves the updated list to the file
+        public void saveNewList(List<User> userList)  //replaces the current list with new one
         {
-            this.users.AddRange(userList);
+            this.users = userList;
             TextWriter writer = null;
             try
             {
@@ -80,7 +80,7 @@ namespace ProjectMS2.PersistentLayer
                     writer.Close();
             }
         }
-        private List<User> retriveAll() //retrives from the file
+        private List<User> retriveAll() //retrieves from the file
         {
             TextReader reader = null;
             try
@@ -115,6 +115,27 @@ namespace ProjectMS2.PersistentLayer
             {
                 return this.users;
             }
+        }
+        public List<User> RetriveAll() //retrives from the file
+        {
+            TextReader reader = null;
+            try
+            {
+                if (!File.Exists(this.FilePath))
+                {
+                    throw new System.IO.FileNotFoundException("No file in the specified path!");
+                }
+                var serializer = new XmlSerializer(typeof(List<User>));
+                reader = new StreamReader(this.FilePath);
+                this.users = (List<User>)serializer.Deserialize(reader);
+                return users;
+            }
+            finally
+            {
+                if (reader != null)
+                    reader.Close();
+            }
+
         }
     }
 }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\
+C:\Users\karamhaj2\Desktop\New folder\ISE182_project\ISE182_project\ISE172_Project\ProjectMS2\obj\Debug\
 ProjectMS2
 none
 false
 DEBUG;TRACE
 
-7-1011261593
+8-307146047
 
-21-1063444472
-181645493668
-App.xaml;MainWindow.xaml;PresentationLayer\ChatroomWindow.xaml;PresentationLayer\LoginWindow.xaml;PresentationLayer\MessageSent.xaml;PresentationLayer\RegisterWindow.xaml;PresentationLayer\viewMessage.xaml;
+23-794871118
+18-2010440259
+App.xaml;MainWindow.xaml;PresentationLayer\ChatroomWindow.xaml;PresentationLayer\LoginWindow.xaml;PresentationLayer\MessageSent.xaml;PresentationLayer\RegisterWindow.xaml;PresentationLayer\viewMessage.xaml;Testers\TestWindow.xaml;
 
-True
+False
 
