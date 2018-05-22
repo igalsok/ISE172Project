@@ -35,4 +35,3 @@ P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Release\MahApps.Metro.pdb
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Release\MahApps.Metro.xml
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Release\PresentationLayer\viewMessage.g.cs
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Release\PresentationLayer\viewMessage.baml
-P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Release\ProjectMS2.csprojResolveAssemblyReference.cache
