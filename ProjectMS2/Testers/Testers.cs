@@ -8,7 +8,7 @@ using ProjectMS2.PersistentLayer;
 
 namespace ProjectMS2.Testers
 {
-    class Testers
+    public class Testers
     {
         private ChatRoom ch;
         private UserHandler uh;
@@ -24,7 +24,7 @@ namespace ProjectMS2.Testers
             uh = new UserHandler();
         }
 
-        public Boolean testEmpty()
+        public void testEmpty()
         {
             ch.Register("tester", "123");
             ch.Login("tester", "123");
@@ -40,11 +40,10 @@ namespace ProjectMS2.Testers
                     break;
                 }
             }
-            if (i == 2)
+            if (i != 2)
             {
-                return true;
+                throw new Exception();
             } 
-           return false;
         }
 
         public Boolean testOver()
@@ -75,7 +74,7 @@ namespace ProjectMS2.Testers
             return false;
         }
 
-        public Boolean testNotRegisteredLogin()
+        public void testNotRegisteredLogin()
         {
             List<User> list = ch.UserHandler.getAll();
             foreach (User usr in list)
@@ -87,9 +86,8 @@ namespace ProjectMS2.Testers
                     break;
                 }
             }
-            if (!ch.Login("tester", "123"))
-                return true;
-            return false;
+            if (ch.Login("tester", "123"))
+                throw new Exception();
         }
 
         public Boolean testLogout()

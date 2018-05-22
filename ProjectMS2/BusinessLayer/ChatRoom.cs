@@ -17,7 +17,7 @@ namespace ProjectMS2.BusinessLayer
     {
         #region Fields/Properties
         private User logged;
-        private String url = "http://192.168.1.114";
+        private String url = "http://ise172.ise.bgu.ac.il";
         private ObservableCollection<Message> msgList;
         private ObservableCollection<Message> _DisplayList;
         public ObservableCollection<Message> DisplayList

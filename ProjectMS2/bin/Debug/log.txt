@@ -476,3 +476,6 @@
 2018-05-10 15:18:16,392 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
 2018-05-10 15:19:18,285 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
 2018-05-10 15:22:56,158 [1] INFO  ProjectMS2.App [(null)] - User loged in successfully. Username: igalgroup id: 123
+2018-05-22 22:49:28,215 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 123
+2018-05-22 22:51:24,341 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 123
+2018-05-22 22:52:03,821 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 123
