@@ -1,7 +1,8 @@
 ﻿using ProjectMS2.BusinessLayer;
-using ProjectMS2.CommunicationLayer;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,117 +16,164 @@ namespace ProjectMS2.PersistentLayer
     {
 
         //fields
-        private List<Message> Messages;
-        private List<Message> messages
+        public static int MAX_LIST_SIZE = 5;
+        private SqlConnection _connection;
+        public SqlConnection Connection
         {
             get
             {
-                return this.Messages;
-
+                return this._connection;
             }
             set
             {
-                this.Messages = value;
-            }
-
-        }
-        private String FilePath;
-        private String filePath
-        {
-            get
-            {
-              return this.FilePath;
-            }
-            set
-            {
-                this.FilePath = value;
+                this._connection = value;
             }
         }
-
 
         //constructors
         public MessageHandler()
         {
-            messages = new List<Message>();
-            filePath = "PersistentLayer/messages.xml";
-            if (File.Exists(this.filePath))
-            {
-                retriveAll();
-            }
+            Connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS01;Initial Catalog=MS3;user id=publicUser;password = isANerd;Trusted_Connection=yes;");
+        }
 
-        }
         //methods
-        private List<Message> GetList()
+        public String lastMessageTime(ObservableCollection<Message> ourList)
         {
-            return this.messages;
+            return ourList.Max(m => m.Date).ToString("yyyy-MM-dd HH:mm:ss.fff");
         }
-        public void SaveNew(Message msg) // saves the new Message in the list and saves the updated list in the file
+
+        //filter types: 'time' 'username' 'group_Id'
+        public LinkedList<Message> loadMessages(String sortType, bool descending, ObservableCollection<Message> ourList)
         {
-            this.Messages.Add(msg);
-            TextWriter writer = null;
+            if(sortType.Equals("SendTime") | sortType.Equals("Nickname")| sortType.Equals("Group_Id"))
+            {
+            LinkedList<Message> tmpList = new LinkedList<Message>();
+            SqlCommand timeDes;
+            //sql command creating new table, "join", we have to convert the userID to nickname+gId
+            if (ourList.Count != 0)
+                timeDes = new SqlCommand("SELECT TOP(" + MAX_LIST_SIZE + ") guid, SendTime, Body, Nickname, Group_Id FROM Messages JOIN Users on[Users].Id = [Messages].User_Id WHERE SendTime > '" + lastMessageTime(ourList) + "' ORDER BY '"+ sortType +"' desc", Connection);
+            else
+                timeDes = new SqlCommand("SELECT TOP(" + MAX_LIST_SIZE + ") guid, SendTime, Body, Nickname, Group_Id FROM Messages JOIN Users on[Users].Id = [Messages].User_Id ORDER BY '" +sortType+"' desc", Connection);
             try
             {
-                var serializer = new XmlSerializer(typeof(List<Message>));
-                writer = new StreamWriter(filePath, false);
-                serializer.Serialize(writer, messages);
-            }
-            finally
-            {
-                if (writer != null)
-                    writer.Close();
-            }
-        }
-        public void SaveNewList(List<Message> msgList) // save new Message to the list and saves the updated list to the file
-        {
-            this.messages.AddRange(msgList);
-            TextWriter writer = null;
-            try
-            {
-                var serializer = new XmlSerializer(typeof(List<IMessage>));
-                writer = new StreamWriter(filePath, false);
-                serializer.Serialize(writer, messages);
-            }
-            finally
-            {
-                if (writer != null)
-                    writer.Close();
-            }
-        }
-        private List<Message> retriveAll() //retrieves from the file
-        {
-            TextReader reader = null;
-            try
-            {
-                if(!File.Exists(this.filePath))
+                Connection.Open();
+                SqlDataReader rs = timeDes.ExecuteReader();
+                if (rs.HasRows)
                 {
-                    throw new System.IO.FileNotFoundException("No file on the specified path!");
+                    while (rs.Read())
+                    {
+                        Message newMsg = new Message(new Guid(Convert.ToString(rs[0])), Convert.ToInt32(rs[4]), Convert.ToString(rs[2]).TrimEnd(), Convert.ToString(rs[3]), Convert.ToDateTime(rs[1]));
+                        if (descending)
+                            tmpList.AddFirst(newMsg); //descending adding the last message to the end of the list. 
+                        else
+                        {
+                            tmpList.AddLast(newMsg);
+                        }
+                    }
+
                 }
-                var serializer = new XmlSerializer(typeof(List<Message>));
-                reader = new StreamReader(this.filePath);
-                this.Messages = (List<Message>)serializer.Deserialize(reader);
-                return Messages;
+                Connection.Close();
             }
-            finally
+            catch
             {
-                if (reader != null)
-                    reader.Close();
+                throw new Exception();
             }
-        }
-        public List<Message> getAll() // return the list from the field
-        {
-            return this.messages;
-        }
-        public List<Message> load() //loads again from the file and saves the new list.
-        {
-            if(File.Exists(this.FilePath))
-            {
-                return retriveAll();
+            return tmpList;
             }
             else
+                throw new Exception("filter type syntax is wrong. should be: SendTime/Nickname/Group_Id");
+                   
+        }
+
+        public LinkedList<Message> loadMessages(String sortType, bool descending, ObservableCollection<Message> ourList, String gIdFilter, String nickFilter)
+        {
+            if (sortType.Equals("SendTime") | sortType.Equals("Nickname") | sortType.Equals("Group_Id"))
             {
-                return this.messages;
+                LinkedList<Message> tmpList = new LinkedList<Message>();
+                SqlCommand timeDes;
+                //sql command creating new table, "join", we have to convert the userID to nickname+gId
+                if(!nickFilter.Equals(string.Empty))
+                { 
+                if (ourList.Count != 0)
+                    timeDes = new SqlCommand("SELECT TOP(" + MAX_LIST_SIZE + ") guid, SendTime, Body, Nickname, Group_Id FROM Messages JOIN Users on[Users].Id = [Messages].User_Id WHERE Nickname = '" + nickFilter + "' AND Group_id = '"+gIdFilter+ "'AND SendTime > '" + lastMessageTime(ourList) + "' ORDER BY '" + sortType + "' desc", Connection);
+                else
+                    timeDes = new SqlCommand("SELECT TOP(" + MAX_LIST_SIZE + ") guid, SendTime, Body, Nickname, Group_Id FROM Messages JOIN Users on[Users].Id = [Messages].User_Id WHERE Nickname = '" + nickFilter + "' AND Group_id = '" + gIdFilter + "' ORDER BY '" + sortType + "' desc", Connection);
+                }
+                else
+                {
+                    if (ourList.Count != 0)
+                        timeDes = new SqlCommand("SELECT TOP(" + MAX_LIST_SIZE + ") guid, SendTime, Body, Nickname, Group_Id FROM Messages JOIN Users on[Users].Id = [Messages].User_Id WHERE Group_id = '" + gIdFilter + "'AND SendTime > '" + lastMessageTime(ourList) + "' ORDER BY '" + sortType + "' desc", Connection);
+                    else
+                        timeDes = new SqlCommand("SELECT TOP(" + MAX_LIST_SIZE + ") guid, SendTime, Body, Nickname, Group_Id FROM Messages JOIN Users on[Users].Id = [Messages].User_Id WHERE Group_id = '" + gIdFilter + "' ORDER BY '" + sortType + "' desc", Connection);
+                }
+                try
+                {
+                    Connection.Open();
+                    SqlDataReader rs = timeDes.ExecuteReader();
+                    if (rs.HasRows)
+                    {
+                        while (rs.Read())
+                        {
+                            Message newMsg = new Message(new Guid(Convert.ToString(rs[0])), Convert.ToInt32(rs[4]), Convert.ToString(rs[2]).TrimEnd(), Convert.ToString(rs[3]), Convert.ToDateTime(rs[1]));
+                            if (descending)
+                                tmpList.AddFirst(newMsg); //descending adding the last message to the end of the list. 
+                            else
+                            {
+                                tmpList.AddLast(newMsg);
+                            }
+                        }
+
+                    }
+                    Connection.Close();
+                }
+                catch
+                {
+                    throw new Exception();
+                }
+                return tmpList;
             }
+            else
+                throw new Exception("sort type syntax is wrong. should be: SendTime/Nickname/Group_Id");
+    }
+
+        public int getUserId(String nickname, int gId)
+        {
+            SqlCommand getUser = new SqlCommand("select Id from Users where Nickname='"+ nickname + "' AND Group_Id='"+ gId+"';", Connection);
+            Connection.Open();
+            SqlDataReader rs = getUser.ExecuteReader();
+            if (rs.HasRows)
+            {
+                while (rs.Read())
+                {
+                    int tmp = Convert.ToInt32(rs[0]);
+                    Connection.Close();
+                    return tmp;
+                }
+
+            }
+            Connection.Close();
+            return -1;
+
         }
         
+        public void sendMessage(Message msg)
+        {
+            SqlCommand sendMessage = new SqlCommand("INSERT INTO Messages (Guid, User_Id, SendTime,Body) VALUES (@Guid, @User_Id,@SendTime, @Body)", Connection);
+            // create parameters
+            sendMessage.Parameters.Add("@Guid", System.Data.SqlDbType.Text);
+            sendMessage.Parameters.Add("@User_Id", System.Data.SqlDbType.Int);
+            sendMessage.Parameters.Add("@SendTime", System.Data.SqlDbType.DateTime);
+            sendMessage.Parameters.Add("@Body", System.Data.SqlDbType.Text);
+            // set values to parameters 
+            sendMessage.Parameters["@Guid"].Value = msg.Id.ToString();
+            sendMessage.Parameters["@User_Id"].Value = getUserId(msg.UserName,msg.GroupID);
+            sendMessage.Parameters["@SendTime"].Value = msg.Date;
+            sendMessage.Parameters["@Body"].Value = msg.MessageContent;
+            Connection.Open();
+            sendMessage.ExecuteNonQuery();
+            Connection.Close();
+        }
     }
 }
+
+           

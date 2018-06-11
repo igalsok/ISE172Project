@@ -40,7 +40,8 @@ namespace ProjectMS2.PresentationLayer
 
         private void btn_register_Click(object sender, RoutedEventArgs e)
         {
-            if(ch.Register(txtBox_usernameReg.Text, txtBox_gIDReg.Text))
+            try { 
+            if(ch.Register(txtBox_usernameReg.Text, Convert.ToInt32(txtBox_gIDReg.Text), pwd_box.Password.ToString()))
             {
                 MessageBox.Show("Registered Successfully");
                 Close();
@@ -48,6 +49,11 @@ namespace ProjectMS2.PresentationLayer
             else
             {
                 MessageBox.Show("this Username: " + txtBox_usernameReg.Text + " and G-Id: " + txtBox_gIDReg.Text + " is already registered");
+            }
+            }
+            catch
+            {
+                System.Windows.MessageBox.Show("Please fill all the requested fields");
             }
         }
 

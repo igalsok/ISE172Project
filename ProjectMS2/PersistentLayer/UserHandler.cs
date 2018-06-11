@@ -1,6 +1,7 @@
 ﻿using ProjectMS2.BusinessLayer;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,130 +13,62 @@ namespace ProjectMS2.PersistentLayer
     public class UserHandler
     {
         //fields
-        private List<User> userList;
-        private List<User> users
+        private SqlConnection _connection;
+        private SqlConnection connection
         {
             get
             {
-                return userList;
+                return _connection;
 
             }
             set
             {
-                this.userList = value;
+                this._connection = value;
             }
 
 
         }
-        private String FilePath
-        {
-            get;
-            set;
-        }
-
         //constructors
         public UserHandler()
         {
-            users = new List<User>();
-            FilePath = "PersistentLayer/users.xml";
-            if (File.Exists(this.FilePath))
-            {
-                retriveAll();
-            }
+            connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS01;Initial Catalog=MS3;user id=publicUser;password = isANerd;Trusted_Connection=yes;");
         }
         //methods
-        private List<User> GetList()
-        {
-            return this.users;
-        }
-        public void saveNew(User user)  //saves the new User in the list and saves the updated list in the file
-        {
-            users.Add(user);
-            TextWriter writer = null;
-            try
-            {
-                var serializer = new XmlSerializer(typeof(List<User>));
-                writer = new StreamWriter(FilePath, false);
-                serializer.Serialize(writer, users);
-            }
-            finally
-            {
-                if (writer != null)
-                    writer.Close();
-            }
-        }
-        public void saveNewList(List<User> userList)  //replaces the current list with new one
-        {
-            this.users = userList;
-            TextWriter writer = null;
-            try
-            {
-                var serializer = new XmlSerializer(typeof(List<String>));
-                writer = new StreamWriter(FilePath, false);
-                serializer.Serialize(writer, users);
-            }
-            finally
-            {
-                if (writer != null)
-                    writer.Close();
-            }
-        }
-        private List<User> retriveAll() //retrieves from the file
-        {
-            TextReader reader = null;
-            try
-            {
-                if (!File.Exists(this.FilePath))
-                {
-                    throw new System.IO.FileNotFoundException("No file on the specified path!");
-                }
-                var serializer = new XmlSerializer(typeof(List<User>));
-                reader = new StreamReader(this.FilePath);
-                this.users = (List<User>)serializer.Deserialize(reader);
-                return users;
-            }
-            finally
-            {
-                if (reader != null)
-                    reader.Close();
-            }
 
-        }
-        public List<User> getAll() //returns the list from the field
+        public void addUser(User user)
         {
-            return users;
+            if(!isUserExists(user))
+            {
+                SqlCommand addUser = new SqlCommand("INSERT INTO Users (Group_Id, Nickname, Password) VALUES (@Group_Id, @Nickname, @Password)", connection);
+                // create parameters
+                addUser.Parameters.Add("@Group_Id", System.Data.SqlDbType.Int);
+                addUser.Parameters.Add("@Nickname", System.Data.SqlDbType.Text);
+                addUser.Parameters.Add("@Password", System.Data.SqlDbType.Text);
+                // set values to parameters 
+                addUser.Parameters["@Group_Id"].Value = user.G_id;
+                addUser.Parameters["@Nickname"].Value = user.Username;
+                addUser.Parameters["@Password"].Value = user.Password;
+                connection.Open();
+                addUser.ExecuteNonQuery();
+                connection.Close();
+            }
         }
-        public List<User> load() // loads again from the file and saves the new list.
+        public bool isUserExists(User user)
         {
-            if (File.Exists(this.FilePath))
-            {
-                return retriveAll();
-            }
-            else
-            {
-                return this.users;
-            }
+            SqlCommand existCmd = new SqlCommand("SELECT COUNT(*) from Users where Nickname='"+user.Username+ "' AND Group_Id='"+ user.G_id+"';", connection);
+            connection.Open();
+            int userCount = (int)existCmd.ExecuteScalar();
+            connection.Close();
+            return userCount != 0;
         }
-        public List<User> RetriveAll() //retrives from the file
+        public bool loginValidation(User user)
         {
-            TextReader reader = null;
-            try
-            {
-                if (!File.Exists(this.FilePath))
-                {
-                    throw new System.IO.FileNotFoundException("No file in the specified path!");
-                }
-                var serializer = new XmlSerializer(typeof(List<User>));
-                reader = new StreamReader(this.FilePath);
-                this.users = (List<User>)serializer.Deserialize(reader);
-                return users;
-            }
-            finally
-            {
-                if (reader != null)
-                    reader.Close();
-            }
+            SqlCommand existCmd = new SqlCommand("SELECT COUNT(*) from Users where Nickname='" + user.Username + "' AND Group_Id='" + user.G_id + "' AND Password ='" + user.Password + "';", connection);
+            connection.Open();
+            int userCount = (int)existCmd.ExecuteScalar();
+           connection.Close();
+            return userCount == 1;
+        }
 
-        }
     }
 }

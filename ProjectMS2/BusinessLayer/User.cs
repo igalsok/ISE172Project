@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectMS2.CommunicationLayer;
 
 
 namespace ProjectMS2.BusinessLayer
@@ -21,8 +20,20 @@ namespace ProjectMS2.BusinessLayer
                 this.username = value;
             }
         }
-        private String g_id;
-        public String G_id{
+        private String _password;
+        public String Password
+        {
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                this._password = value;
+            }
+        }
+        private int g_id;
+        public int G_id{
             get
             {
                 return g_id;
@@ -38,16 +49,11 @@ namespace ProjectMS2.BusinessLayer
         {
 
         }
-        public User(String g_id, String Username)
+        public User(int g_id, String Username, String Password)
         {
             this.G_id = g_id;
             this.Username = Username;
-           
+            this.Password = Password;
         }
-        public void Send(String msg, String url)
-        {
-            CommunicationLayer.Communication.Instance.Send(url, this.G_id, this.Username, msg);
-        }
-
     }
 }
