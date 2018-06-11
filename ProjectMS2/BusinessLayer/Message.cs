@@ -1,4 +1,4 @@
-﻿using ProjectMS2.CommunicationLayer;
+﻿
 using ProjectMS2.PersistentLayer;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMS2.BusinessLayer
 {
-    public class Message : IMessage
+    public class Message 
     {
         private Guid id;
         public Guid Id
@@ -61,8 +61,8 @@ namespace ProjectMS2.BusinessLayer
                 this.body = value;
                }
         }
-        private String groupID;
-        public String GroupID
+        private int groupID;
+        public int GroupID
         {
             get
             {
@@ -72,36 +72,38 @@ namespace ProjectMS2.BusinessLayer
             {
                 this.groupID = value;
             }
-
-
         }
-        private String toString;
-        public String tostring
+        private String _toString;
+        public String toString
         {
-            get
-            {
-                return this.toString;
-            }
-            set
-            {
-                this.toString = value;
-            }
+            get { return this._toString; }
+            set { this._toString = value;}
+            
         }
+
    
         public Message()
         { }
-        public Message(IMessage msg)
+        public Message(int gId, String body, String nickname)
         {
-            this.Id = msg.Id;
-            this.GroupID = msg.GroupID;
-            this.MessageContent = msg.MessageContent;
-            this.UserName = msg.UserName;
-            this.Date = msg.Date;
-            this.tostring = msg.ToString();
+            this.Id = Guid.NewGuid();
+            this.GroupID = gId;
+            this.MessageContent = body;
+            this.UserName = nickname;
+            this.Date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+        }
+        public Message(Guid id,int gId, String body, String nickname,DateTime time)
+        {
+            this.Id = id;
+            this.GroupID = gId;
+            this.MessageContent = body;
+            this.UserName = nickname;
+            this.Date = time;
+            this.toString = "Nickname: " + UserName + " | GroupId: " + GroupID + "\n Send Time: " + Date + "\n     Message: " + MessageContent + "\n";
         }
         public override String ToString()
         {
-            return this.tostring;
+            return toString;
         }
 
     }

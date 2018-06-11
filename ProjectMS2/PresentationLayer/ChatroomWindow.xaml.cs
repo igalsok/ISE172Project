@@ -18,6 +18,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using ProjectMS2.BusinessLayer;
 
 namespace ProjectMS2.PresentationLayer
@@ -29,9 +30,13 @@ namespace ProjectMS2.PresentationLayer
     {
 
         #region Fields/Properties
+        //static filter types:
+        private static String TIME = "SendTime";
+        private static String NICKNAME = "Nickname";
+        private static String GROUP_ID = "Group_Id";
         private ChatRoom ch;
-        private bool firstLog;
         private bool isConnected;
+        private String sortType;
 
 
         private System.Timers.Timer _RetrieveTimer;
@@ -59,7 +64,8 @@ namespace ProjectMS2.PresentationLayer
             isConnected = false;
             btnVisible();
             chk_des.IsChecked = true;
-            firstLog = true;
+            chk_time.IsChecked = true;
+            this.sortType = TIME;
          
         }
         #endregion
@@ -69,6 +75,7 @@ namespace ProjectMS2.PresentationLayer
             ch.logout();
             MainWindow window2 = new MainWindow(ch);
             window2.Show();
+            RetrieveTimer.Enabled = false;
             Close();
 
         }
@@ -116,39 +123,20 @@ namespace ProjectMS2.PresentationLayer
         }
         private void chk_time_Checked(object sender, RoutedEventArgs e)
         {
-            chk_gId.IsChecked = false;
-            chk_uName.IsChecked = false;
-            chk_time.IsEnabled = false;
-            chk_gId.IsEnabled = true;
-            chk_uName.IsEnabled = true;
-
-            if (ch != null)
-            {
-                ch.sortBtn = 1;
-                ch.filter(txtBox_IdFilter.Text == "", txtBox_uNameFilter.Text == "", txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
-            }
-
+            sortType = TIME;
+            ch.sortTypeChanged(TIME);
         }
-        private void chk_uName_Checked(object sender, RoutedEventArgs e)
+
+        private void chk_nickname_Checked(object sender, RoutedEventArgs e)
         {
-            chk_gId.IsChecked = false;
-            chk_time.IsChecked = false;
-            chk_time.IsEnabled = true;
-            chk_uName.IsEnabled = false;
-            chk_gId.IsEnabled = true;
-            ch.sortBtn = 2;
-            ch.filter(txtBox_IdFilter.Text == "", txtBox_uNameFilter.Text == "", txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
+            sortType = NICKNAME;
+            ch.sortTypeChanged(NICKNAME);
         }
+
         private void chk_gId_Checked(object sender, RoutedEventArgs e)
         {
-            chk_time.IsChecked = false;
-            chk_uName.IsChecked = false;
-            chk_time.IsEnabled = true;
-            chk_uName.IsEnabled = true;
-            chk_gId.IsEnabled = false;
-
-            ch.sortBtn = 3;
-            ch.filter(txtBox_IdFilter.Text == "", txtBox_uNameFilter.Text == "", txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
+            sortType = GROUP_ID;
+            ch.sortTypeChanged(GROUP_ID);
         }
         private void filterbtn_Click(object sender, RoutedEventArgs e)
         {
@@ -163,18 +151,26 @@ namespace ProjectMS2.PresentationLayer
                 {
                     txtBox_uNameFilter.Visibility = Visibility.Hidden;
                     lbl_uName.Visibility = Visibility.Hidden;
+                    txtBox_uNameFilter.Text = "";
+                    ch.emptyDisplayList();
+                    ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
                 }
                 else
                 {
                     txtBox_uNameFilter.Visibility = Visibility.Visible;
                     lbl_uName.Visibility = Visibility.Visible;
+                    ch.emptyDisplayList();
+                    ch.Retrieve(sortType,txtBox_IdFilter.Text,txtBox_uNameFilter.Text);
+                   
+
                 }
-                ch.filter(txtBox_IdFilter.Text == "", txtBox_uNameFilter.Text == "", txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
+               
             }));
         }
         private void txtBox_uNameFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
-            ch.filter(txtBox_IdFilter.Text == "", txtBox_uNameFilter.Text == "", txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
+            ch.emptyDisplayList();
+            ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
         }
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -185,13 +181,20 @@ namespace ProjectMS2.PresentationLayer
         }
         private void chk_as_Checked(object sender, RoutedEventArgs e)
         {
-            chk_des.IsChecked = false;
-            ch.reverse(true);
+            if (ch.descending)
+            {
+                chk_des.IsChecked = false;
+                ch.reverse();
+            }
+            
         }
         private void chk_des_Checked(object sender, RoutedEventArgs e)
         {
-            chk_as.IsChecked = false;
-            ch.reverse(false);
+            if (!ch.descending)
+            {
+                chk_as.IsChecked = false;
+                ch.reverse();
+            }
         }
         #endregion
         #region Timer
@@ -208,33 +211,11 @@ namespace ProjectMS2.PresentationLayer
         }
         private void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            int Case = ch.Retrieve();
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                switch (Case)
-                {
-                    case 1:
-                        isConnected = true;
-                        if(firstLog)
-                        {
-                            lst_Display.ScrollIntoView(lst_Display.Items[lst_Display.Items.Count - 1]);
-                            firstLog = false;
-                        }
-                        break;
-                    case 2:
-                        isConnected = true;
-                        ch.filter(txtBox_IdFilter.Text == "", txtBox_uNameFilter.Text == "", txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
-                        lst_Display.ScrollIntoView(lst_Display.Items[lst_Display.Items.Count - 1]);
-                        break;
-                    case 3:
-                        isConnected = false;
-                        break;
-                }
-                
-                btnVisible();
-                
-            });
-            
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background,
+                     new Action(() =>
+                     {
+                         ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
+                     }));
         }
         #endregion
 

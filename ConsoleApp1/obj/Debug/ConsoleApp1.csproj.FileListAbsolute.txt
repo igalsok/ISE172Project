@@ -1,0 +1,7 @@
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
