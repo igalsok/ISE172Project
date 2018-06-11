@@ -680,3 +680,59 @@
 2018-06-11 13:52:19,352 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: igalgroup id: 123
 2018-06-11 13:53:43,896 [1] WARN  ProjectMS2.App [(null)] - attempt to register with the Username:igal, G-ID: 123.a user with this Username and G-ID already exists
 2018-06-11 13:53:51,800 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: igal2131group id: 1234
+2018-06-11 15:49:12,923 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: igal1 and G-ID: 31231, a user with this Username and ID doesn't exist
+2018-06-11 15:49:32,874 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: igalgroup id: 123
+2018-06-11 15:49:39,864 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 123
+2018-06-11 15:51:18,950 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 123
+2018-06-11 15:53:55,146 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 123
+2018-06-11 15:54:40,570 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-06-11 15:54:49,610 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: matanongroup id: 9
+2018-06-11 15:55:01,896 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 123
+2018-06-11 15:55:18,078 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:123, is logging out
+2018-06-11 15:55:26,956 [1] WARN  ProjectMS2.App [(null)] - attempt to register with the Username:gitStash, G-ID: 35.a user with this Username and G-ID already exists
+2018-06-11 16:45:16,780 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: 4545 and G-ID: 214234, a user with this Username and ID doesn't exist
+2018-06-11 16:45:23,210 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: 4545 and G-ID: 214234, a user with this Username and ID doesn't exist
+2018-06-11 16:45:53,263 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: toptop and G-ID: 123, a user with this Username and ID doesn't exist
+2018-06-11 16:45:59,941 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: toptop and G-ID: 123, a user with this Username and ID doesn't exist
+2018-06-11 16:46:54,040 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: rrrrr and G-ID: 222, a user with this Username and ID doesn't exist
+2018-06-11 16:50:16,028 [1] WARN  ProjectMS2.App [(null)] - attempt to login with the Username: 123 and G-ID: 123, a user with this Username and ID doesn't exist
+2018-06-11 16:55:33,522 [1] INFO  ProjectMS2.App [(null)] - User registered successfully. Username: karamgroup id: 14
+2018-06-11 16:55:43,178 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:01:14,776 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:03:01,526 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:03:42,253 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:13:15,404 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:13:55,768 [1] INFO  ProjectMS2.App [(null)] - User: karam, group id:14, is logging out
+2018-06-11 17:14:58,008 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:15:11,707 [1] INFO  ProjectMS2.App [(null)] - User: karam, group id:14, is logging out
+2018-06-11 17:19:51,507 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:20:14,733 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:22:30,960 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:25:14,505 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:49:01,819 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:55:39,526 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:57:05,429 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:58:27,610 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 17:59:34,460 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 18:01:25,092 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 18:06:12,751 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 18:12:41,070 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 18:13:05,306 [1] INFO  ProjectMS2.App [(null)] - User: karam, group id:14, is logging out
+2018-06-11 18:20:34,844 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 18:24:56,719 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 18:38:37,414 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 18:50:56,731 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 18:51:49,738 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 18:59:05,570 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 19:02:25,881 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 19:04:16,924 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 19:04:38,115 [1] INFO  ProjectMS2.App [(null)] - User: karam, group id:14, is logging out
+2018-06-11 19:06:29,402 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 19:08:56,338 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 19:09:45,952 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 19:11:29,767 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 19:13:26,655 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 19:13:47,775 [1] INFO  ProjectMS2.App [(null)] - User: karam, group id:14, is logging out
+2018-06-11 19:14:00,346 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 19:14:25,308 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-11 19:15:55,190 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14

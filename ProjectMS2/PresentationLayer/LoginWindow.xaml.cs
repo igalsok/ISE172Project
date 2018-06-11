@@ -44,21 +44,20 @@ namespace ProjectMS2.PresentationLayer
 
         private void btn_Login_Click(object sender, RoutedEventArgs e)
         {
-            try { 
-            if (ch.Login(txtBox_usernameLog.Text, Convert.ToInt32(txtBox_gIDlog.Text), pwd_box.Password.ToString()))
-            {
+            try {
+                ch.Login(txtBox_usernameLog.Text, Convert.ToInt32(txtBox_gIDlog.Text), pwd_box.Password.ToString());
                 this.isLogged = true;
                 Close();
             }
-                else
-                {
-                    MessageBox.Show("this Username: " + txtBox_usernameLog.Text + " G-ID: " + txtBox_gIDlog.Text + " is not registered");
-                }
-            }
-            catch
+            catch (Exception ex)
             {
-                System.Windows.MessageBox.Show("please fill all the requested fields");
-            }
+                if (ex.GetType().IsAssignableFrom(typeof(System.FormatException)))
+                {
+                    System.Windows.MessageBox.Show("Please fill in all the fields!");
+                }
+                else
+                System.Windows.MessageBox.Show(ex.Message);
+            } 
      
         }
 

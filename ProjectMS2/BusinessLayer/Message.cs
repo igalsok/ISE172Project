@@ -2,6 +2,7 @@
 using ProjectMS2.PersistentLayer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMS2.BusinessLayer
 {
-    public class Message 
+    public class Message : INotifyPropertyChanged
     {
         private Guid id;
         public Guid Id
@@ -59,7 +60,8 @@ namespace ProjectMS2.BusinessLayer
             set
             {
                 this.body = value;
-               }
+                NotifyPropertyChanged("MessageContent");
+            }
         }
         private int groupID;
         public int GroupID
@@ -74,6 +76,7 @@ namespace ProjectMS2.BusinessLayer
             }
         }
         private String _toString;
+
         public String toString
         {
             get { return this._toString; }
@@ -104,6 +107,14 @@ namespace ProjectMS2.BusinessLayer
         public override String ToString()
         {
             return toString;
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged(string property)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
         }
 
     }
