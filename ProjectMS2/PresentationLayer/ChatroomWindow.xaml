@@ -38,6 +38,11 @@
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown" />
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
         <Label Content="Sort Messages by:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="454,29,0,0" RenderTransformOrigin="0.525,1.179" Height="26" Width="106"/>
         <Button x:Name="btn_send" Content="Send" FontSize="18" HorizontalAlignment="Left" Margin="519,460,0,0" VerticalAlignment="Top" Width="92" Height="60" Click="Button_Send_Click"/>
@@ -47,8 +52,6 @@
         <Label Content="Group ID" x:Name="lbl_gId" HorizontalAlignment="Left" Margin="420,180,0,0" VerticalAlignment="Top" Height="25" Width="84"/>
         <Label Content="UserName" x:Name="lbl_uName"  Visibility="Hidden" HorizontalAlignment="Left" Margin="530,180,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
         <Button x:Name="filterbtn"  Content="Reset Fields" HorizontalAlignment="Left" Margin="451,220,0,0" VerticalAlignment="Top" Width="112" Height="45" Click="filterbtn_Click" />
-        <Label Content="Server Connection Status:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="438,365,0,0" Height="33" Width="169"/>
-        <Label x:Name="lbl_nCon" Background="Red" Content="Not Connected" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="453,398,0,0" Height="31" Width="100" FontWeight="Bold"/>
         <Label x:Name="lbl_Con" Background="Green" Content="Connected" HorizontalAlignment="Left" Margin="453,398,0,0" VerticalAlignment="Top" Height="31" Width="100" FontWeight="Bold" Visibility="Hidden"/>
         <Border Margin="398,68,30.6,454.467">
             <Grid Margin="1,-5,-1.2,-6.8">

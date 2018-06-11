@@ -35,10 +35,12 @@ namespace ProjectMS2.PresentationLayer
         private static String NICKNAME = "Nickname";
         private static String GROUP_ID = "Group_Id";
         private ChatRoom ch;
-        private bool isConnected;
-        private String sortType;
-
-
+        private String _sortType;
+        public String sortType
+        {
+            get { return this._sortType; }
+            set { this._sortType = value; }
+        }
         private System.Timers.Timer _RetrieveTimer;
         public System.Timers.Timer RetrieveTimer
         {
@@ -61,8 +63,6 @@ namespace ProjectMS2.PresentationLayer
             DataContext = ch;
             timer();
             txtBox_sendMsg.Text = String.Empty;
-            isConnected = false;
-            btnVisible();
             chk_des.IsChecked = true;
             chk_time.IsChecked = true;
             this.sortType = TIME;
@@ -79,28 +79,9 @@ namespace ProjectMS2.PresentationLayer
             Close();
 
         }
-        private void btnVisible()
-        {
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                if (isConnected)
-                {
-                    btn_send.IsEnabled = true;
-                    lbl_Con.Visibility = Visibility.Visible;
-                    lbl_nCon.Visibility = Visibility.Hidden;
-                }
-                else
-                {
-                    btn_send.IsEnabled = false;
-                    lbl_Con.Visibility = Visibility.Hidden;
-                    lbl_nCon.Visibility = Visibility.Visible;
-                }
-            });
-        }
+       
         private void Button_Send_Click(object sender, RoutedEventArgs e)
         {
-            if (isConnected)
-            {
                 int caseSwitch = ch.Send(txtBox_sendMsg.Text);
                 switch (caseSwitch)
                 {
@@ -118,7 +99,6 @@ namespace ProjectMS2.PresentationLayer
                     default:
                         break;
                 }
-            }
 
         }
         private void chk_time_Checked(object sender, RoutedEventArgs e)
@@ -194,6 +174,19 @@ namespace ProjectMS2.PresentationLayer
             {
                 chk_as.IsChecked = false;
                 ch.reverse();
+            }
+        }
+        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var item = sender as ListViewItem;
+            if (item != null && item.IsSelected)
+            {
+                if (ch.canEdit((Message)item.DataContext))
+                {
+                    EditWindow window2 = new EditWindow((Message)item.DataContext, ch,this);
+                    window2.Show();
+                }
+
             }
         }
         #endregion

@@ -11,6 +11,8 @@ using System.Windows;
 using System.ComponentModel;
 using System.Windows.Data;
 using System.Windows.Threading;
+using System.Text.RegularExpressions;
+using System.Collections.Specialized;
 
 namespace ProjectMS2.BusinessLayer
 {
@@ -61,37 +63,42 @@ namespace ProjectMS2.BusinessLayer
         }
         #endregion
         #region firstMenu
-        public Boolean Register(String Username, int Gid, String Password)
+        public void Register(String Username, int Gid, String Password)
         {
-            User tmpUser = new User(Gid, Username, Password);
+            if (Password.Length < 4 || Password.Length > 16)
+                throw new InvalidOperationException("Password length should be in range of 4-16");
+
+            Regex r = new Regex("[^A-Z0-9.$ ]$");
+            if (r.IsMatch(Password))
+                throw new InvalidOperationException("A valid password should contain only letters and numbers");
+
+            User tmpUser = new User(Gid, Username, Hash.GetHashString(Password + "1337"));
             if (userHandler.isUserExists(tmpUser))
             {
                 this.log.Warn("attempt to register with the Username:" + Username + ", G-ID: " + Gid + ".a user with this Username and G-ID already exists");
-                return false;
+                throw new InvalidOperationException("Username and GroupId already taken");
             }
             else
             {
                 userHandler.addUser(tmpUser);
                 log.Info("User registered successfully. Username: " + Username + "group id: " + Gid);
-                return true;
             }
 
 
         }
 
-        public Boolean Login(String Username, int g_id, String Password)
+        public void Login(String Username, int g_id, String Password)
         {
-            User tmpUser = new User(g_id, Username, Password);
+            User tmpUser = new User(g_id, Username, Hash.GetHashString(Password + "1337"));
             if (userHandler.loginValidation(tmpUser))
             {
                 this.logged = tmpUser;
                 log.Info("User logged in successfully. Username: " + Username + "group id: " + g_id);
-                return true;
             }
             else
             {
                 log.Warn("attempt to login with the Username: " + Username + " and G-ID: " + g_id + ", a user with this Username and ID doesn't exist");
-                return false;
+                throw new InvalidOperationException("Nickname or Password are not valid");
             }
         }
         public void Exit()
@@ -212,6 +219,18 @@ namespace ProjectMS2.BusinessLayer
                     DisplayList = new ObservableCollection<Message>((from i in DisplayList orderby i.Date orderby i.UserName orderby i.GroupID select i).Reverse<Message>());
             }
         }
+
+        public bool canEdit(Message editMsg)
+        {
+            return editMsg.GroupID.Equals(logged.G_id) && editMsg.UserName.Equals(logged.Username);
+        }
+        public void editMessage(Message msg, String sortType, String GIdFilter, String NickFilter)
+        {
+            messageHandler.EditMessage(msg);
+            DisplayList = new ObservableCollection<Message>();
+            DisplayList.Add(msg);
+        }
+
 
         #endregion
         #region ProperyChanged

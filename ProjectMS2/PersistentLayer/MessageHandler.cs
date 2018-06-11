@@ -16,7 +16,7 @@ namespace ProjectMS2.PersistentLayer
     {
 
         //fields
-        public static int MAX_LIST_SIZE = 5;
+        public static int MAX_LIST_SIZE = 200;
         private SqlConnection _connection;
         public SqlConnection Connection
         {
@@ -33,7 +33,7 @@ namespace ProjectMS2.PersistentLayer
         //constructors
         public MessageHandler()
         {
-            Connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS01;Initial Catalog=MS3;user id=publicUser;password = isANerd;Trusted_Connection=yes;");
+            Connection = new SqlConnection("Data Source=ise172.ise.bgu.ac.il,1433\\DB_LAB;Initial Catalog=MS3;user id=publicUser;password = isANerd;");
         }
 
         //methods
@@ -54,15 +54,14 @@ namespace ProjectMS2.PersistentLayer
                 timeDes = new SqlCommand("SELECT TOP(" + MAX_LIST_SIZE + ") guid, SendTime, Body, Nickname, Group_Id FROM Messages JOIN Users on[Users].Id = [Messages].User_Id WHERE SendTime > '" + lastMessageTime(ourList) + "' ORDER BY '"+ sortType +"' desc", Connection);
             else
                 timeDes = new SqlCommand("SELECT TOP(" + MAX_LIST_SIZE + ") guid, SendTime, Body, Nickname, Group_Id FROM Messages JOIN Users on[Users].Id = [Messages].User_Id ORDER BY '" +sortType+"' desc", Connection);
-            try
-            {
+
                 Connection.Open();
                 SqlDataReader rs = timeDes.ExecuteReader();
                 if (rs.HasRows)
                 {
                     while (rs.Read())
                     {
-                        Message newMsg = new Message(new Guid(Convert.ToString(rs[0])), Convert.ToInt32(rs[4]), Convert.ToString(rs[2]).TrimEnd(), Convert.ToString(rs[3]), Convert.ToDateTime(rs[1]));
+                        Message newMsg = new Message(new Guid(Convert.ToString(rs[0])), Convert.ToInt32(rs[4]), Convert.ToString(rs[2]).TrimEnd(), Convert.ToString(rs[3]).TrimEnd(), Convert.ToDateTime(rs[1]));
                         if (descending)
                             tmpList.AddFirst(newMsg); //descending adding the last message to the end of the list. 
                         else
@@ -73,11 +72,7 @@ namespace ProjectMS2.PersistentLayer
 
                 }
                 Connection.Close();
-            }
-            catch
-            {
-                throw new Exception();
-            }
+            
             return tmpList;
             }
             else
@@ -114,7 +109,7 @@ namespace ProjectMS2.PersistentLayer
                     {
                         while (rs.Read())
                         {
-                            Message newMsg = new Message(new Guid(Convert.ToString(rs[0])), Convert.ToInt32(rs[4]), Convert.ToString(rs[2]).TrimEnd(), Convert.ToString(rs[3]), Convert.ToDateTime(rs[1]));
+                            Message newMsg = new Message(new Guid(Convert.ToString(rs[0])), Convert.ToInt32(rs[4]), Convert.ToString(rs[2]).TrimEnd(), Convert.ToString(rs[3]).TrimEnd(), Convert.ToDateTime(rs[1]));
                             if (descending)
                                 tmpList.AddFirst(newMsg); //descending adding the last message to the end of the list. 
                             else
@@ -172,6 +167,15 @@ namespace ProjectMS2.PersistentLayer
             Connection.Open();
             sendMessage.ExecuteNonQuery();
             Connection.Close();
+        }
+
+        public void EditMessage(Message msg)
+        {
+            SqlCommand editCommand = new SqlCommand("UPDATE Messages SET Body = '"+msg.MessageContent+"' WHERE Guid = '" +msg.Id +"';",Connection);
+            Connection.Open();
+            editCommand.ExecuteNonQuery();
+            Connection.Close();
+
         }
     }
 }

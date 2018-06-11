@@ -40,21 +40,21 @@ namespace ProjectMS2.PresentationLayer
 
         private void btn_register_Click(object sender, RoutedEventArgs e)
         {
-            try { 
-            if(ch.Register(txtBox_usernameReg.Text, Convert.ToInt32(txtBox_gIDReg.Text), pwd_box.Password.ToString()))
+            try
             {
+                ch.Register(txtBox_usernameReg.Text, Convert.ToInt32(txtBox_gIDReg.Text), pwd_box.Password.ToString());
                 MessageBox.Show("Registered Successfully");
                 Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("this Username: " + txtBox_usernameReg.Text + " and G-Id: " + txtBox_gIDReg.Text + " is already registered");
-            }
-            }
-            catch
-            {
-                System.Windows.MessageBox.Show("Please fill all the requested fields");
-            }
+                if (ex.GetType().IsAssignableFrom(typeof(System.FormatException)))
+                {
+                    System.Windows.MessageBox.Show("Please fill in all the fields!");
+                }
+                else
+                System.Windows.MessageBox.Show(ex.Message);
+            } 
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
