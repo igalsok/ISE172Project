@@ -15,7 +15,11 @@
         <Button x:Name="btn_login" Content="Login" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Top" Width="206" Margin="296,133,0,0" Height="38" Click="click_btn_Login"/>
         <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Top" Width="206" Margin="296,255,0,0" Height="38" Click="click_btn_Exit"/>
         <Image x:Name="img_bguLogo" Source="/images/bgu_logo.png" HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="119" Margin="34,36,0,0" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="version: 1.0.0" VerticalAlignment="Top" Margin="709,394,0,0" Height="17" Width="74"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="version: 2.0.1" VerticalAlignment="Top" Margin="709,394,0,0" Height="17" Width="74"/>
+        <Image x:Name="radio_notConnected" Source="/images/notConnected.png" HorizontalAlignment="Left" Height="25" Margin="135,380,0,0" VerticalAlignment="Top" Width="30"/>
+        <Image x:Name="radio_connected" Source="/images/connected.png" HorizontalAlignment="Left" Height="20" Margin="140,385,0,0" VerticalAlignment="Top" Width="16" RenderTransformOrigin="3.426,-0.914"/>
+        <Label Content="Connection Status" HorizontalAlignment="Left" Margin="29,379,0,0" VerticalAlignment="Top"/>
+
 
 
 

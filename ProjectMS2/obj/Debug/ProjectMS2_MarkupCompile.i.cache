@@ -4,7 +4,7 @@
 winexe
 C#
 .cs
-C:\Users\karamhaj2\Desktop\ISE\ISE172_Project\ProjectMS2\obj\Debug\
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Debug\
 ProjectMS2
 none
 false
@@ -12,8 +12,8 @@ DEBUG;TRACE
 
 72090739930
 
-20-628094397
-18473241144
+20-494801290
+181563401500
 App.xaml;MainWindow.xaml;PresentationLayer\ChatroomWindow.xaml;PresentationLayer\EditWindow.xaml;PresentationLayer\LoginWindow.xaml;PresentationLayer\RegisterWindow.xaml;PresentationLayer\viewMessage.xaml;
 
 False

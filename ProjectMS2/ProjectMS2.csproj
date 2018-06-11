@@ -168,5 +168,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\notConnected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\connected.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

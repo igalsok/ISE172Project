@@ -31,9 +31,9 @@ namespace ProjectMS2.PresentationLayer
 
         #region Fields/Properties
         //static filter types:
-        private static String TIME = "SendTime";
-        private static String NICKNAME = "Nickname";
-        private static String GROUP_ID = "Group_Id";
+        public static String TIME = "SendTime";
+        public static String NICKNAME = "Nickname";
+        public static String GROUP_ID = "Group_Id";
         private ChatRoom ch;
         private String _sortType;
         public String sortType
@@ -42,6 +42,8 @@ namespace ProjectMS2.PresentationLayer
             set { this._sortType = value; }
         }
         private System.Timers.Timer _RetrieveTimer;
+
+
         public System.Timers.Timer RetrieveTimer
         {
             get
@@ -53,6 +55,7 @@ namespace ProjectMS2.PresentationLayer
                 this._RetrieveTimer = value;
             }
         }
+
         #endregion
         #region Constructor
         public ChatroomWindow(ChatRoom ch)
@@ -62,11 +65,13 @@ namespace ProjectMS2.PresentationLayer
             this.ch = ch;
             DataContext = ch;
             timer();
-            txtBox_sendMsg.Text = String.Empty;
+            btn_send.IsEnabled = false;
+            txtBox_sendMsg.MaxLength = 100;
             chk_des.IsChecked = true;
             chk_time.IsChecked = true;
             this.sortType = TIME;
-         
+            chk_autoScroll.IsChecked = true;
+            ((INotifyCollectionChanged)lst_Display.Items).CollectionChanged += lst_Display_CollectionChanged;
         }
         #endregion
         #region MainFunctions
@@ -79,26 +84,23 @@ namespace ProjectMS2.PresentationLayer
             Close();
 
         }
-       
+        private void lst_Display_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (chk_autoScroll.IsChecked == true && lst_Display.Items.Count > 0)
+            {
+                if (chk_des.IsChecked == true)
+                    lst_Display.ScrollIntoView(lst_Display.Items[lst_Display.Items.Count - 1]);
+                else if (chk_as.IsChecked == true)
+                    lst_Display.ScrollIntoView(lst_Display.Items[0]);
+            }
+
+        }
+
         private void Button_Send_Click(object sender, RoutedEventArgs e)
         {
-                int caseSwitch = ch.Send(txtBox_sendMsg.Text);
-                switch (caseSwitch)
-                {
-                    case 1:
-                        MessageBox.Show("Message didn't sent! \n Message cannot be over 150 chars!");
-                        txtBox_sendMsg.Text = "";
-                        break;
-                    case 2:
-                        MessageBox.Show("Message didn't sent! \n cannot send an empty message!");
-                        txtBox_sendMsg.Text = "";
-                        break;
-                    case 3:
-                        txtBox_sendMsg.Text = "";
-                        break;
-                    default:
-                        break;
-                }
+            if (btn_send.IsEnabled)
+                ch.Send(txtBox_sendMsg.Text);
+            txtBox_sendMsg.Text = string.Empty;
 
         }
         private void chk_time_Checked(object sender, RoutedEventArgs e)
@@ -140,11 +142,11 @@ namespace ProjectMS2.PresentationLayer
                     txtBox_uNameFilter.Visibility = Visibility.Visible;
                     lbl_uName.Visibility = Visibility.Visible;
                     ch.emptyDisplayList();
-                    ch.Retrieve(sortType,txtBox_IdFilter.Text,txtBox_uNameFilter.Text);
-                   
+                    ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
+
 
                 }
-               
+
             }));
         }
         private void txtBox_uNameFilter_TextChanged(object sender, TextChangedEventArgs e)
@@ -166,7 +168,7 @@ namespace ProjectMS2.PresentationLayer
                 chk_des.IsChecked = false;
                 ch.reverse();
             }
-            
+
         }
         private void chk_des_Checked(object sender, RoutedEventArgs e)
         {
@@ -183,8 +185,8 @@ namespace ProjectMS2.PresentationLayer
             {
                 if (ch.canEdit((Message)item.DataContext))
                 {
-                    EditWindow window2 = new EditWindow((Message)item.DataContext, ch,this);
-                    window2.Show();
+                    EditWindow window2 = new EditWindow((Message)item.DataContext, ch, this);
+                    window2.ShowDialog();
                 }
 
             }
@@ -207,11 +209,53 @@ namespace ProjectMS2.PresentationLayer
             Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background,
                      new Action(() =>
                      {
-                         ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
+                         try { ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text); }
+                         catch (Exception ex)
+                         {
+                             RetrieveTimer.Enabled = false;
+                             Hide();
+                             System.Windows.MessageBox.Show(ex.Message);
+                             ch.logout();
+                             MainWindow window2 = new MainWindow(ch);
+                             window2.Show();
+                             Close();
+                         }
+
                      }));
         }
         #endregion
 
+        private void chk_myFilter_Checked(object sender, RoutedEventArgs e)
+        {
+
+            txtBox_IdFilter.Text = Convert.ToString(this.ch.logged.G_id);
+            txtBox_uNameFilter.Text = this.ch.logged.Username;
+
+
+        }
+        private void chk_myFilter_UnChecked(object sender, RoutedEventArgs e)
+        {
+            txtBox_IdFilter.Text = string.Empty;
+            txtBox_uNameFilter.Text = string.Empty;
+        }
+
+        private void btn_info_click(object sender, RoutedEventArgs e)
+        {
+            String info = "Hello Everybody! \nthis is our Chatroom \n1.Messages can only contain 100 latters \n2.You can choose from 3 sort types (time,nickname,GroupId) \n3.You can edit your own messages by pressing on wanted message \n    have fun! \n                                                                 version: 2.0.1";
+            System.Windows.MessageBox.Show(info);
+        }
+
+        private void txtbox_send_Changed(object sender, TextChangedEventArgs e)
+        {
+            if (txtBox_sendMsg.Text.Equals(string.Empty))
+            {
+                btn_send.IsEnabled = false;
+            }
+            else
+            {
+                btn_send.IsEnabled = true;
+            }
+        }
     }
 }
 

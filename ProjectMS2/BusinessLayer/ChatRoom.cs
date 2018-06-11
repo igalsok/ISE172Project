@@ -19,7 +19,12 @@ namespace ProjectMS2.BusinessLayer
     public class ChatRoom : INotifyPropertyChanged
     {
         #region Fields/Properties
-        private User logged;
+        private User _logged;
+        public User logged
+        {
+            get { return this._logged; }
+            set { this._logged = value; }
+        }
 
         private ObservableCollection<Message> _DisplayList;
         public ObservableCollection<Message> DisplayList
@@ -59,7 +64,15 @@ namespace ProjectMS2.BusinessLayer
             this.messageHandler = new MessageHandler();
             this.userHandler = new UserHandler();
             this.descending = true;
-            this.DisplayList = new ObservableCollection<Message>(this.messageHandler.loadMessages("SendTime", descending, new ObservableCollection<Message>()));
+            this.DisplayList = new ObservableCollection<Message>();
+            try
+            {
+                Retrieve("SendTime",string.Empty,string.Empty);
+            }
+            catch
+            {
+
+            }
         }
         #endregion
         #region firstMenu
@@ -108,8 +121,9 @@ namespace ProjectMS2.BusinessLayer
         }
         #endregion
         #region chatroomMenu
-        public bool Retrieve(String sortType, String gIdFilter, String nickFilter)
+        public void Retrieve(String sortType, String gIdFilter, String nickFilter)
         {
+
             LinkedList<Message> tmpList = null;
             try
             {
@@ -118,9 +132,9 @@ namespace ProjectMS2.BusinessLayer
                 else
                     tmpList = new LinkedList<Message>(messageHandler.loadMessages(sortType, descending, this._DisplayList, gIdFilter, nickFilter));
             }
-            catch (Exception)
+            catch
             {
-                return false;
+                throw new Exception("Connection the the server has been lost");
             }
             int overloadCount = tmpList.Count();
             if (DisplayList.Count == MessageHandler.MAX_LIST_SIZE)
@@ -139,7 +153,12 @@ namespace ProjectMS2.BusinessLayer
             new Action(() =>
             {
                 if (descending)
-                    tmpList.ToList<Message>().ForEach(this.DisplayList.Add);
+                {
+                    foreach (Message msg in tmpList.ToList<Message>())
+                    {
+                        this.DisplayList.Add(msg);
+                    }
+                }
                 else
                 {
                     foreach (Message msg in tmpList.ToList<Message>())
@@ -147,11 +166,14 @@ namespace ProjectMS2.BusinessLayer
                         DisplayList.Insert(0, msg);
                     }
                 }
+                if(tmpList.Count>0)
                 sortTypeChanged(sortType);
             }));
-            return true;
+
 
         }
+
+
         public void emptyDisplayList()
         {
             this.DisplayList = new ObservableCollection<Message>();
@@ -164,25 +186,20 @@ namespace ProjectMS2.BusinessLayer
             this.logged = null;
         }
 
-        public int Send(String Msg) //1 - over 150, 2 - empty , 3- sent
+        public void Send(String Msg) //1 - over 150, 2 - empty , 3- sent
         {
             if (Msg.Length > 150)
             {
-
-                this.log.Info(this.logged.Username + "an attempt to send a message over 150 chars");
-                return 1;
-
+                throw new Exception("message over 150 chars");
             }
             else if (Msg.Length == 0)
             {
-                this.log.Info(this.logged.Username + "an attempt to send an empty message");
-                return 2;
+                throw new Exception("empty message");
             }
             else
             {
                 Message msg = new Message(logged.G_id, Msg, logged.Username);
                 this.messageHandler.sendMessage(msg);
-                return 3;
             }
         }
 
@@ -227,8 +244,21 @@ namespace ProjectMS2.BusinessLayer
         public void editMessage(Message msg, String sortType, String GIdFilter, String NickFilter)
         {
             messageHandler.EditMessage(msg);
-            DisplayList = new ObservableCollection<Message>();
-            DisplayList.Add(msg);
+            Message message = new Message(msg.Id, msg.GroupID, msg.MessageContent, msg.UserName, msg.Date);
+            DisplayList[DisplayList.IndexOf(msg)] = message;
+            NotifyPropertyChanged("DisplayList");
+        }
+        public bool isConnected()
+        {
+            try
+            {
+                userHandler.isConnected();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
 

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMS2.BusinessLayer
 {
-    public class Message : INotifyPropertyChanged
+    public class Message
     {
         private Guid id;
         public Guid Id
@@ -60,7 +60,7 @@ namespace ProjectMS2.BusinessLayer
             set
             {
                 this.body = value;
-                NotifyPropertyChanged("MessageContent");
+                
             }
         }
         private int groupID;
@@ -83,10 +83,6 @@ namespace ProjectMS2.BusinessLayer
             set { this._toString = value;}
             
         }
-
-   
-        public Message()
-        { }
         public Message(int gId, String body, String nickname)
         {
             this.Id = Guid.NewGuid();
@@ -94,6 +90,7 @@ namespace ProjectMS2.BusinessLayer
             this.MessageContent = body;
             this.UserName = nickname;
             this.Date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            this.toString = "Nickname: " + UserName + " | GroupId: " + GroupID + "\nSend Time: " + Date + "\nMessage: " + MessageContent + "\n";
         }
         public Message(Guid id,int gId, String body, String nickname,DateTime time)
         {
@@ -102,20 +99,17 @@ namespace ProjectMS2.BusinessLayer
             this.MessageContent = body;
             this.UserName = nickname;
             this.Date = time;
-            this.toString = "Nickname: " + UserName + " | GroupId: " + GroupID + "\n Send Time: " + Date + "\n     Message: " + MessageContent + "\n";
+            this.toString = "Nickname: " + UserName + " | GroupId: " + GroupID + "\nSend Time: " + Date + "\nMessage: " + MessageContent + "\n";
+        }
+        public void changeContent(String content)
+        {
+            this.MessageContent = content;
         }
         public override String ToString()
         {
             return toString;
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-            }
-        }
+      
 
     }
 }
