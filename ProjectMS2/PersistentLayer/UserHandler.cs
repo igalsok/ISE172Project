@@ -31,7 +31,8 @@ namespace ProjectMS2.PersistentLayer
         //constructors
         public UserHandler()
         {
-            connection = new SqlConnection("Data Source = ise172.ise.bgu.ac.il,1433\\DB_LAB; Initial Catalog = MS3; user id = publicUser; password = isANerd;Connection Timeout=1; ");
+            //connection string
+            connection = new SqlConnection("Data Source = localhost\\SQLEXPRESS01; Initial Catalog = MS3; user id = publicUser; password = isANerd; Trusted_Connection = true; Connection Timeout=1; ");
         }
         //methods
 
@@ -63,13 +64,14 @@ namespace ProjectMS2.PersistentLayer
         }
         public bool loginValidation(User user)
         {
+            //checking if useranme and gid and password are exisiting in the same table, if they are return true, else false.
             SqlCommand existCmd = new SqlCommand("SELECT COUNT(*) from Users where Nickname='" + user.Username + "' AND Group_Id='" + user.G_id + "' AND Password ='" + user.Password + "';", connection);
             connection.Open();
             int userCount = (int)existCmd.ExecuteScalar();
             connection.Close();
             return userCount == 1;
         }
-        public void isConnected()
+        public void isConnected() // checking if there is connection the server.
         {
             try
             {

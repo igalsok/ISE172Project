@@ -72,7 +72,7 @@ namespace ProjectMS2
             RetrieveTimer.Enabled = true;
 
         }
-        private void isConnected()
+        private void isConnected() // checking if connected to the server. and showing the right icon + label 
         {
             if (ch.isConnected())
             {
@@ -103,7 +103,7 @@ namespace ProjectMS2
             }
 
         }
-        private void OnTimedEvent(Object source, ElapsedEventArgs e)
+        private void OnTimedEvent(Object source, ElapsedEventArgs e) //every second checking if the client is connected to the server
         {
             isConnected();
         }
