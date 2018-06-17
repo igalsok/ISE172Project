@@ -78,11 +78,11 @@ namespace ProjectMS2.PresentationLayer
         private void click_btn_logout(object sender, RoutedEventArgs e)
         {
             ch.logout();
+            chk_autoScroll.IsChecked = false;
             MainWindow window2 = new MainWindow(ch);
             window2.Show();
             RetrieveTimer.Enabled = false;
             Close();
-
         }
         private void lst_Display_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
@@ -135,14 +135,13 @@ namespace ProjectMS2.PresentationLayer
                     lbl_uName.Visibility = Visibility.Hidden;
                     txtBox_uNameFilter.Text = "";
                     ch.emptyDisplayList();
-                    ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
                 }
                 else
                 {
                     txtBox_uNameFilter.Visibility = Visibility.Visible;
                     lbl_uName.Visibility = Visibility.Visible;
                     ch.emptyDisplayList();
-                    ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
+
 
 
                 }
@@ -152,7 +151,6 @@ namespace ProjectMS2.PresentationLayer
         private void txtBox_uNameFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
             ch.emptyDisplayList();
-            ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
         }
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {

@@ -845,3 +845,13 @@
 2018-06-12 01:34:14,656 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 12
 2018-06-12 01:34:27,564 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:12, is logging out
 2018-06-12 01:34:47,122 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 12
+2018-06-17 17:12:42,951 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-17 17:14:28,281 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-17 17:14:54,158 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-17 17:16:21,032 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-17 17:17:37,090 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-17 17:19:17,213 [1] INFO  ProjectMS2.App [(null)] - User: karam, group id:14, is logging out
+2018-06-17 17:19:23,677 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-17 17:20:58,379 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
+2018-06-17 17:21:16,299 [1] INFO  ProjectMS2.App [(null)] - User: karam, group id:14, is logging out
+2018-06-17 17:21:25,164 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: karamgroup id: 14
