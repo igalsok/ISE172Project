@@ -871,3 +871,12 @@
 2018-06-17 21:20:34,228 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 12
 2018-06-17 21:20:41,163 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:12, sent a message
 2018-06-17 21:21:04,294 [1] WARN  ProjectMS2.App [(null)] - User: igal, group id:12edited it's message - Message Id: fcde4e58-95c1-489e-ba69-5569b1e1c6d6
+2018-06-17 23:28:27,830 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 12
+2018-06-17 23:28:30,166 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:12, sent a message
+2018-06-17 23:28:36,374 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:12, sent a message
+2018-06-17 23:29:39,442 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:12, is logging out
+2018-06-17 23:29:44,821 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 12
+2018-06-17 23:30:16,589 [1] WARN  ProjectMS2.App [(null)] - User: igal, group id:12edited it's message - Message Id: fcde4e58-95c1-489e-ba69-5569b1e1c6d6
+2018-06-17 23:31:06,082 [1] INFO  ProjectMS2.App [(null)] - User logged in successfully. Username: igalgroup id: 12
+2018-06-17 23:31:20,018 [1] WARN  ProjectMS2.App [(null)] - User: igal, group id:12edited it's message - Message Id: 49ab0b53-b1b2-4c6d-a795-00ccb4b77260
+2018-06-17 23:31:29,140 [1] INFO  ProjectMS2.App [(null)] - User: igal, group id:12, is logging out

@@ -128,6 +128,7 @@ namespace ProjectMS2.PresentationLayer
         {
             txtBox_IdFilter.Text = String.Empty;
             txtBox_uNameFilter.Text = String.Empty;
+            chk_myFilter.IsChecked = false;
         }
         private void txtBox_IdFilter_TextChanged(object sender, TextChangedEventArgs e)
         {

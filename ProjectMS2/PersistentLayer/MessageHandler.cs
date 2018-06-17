@@ -18,7 +18,7 @@ namespace ProjectMS2.PersistentLayer
         //fields
         public static int MAX_LIST_SIZE = 200;
         private SqlConnection _connection;
-        public SqlConnection Connection
+        private SqlConnection Connection
         {
             get
             {
@@ -139,7 +139,7 @@ namespace ProjectMS2.PersistentLayer
                 throw new Exception("sort type syntax is wrong. should be: SendTime/Nickname/Group_Id");
     }
 
-        public int getUserId(String nickname, int gId)
+        private int getUserId(String nickname, int gId)
         {
             SqlCommand getUser = new SqlCommand("select Id from Users where Nickname='"+ nickname + "' AND Group_Id='"+ gId+"';", Connection);
             Connection.Open();

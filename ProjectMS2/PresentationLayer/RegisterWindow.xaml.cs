@@ -29,15 +29,6 @@ namespace ProjectMS2.PresentationLayer
             InitializeComponent();
         }
 
-        private void txtbox_usernameReg(object sender, TextChangedEventArgs e)
-        {
-
-        }
-        private void txtbox_gIDReg(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void btn_register_Click(object sender, RoutedEventArgs e)
         {
             try
