@@ -40,7 +40,7 @@ namespace ProjectMS2.PersistentLayer
         //methods
         public String lastMessageTime(ObservableCollection<Message> ourList)
         {
-            return ourList.Max(m => m.Date).ToString("yyyy-MM-dd HH:mm:ss.fff");
+            return ourList.Max(m => m.Date).ToString("yyyy-MM-dd HH:mm:ss.fff"); //getting the last message time from the list.
         }
 
         //filter types: 'time' 'username' 'group_Id'
@@ -50,7 +50,7 @@ namespace ProjectMS2.PersistentLayer
             {
             LinkedList<Message> tmpList = new LinkedList<Message>();
             SqlCommand timeDes;
-            //sql command creating new table, "join", we have to convert the userID to nickname+gId
+            //sql command creating new table, "join", we have to convert the userID to nickname+gId, selecting the top "maxListSize" messages
             if (ourList.Count != 0)
                 timeDes = new SqlCommand("SELECT TOP(" + MAX_LIST_SIZE + ") guid, SendTime, Body, Nickname, Group_Id FROM Messages JOIN Users on[Users].Id = [Messages].User_Id WHERE SendTime > '" + lastMessageTime(ourList) + "' ORDER BY '"+ sortType +"' desc", Connection);
             else
@@ -141,6 +141,7 @@ namespace ProjectMS2.PersistentLayer
 
         private int getUserId(String nickname, int gId)
         {
+            //checking for username and Gid combination to find out the userID
             SqlCommand getUser = new SqlCommand("select Id from Users where Nickname='"+ nickname + "' AND Group_Id='"+ gId+"';", Connection);
             Connection.Open();
             SqlDataReader rs = getUser.ExecuteReader();

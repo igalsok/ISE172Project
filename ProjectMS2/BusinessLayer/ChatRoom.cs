@@ -100,9 +100,8 @@ namespace ProjectMS2.BusinessLayer
             bool valid = Password.All(c => char.IsLetterOrDigit(c));
             if (!valid)
                 throw new InvalidOperationException("A valid password should contain only letters and numbers");
-
-            User tmpUser = new User(Gid, Username, Hash.GetHashString(Password + "1337"));
-            if (userHandler.isUserExists(tmpUser))
+            User tmpUser = new User(Gid, Username, Hash.GetHashString(Password + "1337")); //creating tmp user
+            if (userHandler.isUserExists(tmpUser)) // checking if this user is already exists
             {
                 if (log != null)
                     this.log.Warn("attempt to register with the Username:" + Username + ", G-ID: " + Gid + ".a user with this Username and G-ID already exists");
@@ -110,7 +109,7 @@ namespace ProjectMS2.BusinessLayer
             }
             else
             {
-                userHandler.addUser(tmpUser);
+                userHandler.addUser(tmpUser); // adding user to database
                 if (log != null)
                     log.Info("User registered successfully. Username: " + Username + "group id: " + Gid);
             }
@@ -137,7 +136,6 @@ namespace ProjectMS2.BusinessLayer
         public void Exit()
         {
             log.Logger.Repository.Shutdown();
-
         }
         #endregion
         #region chatroomMenu
@@ -174,7 +172,7 @@ namespace ProjectMS2.BusinessLayer
             }
             Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
              {
-                 if (descending)
+                 if (descending) //adding messages by descending
                  {
                      foreach (Message msg in tmpList.ToList<Message>())
                      {
@@ -183,7 +181,7 @@ namespace ProjectMS2.BusinessLayer
                  }
                  else
                  {
-                     foreach (Message msg in tmpList.ToList<Message>())
+                     foreach (Message msg in tmpList.ToList<Message>()) //adding messages by ascending
                      {
                          DisplayList.Insert(0, msg);
                      }
