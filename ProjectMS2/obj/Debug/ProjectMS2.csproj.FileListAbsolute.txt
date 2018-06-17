@@ -36,7 +36,6 @@ P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\ControlzEx.pdb
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\MahApps.Metro.pdb
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\bin\Debug\MahApps.Metro.xml
 P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Debug\ProjectMS2.csprojResolveAssemblyReference.cache
-P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Debug\ProjectMS2.csprojResolveAssemblyReference.cache
 P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Debug\App.g.cs
 P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Debug\MainWindow.g.cs
 P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Debug\PresentationLayer\ChatroomWindow.g.cs
@@ -112,4 +111,3 @@ C:\Users\karamhaj2\Desktop\ISE\ISE172_Project\ProjectMS2\obj\Debug\PresentationL
 C:\Users\karamhaj2\Desktop\ISE\ISE172_Project\ProjectMS2\obj\Debug\PresentationLayer\EditWindow.baml
 P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Debug\PresentationLayer\EditWindow.g.cs
 P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Debug\PresentationLayer\EditWindow.baml
-P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Debug\GeneratedInternalTypeHelper.g.cs

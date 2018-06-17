@@ -32,7 +32,7 @@ namespace ProjectMS2.PersistentLayer
         public UserHandler()
         {
             //connection string
-            connection = new SqlConnection("Data Source = localhost\\SQLEXPRESS01; Initial Catalog = MS3; user id = publicUser; password = isANerd; Trusted_Connection = true; Connection Timeout=1; ");
+            connection = new SqlConnection("Data Source = ise172.ise.bgu.ac.il,1433\\DB_LAB; Initial Catalog = MS3; user id = publicUser; password = isANerd; Connection Timeout=1; ");
         }
         //methods
 

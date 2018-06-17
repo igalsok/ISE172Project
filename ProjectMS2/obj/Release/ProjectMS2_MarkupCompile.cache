@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-P:\Projects\PEs2\PROJECT\ISE172Project\ProjectMS2\obj\Release\
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Release\
 ProjectMS2
 none
 false
 TRACE
 
-7-1011261593
+72090739930
 
-18979045852
-181645493668
-App.xaml;MainWindow.xaml;PresentationLayer\ChatroomWindow.xaml;PresentationLayer\LoginWindow.xaml;PresentationLayer\MessageSent.xaml;PresentationLayer\RegisterWindow.xaml;PresentationLayer\viewMessage.xaml;
+16-1859863695
+181563401500
+App.xaml;MainWindow.xaml;PresentationLayer\ChatroomWindow.xaml;PresentationLayer\EditWindow.xaml;PresentationLayer\LoginWindow.xaml;PresentationLayer\RegisterWindow.xaml;PresentationLayer\viewMessage.xaml;
 
 False
 
