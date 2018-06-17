@@ -31,24 +31,18 @@ namespace ProjectMS2.PresentationLayer
         }
         public EditWindow(Message msg, ChatRoom ch,ChatroomWindow chWindow)
         {
+            InitializeComponent();
             this.message = msg;
             this.chWindow = chWindow;
-            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background,
-         new Action(() =>
-         {
-             txt_editBox.Text = msg.MessageContent;
-
-         }));
-
+            txt_editBox.Text = msg.MessageContent;
             this.ch = ch;
-            InitializeComponent();
             txt_editBox.MaxLength = 100;
         }
 
         private void btn_Save_Click(object sender, RoutedEventArgs e)
         {
-            message.MessageContent = txt_editBox.Text;
-            ch.editMessage(message,chWindow.sortType,chWindow.txtBox_IdFilter.Text,chWindow.txtBox_uNameFilter.Text);
+            message.changeContent(txt_editBox.Text);
+            ch.editMessage(message, chWindow.sortType, chWindow.txtBox_IdFilter.Text, chWindow.txtBox_uNameFilter.Text);
             Close();
 
 

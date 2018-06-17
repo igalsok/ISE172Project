@@ -18,7 +18,7 @@ namespace ProjectMS2.PersistentLayer
         //fields
         public static int MAX_LIST_SIZE = 200;
         private SqlConnection _connection;
-        public SqlConnection Connection
+        private SqlConnection Connection
         {
             get
             {
@@ -33,7 +33,8 @@ namespace ProjectMS2.PersistentLayer
         //constructors
         public MessageHandler()
         {
-            Connection = new SqlConnection("Data Source=ise172.ise.bgu.ac.il,1433\\DB_LAB;Initial Catalog=MS3;user id=publicUser;password = isANerd;");
+            //connection string
+            Connection = new SqlConnection("Data Source = localhost\\SQLEXPRESS01; Initial Catalog = MS3; user id = publicUser; password = isANerd; Trusted_Connection = true; Connection Timeout=1; ");
         }
 
         //methods
@@ -54,24 +55,31 @@ namespace ProjectMS2.PersistentLayer
                 timeDes = new SqlCommand("SELECT TOP(" + MAX_LIST_SIZE + ") guid, SendTime, Body, Nickname, Group_Id FROM Messages JOIN Users on[Users].Id = [Messages].User_Id WHERE SendTime > '" + lastMessageTime(ourList) + "' ORDER BY '"+ sortType +"' desc", Connection);
             else
                 timeDes = new SqlCommand("SELECT TOP(" + MAX_LIST_SIZE + ") guid, SendTime, Body, Nickname, Group_Id FROM Messages JOIN Users on[Users].Id = [Messages].User_Id ORDER BY '" +sortType+"' desc", Connection);
-
-                Connection.Open();
-                SqlDataReader rs = timeDes.ExecuteReader();
-                if (rs.HasRows)
+                try
                 {
-                    while (rs.Read())
+                    Connection.Open();
+                    SqlDataReader rs = timeDes.ExecuteReader();
+                    if (rs.HasRows)
                     {
-                        Message newMsg = new Message(new Guid(Convert.ToString(rs[0])), Convert.ToInt32(rs[4]), Convert.ToString(rs[2]).TrimEnd(), Convert.ToString(rs[3]).TrimEnd(), Convert.ToDateTime(rs[1]));
-                        if (descending)
-                            tmpList.AddFirst(newMsg); //descending adding the last message to the end of the list. 
-                        else
+                        while (rs.Read())
                         {
-                            tmpList.AddLast(newMsg);
+                            Message newMsg = new Message(new Guid(Convert.ToString(rs[0])), Convert.ToInt32(rs[4]), Convert.ToString(rs[2]).TrimEnd(), Convert.ToString(rs[3]).TrimEnd(), Convert.ToDateTime(rs[1]));
+                            if (descending)
+                                tmpList.AddFirst(newMsg); //descending adding the last message to the end of the list. 
+                            else
+                            {
+                                tmpList.AddLast(newMsg);
+                            }
                         }
-                    }
 
+                    }
+                    Connection.Close();
                 }
-                Connection.Close();
+                catch (Exception)
+                {
+                    throw new Exception("not connected to the server");
+                }
+                
             
             return tmpList;
             }
@@ -131,7 +139,7 @@ namespace ProjectMS2.PersistentLayer
                 throw new Exception("sort type syntax is wrong. should be: SendTime/Nickname/Group_Id");
     }
 
-        public int getUserId(String nickname, int gId)
+        private int getUserId(String nickname, int gId)
         {
             SqlCommand getUser = new SqlCommand("select Id from Users where Nickname='"+ nickname + "' AND Group_Id='"+ gId+"';", Connection);
             Connection.Open();

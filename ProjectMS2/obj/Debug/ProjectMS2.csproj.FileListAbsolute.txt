@@ -110,3 +110,6 @@ C:\Users\karamhaj2\Desktop\ISE\ISE172_Project\ProjectMS2\obj\Debug\ProjectMS2.ex
 C:\Users\karamhaj2\Desktop\ISE\ISE172_Project\ProjectMS2\obj\Debug\ProjectMS2.pdb
 C:\Users\karamhaj2\Desktop\ISE\ISE172_Project\ProjectMS2\obj\Debug\PresentationLayer\EditWindow.g.cs
 C:\Users\karamhaj2\Desktop\ISE\ISE172_Project\ProjectMS2\obj\Debug\PresentationLayer\EditWindow.baml
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Debug\PresentationLayer\EditWindow.g.cs
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Debug\PresentationLayer\EditWindow.baml
+P:\Projects\PEs2-MS3\ise172-Project\new\ISE172_Project\ProjectMS2\obj\Debug\GeneratedInternalTypeHelper.g.cs

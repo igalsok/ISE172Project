@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectMS2.PresentationLayer"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" 
         Title="EditWindow" Height="300" Width="700">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -14,7 +15,7 @@
     </Window.Background>
     <Grid>
         <Button x:Name="btn_Save" Content="Save" HorizontalAlignment="Left" Margin="577,202,0,0" VerticalAlignment="Top" Width="85" Height="40" Click="btn_Save_Click"/>
-        <Button x:Name="btn_Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="467,201,0,0" VerticalAlignment="Top" Width="85" Height="40" Click="btn_Cancel_Click"/>
+        <Button x:Name="btn_Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="467,202,0,0" VerticalAlignment="Top" Width="85" Height="40" Click="btn_Cancel_Click"/>
         <TextBox x:Name="txt_editBox" HorizontalAlignment="Left" Height="112" Margin="29,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="559"/>
 
     </Grid>

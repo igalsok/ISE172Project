@@ -30,18 +30,22 @@ namespace ProjectMS2.PresentationLayer
     {
 
         #region Fields/Properties
-        //static filter types:
-        private static String TIME = "SendTime";
-        private static String NICKNAME = "Nickname";
-        private static String GROUP_ID = "Group_Id";
+        //static sort types:
+        public static String TIME = "SendTime";
+        public static String NICKNAME = "Nickname";
+        public static String GROUP_ID = "Group_Id";
+
+
         private ChatRoom ch;
-        private String _sortType;
+        private String _sortType; // the sort type that choosed.
         public String sortType
         {
             get { return this._sortType; }
             set { this._sortType = value; }
         }
         private System.Timers.Timer _RetrieveTimer;
+
+
         public System.Timers.Timer RetrieveTimer
         {
             get
@@ -53,6 +57,7 @@ namespace ProjectMS2.PresentationLayer
                 this._RetrieveTimer = value;
             }
         }
+
         #endregion
         #region Constructor
         public ChatroomWindow(ChatRoom ch)
@@ -62,43 +67,43 @@ namespace ProjectMS2.PresentationLayer
             this.ch = ch;
             DataContext = ch;
             timer();
-            txtBox_sendMsg.Text = String.Empty;
+            btn_send.IsEnabled = false;
+            txtBox_sendMsg.MaxLength = 100;
             chk_des.IsChecked = true;
             chk_time.IsChecked = true;
             this.sortType = TIME;
-         
+            chk_autoScroll.IsChecked = true;
+            ((INotifyCollectionChanged)lst_Display.Items).CollectionChanged += lst_Display_CollectionChanged;
         }
         #endregion
         #region MainFunctions
         private void click_btn_logout(object sender, RoutedEventArgs e)
         {
             ch.logout();
+            chk_autoScroll.IsChecked = false;
             MainWindow window2 = new MainWindow(ch);
             window2.Show();
             RetrieveTimer.Enabled = false;
             Close();
+        }
+        // auto scrolling to the last item in the list. if list empty do nothing
+        private void lst_Display_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e) 
+        {
+            if (chk_autoScroll.IsChecked == true && lst_Display.Items.Count > 0)
+            {
+                if (chk_des.IsChecked == true)
+                    lst_Display.ScrollIntoView(lst_Display.Items[lst_Display.Items.Count - 1]);
+                else if (chk_as.IsChecked == true)
+                    lst_Display.ScrollIntoView(lst_Display.Items[0]);
+            }
 
         }
-       
+
         private void Button_Send_Click(object sender, RoutedEventArgs e)
         {
-                int caseSwitch = ch.Send(txtBox_sendMsg.Text);
-                switch (caseSwitch)
-                {
-                    case 1:
-                        MessageBox.Show("Message didn't sent! \n Message cannot be over 150 chars!");
-                        txtBox_sendMsg.Text = "";
-                        break;
-                    case 2:
-                        MessageBox.Show("Message didn't sent! \n cannot send an empty message!");
-                        txtBox_sendMsg.Text = "";
-                        break;
-                    case 3:
-                        txtBox_sendMsg.Text = "";
-                        break;
-                    default:
-                        break;
-                }
+            if (btn_send.IsEnabled)
+                ch.Send(txtBox_sendMsg.Text);
+            txtBox_sendMsg.Text = string.Empty;
 
         }
         private void chk_time_Checked(object sender, RoutedEventArgs e)
@@ -118,39 +123,36 @@ namespace ProjectMS2.PresentationLayer
             sortType = GROUP_ID;
             ch.sortTypeChanged(GROUP_ID);
         }
+        //reset fields button
         private void filterbtn_Click(object sender, RoutedEventArgs e)
         {
             txtBox_IdFilter.Text = String.Empty;
             txtBox_uNameFilter.Text = String.Empty;
+            chk_myFilter.IsChecked = false;
         }
         private void txtBox_IdFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
             Dispatcher.Invoke(new Action(() =>
             {
-                if (txtBox_IdFilter.Text == "")
+                if (txtBox_IdFilter.Text == "") //if text changed to empty string, we want to hide the username filter
                 {
                     txtBox_uNameFilter.Visibility = Visibility.Hidden;
                     lbl_uName.Visibility = Visibility.Hidden;
                     txtBox_uNameFilter.Text = "";
                     ch.emptyDisplayList();
-                    ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
                 }
                 else
                 {
                     txtBox_uNameFilter.Visibility = Visibility.Visible;
                     lbl_uName.Visibility = Visibility.Visible;
                     ch.emptyDisplayList();
-                    ch.Retrieve(sortType,txtBox_IdFilter.Text,txtBox_uNameFilter.Text);
-                   
-
                 }
-               
+
             }));
         }
         private void txtBox_uNameFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
             ch.emptyDisplayList();
-            ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
         }
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -165,8 +167,9 @@ namespace ProjectMS2.PresentationLayer
             {
                 chk_des.IsChecked = false;
                 ch.reverse();
+                
             }
-            
+
         }
         private void chk_des_Checked(object sender, RoutedEventArgs e)
         {
@@ -176,6 +179,7 @@ namespace ProjectMS2.PresentationLayer
                 ch.reverse();
             }
         }
+        //clicking on the message that want to add
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             var item = sender as ListViewItem;
@@ -183,10 +187,41 @@ namespace ProjectMS2.PresentationLayer
             {
                 if (ch.canEdit((Message)item.DataContext))
                 {
-                    EditWindow window2 = new EditWindow((Message)item.DataContext, ch,this);
-                    window2.Show();
+                    EditWindow window2 = new EditWindow((Message)item.DataContext, ch, this);
+                    window2.ShowDialog();
                 }
 
+            }
+        }
+        private void chk_myFilter_Checked(object sender, RoutedEventArgs e)
+        {
+
+            txtBox_IdFilter.Text = Convert.ToString(this.ch.logged.G_id);
+            txtBox_uNameFilter.Text = this.ch.logged.Username;
+
+
+        }
+        private void chk_myFilter_UnChecked(object sender, RoutedEventArgs e)
+        {
+            txtBox_IdFilter.Text = string.Empty;
+            txtBox_uNameFilter.Text = string.Empty;
+        }
+
+        private void btn_info_click(object sender, RoutedEventArgs e)
+        {
+            String info = "Hello Everybody! \nthis is our Chatroom \n1.Messages can only contain 100 latters \n2.You can choose from 3 sort types (time,nickname,GroupId) \n3.You can edit your own messages by pressing on wanted message \n    have fun! \n                                                                 version: 2.0.1";
+            System.Windows.MessageBox.Show(info);
+        }
+
+        private void txtbox_send_Changed(object sender, TextChangedEventArgs e)
+        {
+            if (txtBox_sendMsg.Text.Equals(string.Empty))
+            {
+                btn_send.IsEnabled = false;
+            }
+            else
+            {
+                btn_send.IsEnabled = true;
             }
         }
         #endregion
@@ -207,11 +242,23 @@ namespace ProjectMS2.PresentationLayer
             Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background,
                      new Action(() =>
                      {
-                         ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text);
+                         try { ch.Retrieve(sortType, txtBox_IdFilter.Text, txtBox_uNameFilter.Text); }
+                         catch (Exception ex) //if there is a network exception, we go back to login window and showing the connection erro message
+                         {
+                             RetrieveTimer.Enabled = false;
+                             Hide();
+                             System.Windows.MessageBox.Show(ex.Message);
+                             ch.logout();
+                             MainWindow window2 = new MainWindow(ch);
+                             window2.Show();
+                             Close();
+                         }
+
                      }));
         }
         #endregion
 
+     
     }
 }
 

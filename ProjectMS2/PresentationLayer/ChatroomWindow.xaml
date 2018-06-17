@@ -4,10 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectMS2.PresentationLayer"
-        xmlns:BusinessLayer="clr-namespace:ProjectMS2.BusinessLayer" x:Class="ProjectMS2.PresentationLayer.ChatroomWindow"
+        xmlns:BusinessLayer="clr-namespace:ProjectMS2.BusinessLayer" 
+        x:Class="ProjectMS2.PresentationLayer.ChatroomWindow"
         mc:Ignorable="d"
+        
+   
      WindowStartupLocation="CenterScreen" 
-        Title="ChatRo0om" Height="578.5" Width="662"
+        Title="ChatRo0om" Height="578.5" Width="900"
     PreviewKeyDown="Window_PreviewKeyDown"
     >
     <Window.Background>
@@ -22,45 +25,38 @@
 
 
 
-    <Grid Margin="0,0,26.333,11.333" >
+    <Grid Margin="0,2,-14.4,0.8" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="Logout" Content="Logout" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Margin="438,291,0,0" Height="50" Click="click_btn_logout"/>
-        <TextBox x:Name="txtBox_sendMsg"  ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" Margin="10,460,0,0"  />
-        <ListView Background="AliceBlue" ItemsSource="{Binding DisplayList , UpdateSourceTrigger=PropertyChanged }" SelectedItem="{Binding Path=DisplayList}"   x:Name="lst_Display" HorizontalAlignment="Left" Height="431" VerticalAlignment="Top" Width="383" Margin="10,10,0,0">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <TextBox BorderThickness="0" Text="{Binding toString}" FontWeight="Bold" IsReadOnly="true" Background="AliceBlue"/>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+        <Button x:Name="Logout" Content="Logout" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Margin="711,390,0,0" Height="50" Click="click_btn_logout" FontFamily="Monotype Corsiva"/>
+        <TextBox x:Name="txtBox_sendMsg"  ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="600" Margin="10,475,0,0" TextChanged="txtbox_send_Changed" />
+        <ListView Background="AliceBlue" ItemsSource="{Binding DisplayList , UpdateSourceTrigger=PropertyChanged }"   x:Name="lst_Display" HorizontalAlignment="Left" Height="440" VerticalAlignment="Top" Width="645" Margin="5,10,0,0">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown" />
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <Label Content="Sort Messages by:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="454,29,0,0" RenderTransformOrigin="0.525,1.179" Height="26" Width="106"/>
-        <Button x:Name="btn_send" Content="Send" FontSize="18" HorizontalAlignment="Left" Margin="519,460,0,0" VerticalAlignment="Top" Width="92" Height="60" Click="Button_Send_Click"/>
-        <Label Content="Filter Messages by:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="450,125,0,0" RenderTransformOrigin="0.525,1.179" Width="116" Height="26"/>
-        <TextBox x:Name="txtBox_IdFilter" Visibility="visible" HorizontalAlignment="Left" Height="23" Margin="410,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" TextChanged="txtBox_IdFilter_TextChanged"/>
-        <TextBox x:Name="txtBox_uNameFilter" Visibility="hidden" HorizontalAlignment="Left"  Margin="517,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Height="23" TextChanged="txtBox_uNameFilter_TextChanged" />
-        <Label Content="Group ID" x:Name="lbl_gId" HorizontalAlignment="Left" Margin="420,180,0,0" VerticalAlignment="Top" Height="25" Width="84"/>
-        <Label Content="UserName" x:Name="lbl_uName"  Visibility="Hidden" HorizontalAlignment="Left" Margin="530,180,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
-        <Button x:Name="filterbtn"  Content="Reset Fields" HorizontalAlignment="Left" Margin="451,220,0,0" VerticalAlignment="Top" Width="112" Height="45" Click="filterbtn_Click" />
+        <Label Content="Sort Messages by:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="724,54,0,0" RenderTransformOrigin="0.525,1.179" Height="26" Width="106"/>
+        <Button x:Name="btn_send" Content="Send" FontSize="18" HorizontalAlignment="Left" Margin="613,475,0,0" VerticalAlignment="Top" Width="92" Height="60" Click="Button_Send_Click" FontFamily="Monotype Corsiva"/>
+        <Label Content="Filter Messages by:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="707,225,0,0" RenderTransformOrigin="0.525,1.179" Width="116" Height="26"/>
+        <TextBox x:Name="txtBox_IdFilter" Visibility="visible" HorizontalAlignment="Left" Height="23" Margin="667,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" TextChanged="txtBox_IdFilter_TextChanged"/>
+        <TextBox x:Name="txtBox_uNameFilter" Visibility="Hidden" HorizontalAlignment="Left"  Margin="769,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Height="23" TextChanged="txtBox_uNameFilter_TextChanged" />
+        <Label Content="Group ID" x:Name="lbl_gId" HorizontalAlignment="Left" Margin="677,280,0,0" VerticalAlignment="Top" Height="25" Width="84"/>
+        <Label Content="UserName" x:Name="lbl_uName"  Visibility="Hidden" HorizontalAlignment="Left" Margin="775,280,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
+        <Button x:Name="filterbtn"  Content="Reset Fields" HorizontalAlignment="Left" Margin="790,310,0,0" VerticalAlignment="Top" Width="91" Height="40" Click="filterbtn_Click" FontFamily="Monotype Corsiva" FontSize="16" />
         <Label x:Name="lbl_Con" Background="Green" Content="Connected" HorizontalAlignment="Left" Margin="453,398,0,0" VerticalAlignment="Top" Height="31" Width="100" FontWeight="Bold" Visibility="Hidden"/>
-        <Border Margin="398,68,30.6,454.467">
-            <Grid Margin="1,-5,-1.2,-6.8">
+        <Border Margin="668,93,-239.8,429" Grid.ColumnSpan="2">
+            <Grid Margin="1,-5,0,-6.4" HorizontalAlignment="Left" Width="240">
 
                 <RadioButton x:Name="chk_as" Content="Ascending" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="chk_as_Checked" Height="15" Width="74"/>
                 <RadioButton x:Name="chk_des" Content="Descending" Margin="119,0,-21,0" VerticalAlignment="Top" Checked="chk_des_Checked" Height="17"/>
             </Grid>
         </Border>
-        <Border Margin="405,105,24.6,417.467">
+        <Border Margin="675,130,-245.8,392" Grid.ColumnSpan="2">
             <Grid>
                 <RadioButton x:Name="chk_time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="chk_time_Checked" Height="25" Width="45" Margin="-5,-15,0,0" />
                 <RadioButton x:Name="chk_nickname" Content="Nickname" HorizontalAlignment="Left" Margin="55,-15,0,5.2" Checked="chk_nickname_Checked" Width="75"/>
@@ -68,6 +64,11 @@
 
             </Grid>
         </Border>
+        <Label Content="Flter my messages:" HorizontalAlignment="Left" Margin="656,320,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.391,-0.016" Height="30" Width="120"/>
+        <CheckBox x:Name="chk_myFilter" HorizontalAlignment="Left" Margin="770,325,0,0" VerticalAlignment="Top" Checked="chk_myFilter_Checked" Unchecked="chk_myFilter_UnChecked" Height="15" Width="16"/>
+        <Label Content="version 2.0.1" HorizontalAlignment="Left" Margin="810,509,0,0" Height="26" VerticalAlignment="Top"/>
+        <Button x:Name="btn_info" Content="Info" HorizontalAlignment="Left" Margin="810,475,0,0" VerticalAlignment="Top" Width="75" FontSize="20" FontFamily="Monotype Corsiva" FontWeight="Bold" FontStyle="Italic" Click="btn_info_click"/>
+        <CheckBox x:Name="chk_autoScroll" Content="AutoScroll" HorizontalAlignment="Left" Margin="570,455,0,0" VerticalAlignment="Top"/>
 
 
 

@@ -41,7 +41,7 @@ namespace ProjectMS2.PresentationLayer
         }
 
 
-
+        //checking if the login is successful, if it is, closing the window and opening the chatroom window.
         private void btn_Login_Click(object sender, RoutedEventArgs e)
         {
             try {
@@ -65,11 +65,5 @@ namespace ProjectMS2.PresentationLayer
         {
             Close();
         }
-
-        private void txtBox_gIDlog_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-  
     }
 }

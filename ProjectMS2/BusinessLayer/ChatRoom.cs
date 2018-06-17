@@ -19,7 +19,12 @@ namespace ProjectMS2.BusinessLayer
     public class ChatRoom : INotifyPropertyChanged
     {
         #region Fields/Properties
-        private User logged;
+        private User _logged;
+        public User logged
+        {
+            get { return this._logged; }
+            set { this._logged = value; }
+        }
 
         private ObservableCollection<Message> _DisplayList;
         public ObservableCollection<Message> DisplayList
@@ -59,29 +64,55 @@ namespace ProjectMS2.BusinessLayer
             this.messageHandler = new MessageHandler();
             this.userHandler = new UserHandler();
             this.descending = true;
-            this.DisplayList = new ObservableCollection<Message>(this.messageHandler.loadMessages("SendTime", descending, new ObservableCollection<Message>()));
+            this.DisplayList = new ObservableCollection<Message>();
+            try
+            {
+                Retrieve("SendTime", string.Empty, string.Empty);
+            }
+            catch
+            {
+
+            }
+        }
+        public ChatRoom()
+        {
+            this.messageHandler = new MessageHandler();
+            this.userHandler = new UserHandler();
+            this.descending = true;
+            this.DisplayList = new ObservableCollection<Message>();
+            try
+            {
+                Retrieve("SendTime", string.Empty, string.Empty);
+            }
+            catch
+            {
+
+            }
         }
         #endregion
         #region firstMenu
         public void Register(String Username, int Gid, String Password)
         {
+            //checking pass length
             if (Password.Length < 4 || Password.Length > 16)
                 throw new InvalidOperationException("Password length should be in range of 4-16");
-
-            Regex r = new Regex("[^A-Z0-9.$ ]$");
-            if (r.IsMatch(Password))
+            //checking if only latters and numbers
+            bool valid = Password.All(c => char.IsLetterOrDigit(c));
+            if (!valid)
                 throw new InvalidOperationException("A valid password should contain only letters and numbers");
 
             User tmpUser = new User(Gid, Username, Hash.GetHashString(Password + "1337"));
             if (userHandler.isUserExists(tmpUser))
             {
-                this.log.Warn("attempt to register with the Username:" + Username + ", G-ID: " + Gid + ".a user with this Username and G-ID already exists");
+                if (log != null)
+                    this.log.Warn("attempt to register with the Username:" + Username + ", G-ID: " + Gid + ".a user with this Username and G-ID already exists");
                 throw new InvalidOperationException("Username and GroupId already taken");
             }
             else
             {
                 userHandler.addUser(tmpUser);
-                log.Info("User registered successfully. Username: " + Username + "group id: " + Gid);
+                if (log != null)
+                    log.Info("User registered successfully. Username: " + Username + "group id: " + Gid);
             }
 
 
@@ -93,11 +124,13 @@ namespace ProjectMS2.BusinessLayer
             if (userHandler.loginValidation(tmpUser))
             {
                 this.logged = tmpUser;
-                log.Info("User logged in successfully. Username: " + Username + "group id: " + g_id);
+                if (log != null)
+                    log.Info("User logged in successfully. Username: " + Username + "group id: " + g_id);
             }
             else
             {
-                log.Warn("attempt to login with the Username: " + Username + " and G-ID: " + g_id + ", a user with this Username and ID doesn't exist");
+                if (log != null)
+                    log.Warn("attempt to login with the Username: " + Username + " and G-ID: " + g_id + ", a user with this Username and ID doesn't exist");
                 throw new InvalidOperationException("Nickname or Password are not valid");
             }
         }
@@ -108,9 +141,11 @@ namespace ProjectMS2.BusinessLayer
         }
         #endregion
         #region chatroomMenu
-        public bool Retrieve(String sortType, String gIdFilter, String nickFilter)
+        public void Retrieve(String sortType, String gIdFilter, String nickFilter)
         {
+
             LinkedList<Message> tmpList = null;
+            //trying to load new messages from the server. 2 methods from messages handler. 1- if no filter, 2- with filter
             try
             {
                 if (gIdFilter.Equals(String.Empty))
@@ -118,11 +153,13 @@ namespace ProjectMS2.BusinessLayer
                 else
                     tmpList = new LinkedList<Message>(messageHandler.loadMessages(sortType, descending, this._DisplayList, gIdFilter, nickFilter));
             }
-            catch (Exception)
+            catch
             {
-                return false;
+                if (log != null)
+                    log.Error("The client has lost it's connection to the server");
+                throw new Exception("Connection to the the server has been lost");
             }
-            int overloadCount = tmpList.Count();
+            int overloadCount = tmpList.Count(); //checking if our list is full and if so, removing the first messages.
             if (DisplayList.Count == MessageHandler.MAX_LIST_SIZE)
             {
                 while (overloadCount > 0)
@@ -135,57 +172,60 @@ namespace ProjectMS2.BusinessLayer
                     overloadCount--;
                 }
             }
-            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background,
-            new Action(() =>
-            {
-                if (descending)
-                    tmpList.ToList<Message>().ForEach(this.DisplayList.Add);
-                else
-                {
-                    foreach (Message msg in tmpList.ToList<Message>())
-                    {
-                        DisplayList.Insert(0, msg);
-                    }
-                }
-                sortTypeChanged(sortType);
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
+             {
+                 if (descending)
+                 {
+                     foreach (Message msg in tmpList.ToList<Message>())
+                     {
+                         this.DisplayList.Add(msg);
+                     }
+                 }
+                 else
+                 {
+                     foreach (Message msg in tmpList.ToList<Message>())
+                     {
+                         DisplayList.Insert(0, msg);
+                     }
+                 }
+                 if (tmpList.Count > 0)
+                     sortTypeChanged(sortType); //we want the list keep updating and not losing it's sorting.
             }));
-            return true;
+
 
         }
         public void emptyDisplayList()
         {
             this.DisplayList = new ObservableCollection<Message>();
         }
-
-
         public void logout()
         {
-            log.Info("User: " + this.logged.Username + ", group id:" + this.logged.G_id + ", is logging out");
+            if (log != null)
+                log.Info("User: " + this.logged.Username + ", group id:" + this.logged.G_id + ", is logging out");
             this.logged = null;
         }
-
-        public int Send(String Msg) //1 - over 150, 2 - empty , 3- sent
+        public void Send(String Msg)
         {
-            if (Msg.Length > 150)
+            if (Msg.Length > 100)
             {
-
-                this.log.Info(this.logged.Username + "an attempt to send a message over 150 chars");
-                return 1;
-
+                if (log != null)
+                    log.Warn("User: " + this.logged.Username + ", group id:" + this.logged.G_id + ",try to send over 100 length message");
+                throw new Exception("message over 150 chars");
             }
             else if (Msg.Length == 0)
             {
-                this.log.Info(this.logged.Username + "an attempt to send an empty message");
-                return 2;
+                if (log != null)
+                    log.Warn("User: " + this.logged.Username + ", group id:" + this.logged.G_id + ", tried to send an empty message");
+                throw new Exception("empty message");
             }
             else
             {
                 Message msg = new Message(logged.G_id, Msg, logged.Username);
                 this.messageHandler.sendMessage(msg);
-                return 3;
+                if (log != null)
+                    log.Info("User: " + this.logged.Username + ", group id:" + this.logged.G_id + ", sent a message");
             }
         }
-
         public void reverse()
         {
 
@@ -197,7 +237,6 @@ namespace ProjectMS2.BusinessLayer
 
            }));
         }
-
         public void sortTypeChanged(String sortType)
         {
             if (descending)
@@ -219,16 +258,33 @@ namespace ProjectMS2.BusinessLayer
                     DisplayList = new ObservableCollection<Message>((from i in DisplayList orderby i.Date orderby i.UserName orderby i.GroupID select i).Reverse<Message>());
             }
         }
-
         public bool canEdit(Message editMsg)
         {
+            //checking if the speciefic user are trying to edit it's own message.
             return editMsg.GroupID.Equals(logged.G_id) && editMsg.UserName.Equals(logged.Username);
         }
         public void editMessage(Message msg, String sortType, String GIdFilter, String NickFilter)
         {
+            //editing the message and updating it in the display list.
             messageHandler.EditMessage(msg);
-            DisplayList = new ObservableCollection<Message>();
-            DisplayList.Add(msg);
+            Message message = new Message(msg.Id, msg.GroupID, msg.MessageContent, msg.UserName, msg.Date);
+            DisplayList[DisplayList.IndexOf(msg)] = message;
+            if (log != null)
+                log.Warn("User: " + this.logged.Username + ", group id:" + this.logged.G_id + "edited it's message - Message Id: " + msg.Id);
+        }
+        public bool isConnected()
+        {
+            try
+            {
+                userHandler.isConnected();
+                return true;
+            }
+            catch
+            {
+                if (log != null)
+                    log.Error("The client has lost it's connection to the server");
+                return false;
+            }
         }
 
 
